@@ -384,7 +384,7 @@ export class ExpenseDocumentWithoutPayment {
     /**
     * วันที่เอกสาร รูปแบบ yyyy-MM-dd
     */
-    'publishedOn'?: string;
+    'publishedOn': string;
     /**
     * รูปแบบเครดิต: 1 = เครดิต (วัน) / 5 = เครดิต (ไม่แสดงวันที่ครบกำหนด)
     */
@@ -701,7 +701,7 @@ export class ExpenseDocumentWithoutPaymentWithId {
     /**
     * วันที่เอกสาร รูปแบบ yyyy-MM-dd
     */
-    'publishedOn'?: string;
+    'publishedOn': string;
     /**
     * รูปแบบเครดิต: 1 = เครดิต (วัน) / 5 = เครดิต (ไม่แสดงวันที่ครบกำหนด)
     */
@@ -975,7 +975,7 @@ export class ExpenseInlineDocument {
     /**
     * วันที่เอกสาร รูปแบบ yyyy-MM-dd
     */
-    'publishedOn'?: string;
+    'publishedOn': string;
     /**
     * รูปแบบเครดิต: 1 = เครดิต (วัน) / 5 = เครดิต (ไม่แสดงวันที่ครบกำหนด)
     */
@@ -1239,7 +1239,7 @@ export class ExpenseInlineDocumentWithId {
     /**
     * วันที่เอกสาร รูปแบบ yyyy-MM-dd
     */
-    'publishedOn'?: string;
+    'publishedOn': string;
     /**
     * รูปแบบเครดิต: 1 = เครดิต (วัน) / 5 = เครดิต (ไม่แสดงวันที่ครบกำหนด)
     */
@@ -1930,7 +1930,7 @@ export class InlineDocument {
     /**
     * วันที่เอกสาร รูปแบบ yyyy-MM-dd
     */
-    'publishedOn'?: string;
+    'publishedOn': string;
     /**
     * รูปแบบเครดิต: 1 = เครดิต (วัน) / 5 = เครดิต (ไม่แสดงวันที่ครบกำหนด)
     */
@@ -2238,7 +2238,7 @@ export class InlineDocumentWithId {
     /**
     * วันที่เอกสาร รูปแบบ yyyy-MM-dd
     */
-    'publishedOn'?: string;
+    'publishedOn': string;
     /**
     * รูปแบบเครดิต: 1 = เครดิต (วัน) / 5 = เครดิต (ไม่แสดงวันที่ครบกำหนด)
     */
@@ -2586,7 +2586,7 @@ export class SimpleDocument {
     /**
     * วันที่เอกสาร รูปแบบ yyyy-MM-dd
     */
-    'publishedOn'?: string;
+    'publishedOn': string;
     /**
     * ชื่อโปรเจค
     */
@@ -2941,7 +2941,7 @@ export class SimpleDocumentWithoutPayment {
     /**
     * วันที่เอกสาร รูปแบบ yyyy-MM-dd
     */
-    'publishedOn'?: string;
+    'publishedOn': string;
     /**
     * รูปแบบเครดิต: 1 = เครดิต (วัน) / 5 = เครดิต (ไม่แสดงวันที่ครบกำหนด)
     */
@@ -3214,7 +3214,7 @@ export class SimpleDocumentWithoutPaymentWithDocumentId {
     /**
     * วันที่เอกสาร รูปแบบ yyyy-MM-dd
     */
-    'publishedOn'?: string;
+    'publishedOn': string;
     /**
     * รูปแบบเครดิต: 1 = เครดิต (วัน) / 5 = เครดิต (ไม่แสดงวันที่ครบกำหนด)
     */
@@ -3731,6 +3731,175 @@ export class AuthenticationApi {
                     reject(error);
                 } else {
                     body = ObjectSerializer.deserialize(body, "AuthenResponse");
+                    if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
+                        resolve({ response: response, body: body });
+                    } else {
+                        reject({ response: response, body: body });
+                    }
+                }
+            });
+        });
+    }
+}
+export enum BillingNotesApiApiKeys {
+}
+
+export class BillingNotesApi {
+    protected _basePath = defaultBasePath;
+    protected defaultHeaders : any = {};
+    protected _useQuerystring : boolean = false;
+
+    protected authentications = {
+        'default': <Authentication>new VoidAuth(),
+    }
+
+    constructor(basePath?: string);
+    constructor(basePathOrUsername: string, password?: string, basePath?: string) {
+        if (password) {
+            if (basePath) {
+                this.basePath = basePath;
+            }
+        } else {
+            if (basePathOrUsername) {
+                this.basePath = basePathOrUsername
+            }
+        }
+    }
+
+    set useQuerystring(value: boolean) {
+        this._useQuerystring = value;
+    }
+
+    set basePath(basePath: string) {
+        this._basePath = basePath;
+    }
+
+    get basePath() {
+        return this._basePath;
+    }
+
+    public setDefaultAuthentication(auth: Authentication) {
+	this.authentications.default = auth;
+    }
+
+    public setApiKey(key: BillingNotesApiApiKeys, value: string) {
+        (this.authentications as any)[BillingNotesApiApiKeys[key]].apiKey = value;
+    }
+    /**
+     * 
+     * @summary Create billing notes document with discount and tax inline.
+     * @param authorization 
+     * @param aPICoreDocumentInline 
+     * @param {*} [options] Override http request options.
+     */
+    public billingNotesInlinePost (authorization: string, aPICoreDocumentInline: InlineDocument, options: any = {}) : Promise<{ response: http.ClientResponse; body: InlineDocumentResponse;  }> {
+        const localVarPath = this.basePath + '/billing-notes/inline';
+        let localVarQueryParameters: any = {};
+        let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
+        let localVarFormParams: any = {};
+
+        // verify required parameter 'authorization' is not null or undefined
+        if (authorization === null || authorization === undefined) {
+            throw new Error('Required parameter authorization was null or undefined when calling billingNotesInlinePost.');
+        }
+
+        // verify required parameter 'aPICoreDocumentInline' is not null or undefined
+        if (aPICoreDocumentInline === null || aPICoreDocumentInline === undefined) {
+            throw new Error('Required parameter aPICoreDocumentInline was null or undefined when calling billingNotesInlinePost.');
+        }
+
+        localVarHeaderParams['Authorization'] = ObjectSerializer.serialize(authorization, "string");
+        (<any>Object).assign(localVarHeaderParams, options.headers);
+
+        let localVarUseFormData = false;
+
+        let localVarRequestOptions: localVarRequest.Options = {
+            method: 'POST',
+            qs: localVarQueryParameters,
+            headers: localVarHeaderParams,
+            uri: localVarPath,
+            useQuerystring: this._useQuerystring,
+            json: true,
+            body: ObjectSerializer.serialize(aPICoreDocumentInline, "InlineDocument")
+        };
+
+        this.authentications.default.applyToRequest(localVarRequestOptions);
+
+        if (Object.keys(localVarFormParams).length) {
+            if (localVarUseFormData) {
+                (<any>localVarRequestOptions).formData = localVarFormParams;
+            } else {
+                localVarRequestOptions.form = localVarFormParams;
+            }
+        }
+        return new Promise<{ response: http.ClientResponse; body: InlineDocumentResponse;  }>((resolve, reject) => {
+            localVarRequest(localVarRequestOptions, (error, response, body) => {
+                if (error) {
+                    reject(error);
+                } else {
+                    body = ObjectSerializer.deserialize(body, "InlineDocumentResponse");
+                    if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
+                        resolve({ response: response, body: body });
+                    } else {
+                        reject({ response: response, body: body });
+                    }
+                }
+            });
+        });
+    }
+    /**
+     * 
+     * @summary Create billing notes document.
+     * @param authorization 
+     * @param simpleDocumentWithoutPayment 
+     * @param {*} [options] Override http request options.
+     */
+    public billingNotesPost (authorization: string, simpleDocumentWithoutPayment: SimpleDocumentWithoutPayment, options: any = {}) : Promise<{ response: http.ClientResponse; body: SimpleDocumentWithoutPaymentWithDocumentId;  }> {
+        const localVarPath = this.basePath + '/billing-notes';
+        let localVarQueryParameters: any = {};
+        let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
+        let localVarFormParams: any = {};
+
+        // verify required parameter 'authorization' is not null or undefined
+        if (authorization === null || authorization === undefined) {
+            throw new Error('Required parameter authorization was null or undefined when calling billingNotesPost.');
+        }
+
+        // verify required parameter 'simpleDocumentWithoutPayment' is not null or undefined
+        if (simpleDocumentWithoutPayment === null || simpleDocumentWithoutPayment === undefined) {
+            throw new Error('Required parameter simpleDocumentWithoutPayment was null or undefined when calling billingNotesPost.');
+        }
+
+        localVarHeaderParams['Authorization'] = ObjectSerializer.serialize(authorization, "string");
+        (<any>Object).assign(localVarHeaderParams, options.headers);
+
+        let localVarUseFormData = false;
+
+        let localVarRequestOptions: localVarRequest.Options = {
+            method: 'POST',
+            qs: localVarQueryParameters,
+            headers: localVarHeaderParams,
+            uri: localVarPath,
+            useQuerystring: this._useQuerystring,
+            json: true,
+            body: ObjectSerializer.serialize(simpleDocumentWithoutPayment, "SimpleDocumentWithoutPayment")
+        };
+
+        this.authentications.default.applyToRequest(localVarRequestOptions);
+
+        if (Object.keys(localVarFormParams).length) {
+            if (localVarUseFormData) {
+                (<any>localVarRequestOptions).formData = localVarFormParams;
+            } else {
+                localVarRequestOptions.form = localVarFormParams;
+            }
+        }
+        return new Promise<{ response: http.ClientResponse; body: SimpleDocumentWithoutPaymentWithDocumentId;  }>((resolve, reject) => {
+            localVarRequest(localVarRequestOptions, (error, response, body) => {
+                if (error) {
+                    reject(error);
+                } else {
+                    body = ObjectSerializer.deserialize(body, "SimpleDocumentWithoutPaymentWithDocumentId");
                     if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
                         resolve({ response: response, body: body });
                     } else {
@@ -4388,6 +4557,175 @@ export class ExpenseApi {
                     reject(error);
                 } else {
                     body = ObjectSerializer.deserialize(body, "ExpenseDocumentWithoutPaymentResponse");
+                    if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
+                        resolve({ response: response, body: body });
+                    } else {
+                        reject({ response: response, body: body });
+                    }
+                }
+            });
+        });
+    }
+}
+export enum QuotationsApiApiKeys {
+}
+
+export class QuotationsApi {
+    protected _basePath = defaultBasePath;
+    protected defaultHeaders : any = {};
+    protected _useQuerystring : boolean = false;
+
+    protected authentications = {
+        'default': <Authentication>new VoidAuth(),
+    }
+
+    constructor(basePath?: string);
+    constructor(basePathOrUsername: string, password?: string, basePath?: string) {
+        if (password) {
+            if (basePath) {
+                this.basePath = basePath;
+            }
+        } else {
+            if (basePathOrUsername) {
+                this.basePath = basePathOrUsername
+            }
+        }
+    }
+
+    set useQuerystring(value: boolean) {
+        this._useQuerystring = value;
+    }
+
+    set basePath(basePath: string) {
+        this._basePath = basePath;
+    }
+
+    get basePath() {
+        return this._basePath;
+    }
+
+    public setDefaultAuthentication(auth: Authentication) {
+	this.authentications.default = auth;
+    }
+
+    public setApiKey(key: QuotationsApiApiKeys, value: string) {
+        (this.authentications as any)[QuotationsApiApiKeys[key]].apiKey = value;
+    }
+    /**
+     * 
+     * @summary Create quotations document with discount and tax inline.
+     * @param authorization 
+     * @param aPICoreDocumentInline 
+     * @param {*} [options] Override http request options.
+     */
+    public quotationsInlinePost (authorization: string, aPICoreDocumentInline: InlineDocument, options: any = {}) : Promise<{ response: http.ClientResponse; body: InlineDocumentResponse;  }> {
+        const localVarPath = this.basePath + '/quotations/inline';
+        let localVarQueryParameters: any = {};
+        let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
+        let localVarFormParams: any = {};
+
+        // verify required parameter 'authorization' is not null or undefined
+        if (authorization === null || authorization === undefined) {
+            throw new Error('Required parameter authorization was null or undefined when calling quotationsInlinePost.');
+        }
+
+        // verify required parameter 'aPICoreDocumentInline' is not null or undefined
+        if (aPICoreDocumentInline === null || aPICoreDocumentInline === undefined) {
+            throw new Error('Required parameter aPICoreDocumentInline was null or undefined when calling quotationsInlinePost.');
+        }
+
+        localVarHeaderParams['Authorization'] = ObjectSerializer.serialize(authorization, "string");
+        (<any>Object).assign(localVarHeaderParams, options.headers);
+
+        let localVarUseFormData = false;
+
+        let localVarRequestOptions: localVarRequest.Options = {
+            method: 'POST',
+            qs: localVarQueryParameters,
+            headers: localVarHeaderParams,
+            uri: localVarPath,
+            useQuerystring: this._useQuerystring,
+            json: true,
+            body: ObjectSerializer.serialize(aPICoreDocumentInline, "InlineDocument")
+        };
+
+        this.authentications.default.applyToRequest(localVarRequestOptions);
+
+        if (Object.keys(localVarFormParams).length) {
+            if (localVarUseFormData) {
+                (<any>localVarRequestOptions).formData = localVarFormParams;
+            } else {
+                localVarRequestOptions.form = localVarFormParams;
+            }
+        }
+        return new Promise<{ response: http.ClientResponse; body: InlineDocumentResponse;  }>((resolve, reject) => {
+            localVarRequest(localVarRequestOptions, (error, response, body) => {
+                if (error) {
+                    reject(error);
+                } else {
+                    body = ObjectSerializer.deserialize(body, "InlineDocumentResponse");
+                    if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
+                        resolve({ response: response, body: body });
+                    } else {
+                        reject({ response: response, body: body });
+                    }
+                }
+            });
+        });
+    }
+    /**
+     * 
+     * @summary Create quotations document.
+     * @param authorization 
+     * @param simpleDocumentWithoutPayment 
+     * @param {*} [options] Override http request options.
+     */
+    public quotationsPost (authorization: string, simpleDocumentWithoutPayment: SimpleDocumentWithoutPayment, options: any = {}) : Promise<{ response: http.ClientResponse; body: SimpleDocumentWithoutPaymentWithDocumentId;  }> {
+        const localVarPath = this.basePath + '/quotations';
+        let localVarQueryParameters: any = {};
+        let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
+        let localVarFormParams: any = {};
+
+        // verify required parameter 'authorization' is not null or undefined
+        if (authorization === null || authorization === undefined) {
+            throw new Error('Required parameter authorization was null or undefined when calling quotationsPost.');
+        }
+
+        // verify required parameter 'simpleDocumentWithoutPayment' is not null or undefined
+        if (simpleDocumentWithoutPayment === null || simpleDocumentWithoutPayment === undefined) {
+            throw new Error('Required parameter simpleDocumentWithoutPayment was null or undefined when calling quotationsPost.');
+        }
+
+        localVarHeaderParams['Authorization'] = ObjectSerializer.serialize(authorization, "string");
+        (<any>Object).assign(localVarHeaderParams, options.headers);
+
+        let localVarUseFormData = false;
+
+        let localVarRequestOptions: localVarRequest.Options = {
+            method: 'POST',
+            qs: localVarQueryParameters,
+            headers: localVarHeaderParams,
+            uri: localVarPath,
+            useQuerystring: this._useQuerystring,
+            json: true,
+            body: ObjectSerializer.serialize(simpleDocumentWithoutPayment, "SimpleDocumentWithoutPayment")
+        };
+
+        this.authentications.default.applyToRequest(localVarRequestOptions);
+
+        if (Object.keys(localVarFormParams).length) {
+            if (localVarUseFormData) {
+                (<any>localVarRequestOptions).formData = localVarFormParams;
+            } else {
+                localVarRequestOptions.form = localVarFormParams;
+            }
+        }
+        return new Promise<{ response: http.ClientResponse; body: SimpleDocumentWithoutPaymentWithDocumentId;  }>((resolve, reject) => {
+            localVarRequest(localVarRequestOptions, (error, response, body) => {
+                if (error) {
+                    reject(error);
+                } else {
+                    body = ObjectSerializer.deserialize(body, "SimpleDocumentWithoutPaymentWithDocumentId");
                     if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
                         resolve({ response: response, body: body });
                     } else {
