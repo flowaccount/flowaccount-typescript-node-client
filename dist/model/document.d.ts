@@ -1,0 +1,55 @@
+export declare class Document {
+    'documentSerial'?: string;
+    'contactCode'?: string;
+    'contactName': string;
+    'contactAddress'?: string;
+    'contactTaxId'?: string;
+    'contactBranch'?: string;
+    'contactPerson'?: string;
+    'contactEmail'?: string;
+    'contactNumber'?: string;
+    'contactZipCode'?: string;
+    'publishedOn': string;
+    'dueDate'?: string;
+    'projectName'?: string;
+    'reference'?: string;
+    'isVatInclusive'?: boolean;
+    'discountType'?: number;
+    'discountPercentage'?: number;
+    'discountAmount'?: number;
+    'salesName'?: string;
+    'subTotal'?: number;
+    'totalAfterDiscount': number;
+    'grandTotal': number;
+    'totalWithoutVat'?: number;
+    'vatAmount'?: number;
+    'remarks'?: string;
+    'internalNotes'?: string;
+    'paymentMethod'?: number;
+    'paymentDate'?: string;
+    'paymentRemarks'?: string;
+    'bankAccountName'?: string;
+    'bankAccountNumber'?: string;
+    'collected'?: number;
+    'withheldAmount'?: number;
+    'withheldPercentage'?: number;
+    'fee'?: number;
+    'documentShowWithholdingTax'?: boolean;
+    'documentWithholdingTaxAmount'?: number;
+    'documentWithholdingTaxPercentage'?: number;
+    'creditDays'?: number;
+    'creditType'?: number;
+    'recordId'?: number;
+    'documentStructureType': string;
+    static discriminator: string | undefined;
+    static attributeTypeMap: Array<{
+        name: string;
+        baseName: string;
+        type: string;
+    }>;
+    static getAttributeTypeMap(): {
+        name: string;
+        baseName: string;
+        type: string;
+    }[];
+}
