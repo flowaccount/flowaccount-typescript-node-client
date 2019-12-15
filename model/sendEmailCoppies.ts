@@ -10,21 +10,26 @@
  * Do not edit the class manually.
  */
 
+import { SendEmail } from './sendEmail';
+import { SendEmailCoppiesAllOf } from './sendEmailCoppiesAllOf';
 
-export class InlineObject {
-    'file'?: RequestFile;
+export class SendEmailCoppies extends SendEmail {
+    /**
+    * ส่งต้นฉบับ พร้อม สำเนา
+    */
+    'doCopy'?: boolean;
 
     static discriminator: string | undefined = undefined;
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
         {
-            "name": "file",
-            "baseName": "file",
-            "type": "RequestFile"
+            "name": "doCopy",
+            "baseName": "doCopy",
+            "type": "boolean"
         }    ];
 
     static getAttributeTypeMap() {
-        return InlineObject.attributeTypeMap;
+        return super.getAttributeTypeMap().concat(SendEmailCoppies.attributeTypeMap);
     }
 }
 

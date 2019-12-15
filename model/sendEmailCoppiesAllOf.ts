@@ -11,20 +11,23 @@
  */
 
 
-export class InlineObject {
-    'file'?: RequestFile;
+export class SendEmailCoppiesAllOf {
+    /**
+    * ส่งต้นฉบับ พร้อม สำเนา
+    */
+    'doCopy'?: boolean;
 
     static discriminator: string | undefined = undefined;
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
         {
-            "name": "file",
-            "baseName": "file",
-            "type": "RequestFile"
+            "name": "doCopy",
+            "baseName": "doCopy",
+            "type": "boolean"
         }    ];
 
     static getAttributeTypeMap() {
-        return InlineObject.attributeTypeMap;
+        return SendEmailCoppiesAllOf.attributeTypeMap;
     }
 }
 

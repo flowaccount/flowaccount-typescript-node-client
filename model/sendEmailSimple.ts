@@ -10,21 +10,17 @@
  * Do not edit the class manually.
  */
 
+import { SendEmail } from './sendEmail';
 
-export class InlineObject {
-    'file'?: RequestFile;
+export class SendEmailSimple extends SendEmail {
 
     static discriminator: string | undefined = undefined;
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-        {
-            "name": "file",
-            "baseName": "file",
-            "type": "RequestFile"
-        }    ];
+    ];
 
     static getAttributeTypeMap() {
-        return InlineObject.attributeTypeMap;
+        return super.getAttributeTypeMap().concat(SendEmailSimple.attributeTypeMap);
     }
 }
 

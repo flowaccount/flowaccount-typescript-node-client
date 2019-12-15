@@ -11,7 +11,7 @@
  */
 
 
-export class InlineObject {
+export class InlineObject2 {
     'file'?: RequestFile;
 
     static discriminator: string | undefined = undefined;
@@ -24,7 +24,7 @@ export class InlineObject {
         }    ];
 
     static getAttributeTypeMap() {
-        return InlineObject.attributeTypeMap;
+        return InlineObject2.attributeTypeMap;
     }
 }
 

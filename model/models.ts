@@ -14,9 +14,17 @@ export * from './inlineDocumentResponse';
 export * from './inlineDocumentResponseAllOf';
 export * from './inlineObject';
 export * from './inlineObject1';
+export * from './inlineObject2';
+export * from './inlineObject3';
+export * from './inlineObject4';
 export * from './inlineProductItem';
 export * from './inlineProductItemAllOf';
 export * from './productItem';
+export * from './sendEmail';
+export * from './sendEmailCoppies';
+export * from './sendEmailCoppiesAllOf';
+export * from './sendEmailResponse';
+export * from './sendEmailSimple';
 export * from './simpleDocument';
 export * from './simpleDocumentAllOf';
 export * from './simpleDocumentResponse';
@@ -41,9 +49,17 @@ import { InlineDocumentResponse } from './inlineDocumentResponse';
 import { InlineDocumentResponseAllOf } from './inlineDocumentResponseAllOf';
 import { InlineObject } from './inlineObject';
 import { InlineObject1 } from './inlineObject1';
+import { InlineObject2 } from './inlineObject2';
+import { InlineObject3 } from './inlineObject3';
+import { InlineObject4 } from './inlineObject4';
 import { InlineProductItem } from './inlineProductItem';
 import { InlineProductItemAllOf } from './inlineProductItemAllOf';
 import { ProductItem } from './productItem';
+import { SendEmail } from './sendEmail';
+import { SendEmailCoppies } from './sendEmailCoppies';
+import { SendEmailCoppiesAllOf } from './sendEmailCoppiesAllOf';
+import { SendEmailResponse } from './sendEmailResponse';
+import { SendEmailSimple } from './sendEmailSimple';
 import { SimpleDocument } from './simpleDocument';
 import { SimpleDocumentAllOf } from './simpleDocumentAllOf';
 import { SimpleDocumentResponse } from './simpleDocumentResponse';
@@ -82,9 +98,17 @@ let typeMap: {[index: string]: any} = {
     "InlineDocumentResponseAllOf": InlineDocumentResponseAllOf,
     "InlineObject": InlineObject,
     "InlineObject1": InlineObject1,
+    "InlineObject2": InlineObject2,
+    "InlineObject3": InlineObject3,
+    "InlineObject4": InlineObject4,
     "InlineProductItem": InlineProductItem,
     "InlineProductItemAllOf": InlineProductItemAllOf,
     "ProductItem": ProductItem,
+    "SendEmail": SendEmail,
+    "SendEmailCoppies": SendEmailCoppies,
+    "SendEmailCoppiesAllOf": SendEmailCoppiesAllOf,
+    "SendEmailResponse": SendEmailResponse,
+    "SendEmailSimple": SendEmailSimple,
     "SimpleDocument": SimpleDocument,
     "SimpleDocumentAllOf": SimpleDocumentAllOf,
     "SimpleDocumentResponse": SimpleDocumentResponse,
