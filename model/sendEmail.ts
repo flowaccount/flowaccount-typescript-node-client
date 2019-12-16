@@ -13,7 +13,7 @@
 
 export class SendEmail {
     /**
-    * id เอกสาร (recordId)
+    * documentId
     */
     'documentId': number;
     /**

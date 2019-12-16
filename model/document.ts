@@ -169,6 +169,9 @@ export class Document {
     * รูปแบบเครดิต: 1 = เครดิต (วัน) / 5 = เครดิต (ไม่แสดงวันที่ครบกำหนด)
     */
     'creditType'?: number;
+    /**
+    * id ของเอกสาร
+    */
     'recordId'?: number;
     'documentStructureType': string;
 
