@@ -41,7 +41,7 @@ export class SendEmail {
     */
     'subject': string;
     /**
-    * ข้อความ
+    * ข้อความ เนื้อหาของ email
     */
     'message'?: string;
 

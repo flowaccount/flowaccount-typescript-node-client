@@ -82,8 +82,8 @@ export class TaxInvoiceApi {
      * @param authorization 
      * @param sendEmailCoppies 
      */
-    public async taxInvoiceEmailDocumentPost (authorization: string, sendEmailCoppies: SendEmailCoppies, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: SendEmailResponse;  }> {
-        const localVarPath = this.basePath + '/tax-Invoice/email-document';
+    public async taxInvoicesEmailDocumentPost (authorization: string, sendEmailCoppies: SendEmailCoppies, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: SendEmailResponse;  }> {
+        const localVarPath = this.basePath + '/tax-Invoices/email-document';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
         const produces = ['application/json'];
@@ -97,12 +97,12 @@ export class TaxInvoiceApi {
 
         // verify required parameter 'authorization' is not null or undefined
         if (authorization === null || authorization === undefined) {
-            throw new Error('Required parameter authorization was null or undefined when calling taxInvoiceEmailDocumentPost.');
+            throw new Error('Required parameter authorization was null or undefined when calling taxInvoicesEmailDocumentPost.');
         }
 
         // verify required parameter 'sendEmailCoppies' is not null or undefined
         if (sendEmailCoppies === null || sendEmailCoppies === undefined) {
-            throw new Error('Required parameter sendEmailCoppies was null or undefined when calling taxInvoiceEmailDocumentPost.');
+            throw new Error('Required parameter sendEmailCoppies was null or undefined when calling taxInvoicesEmailDocumentPost.');
         }
 
         localVarHeaderParams['Authorization'] = ObjectSerializer.serialize(authorization, "string");

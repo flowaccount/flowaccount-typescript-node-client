@@ -19,9 +19,17 @@ __export(require("./inlineDocumentResponse"));
 __export(require("./inlineDocumentResponseAllOf"));
 __export(require("./inlineObject"));
 __export(require("./inlineObject1"));
+__export(require("./inlineObject2"));
+__export(require("./inlineObject3"));
+__export(require("./inlineObject4"));
 __export(require("./inlineProductItem"));
 __export(require("./inlineProductItemAllOf"));
 __export(require("./productItem"));
+__export(require("./sendEmail"));
+__export(require("./sendEmailCoppies"));
+__export(require("./sendEmailCoppiesAllOf"));
+__export(require("./sendEmailResponse"));
+__export(require("./sendEmailSimple"));
 __export(require("./simpleDocument"));
 __export(require("./simpleDocumentAllOf"));
 __export(require("./simpleDocumentResponse"));
@@ -43,9 +51,17 @@ const inlineDocumentResponse_1 = require("./inlineDocumentResponse");
 const inlineDocumentResponseAllOf_1 = require("./inlineDocumentResponseAllOf");
 const inlineObject_1 = require("./inlineObject");
 const inlineObject1_1 = require("./inlineObject1");
+const inlineObject2_1 = require("./inlineObject2");
+const inlineObject3_1 = require("./inlineObject3");
+const inlineObject4_1 = require("./inlineObject4");
 const inlineProductItem_1 = require("./inlineProductItem");
 const inlineProductItemAllOf_1 = require("./inlineProductItemAllOf");
 const productItem_1 = require("./productItem");
+const sendEmail_1 = require("./sendEmail");
+const sendEmailCoppies_1 = require("./sendEmailCoppies");
+const sendEmailCoppiesAllOf_1 = require("./sendEmailCoppiesAllOf");
+const sendEmailResponse_1 = require("./sendEmailResponse");
+const sendEmailSimple_1 = require("./sendEmailSimple");
 const simpleDocument_1 = require("./simpleDocument");
 const simpleDocumentAllOf_1 = require("./simpleDocumentAllOf");
 const simpleDocumentResponse_1 = require("./simpleDocumentResponse");
@@ -79,9 +95,17 @@ let typeMap = {
     "InlineDocumentResponseAllOf": inlineDocumentResponseAllOf_1.InlineDocumentResponseAllOf,
     "InlineObject": inlineObject_1.InlineObject,
     "InlineObject1": inlineObject1_1.InlineObject1,
+    "InlineObject2": inlineObject2_1.InlineObject2,
+    "InlineObject3": inlineObject3_1.InlineObject3,
+    "InlineObject4": inlineObject4_1.InlineObject4,
     "InlineProductItem": inlineProductItem_1.InlineProductItem,
     "InlineProductItemAllOf": inlineProductItemAllOf_1.InlineProductItemAllOf,
     "ProductItem": productItem_1.ProductItem,
+    "SendEmail": sendEmail_1.SendEmail,
+    "SendEmailCoppies": sendEmailCoppies_1.SendEmailCoppies,
+    "SendEmailCoppiesAllOf": sendEmailCoppiesAllOf_1.SendEmailCoppiesAllOf,
+    "SendEmailResponse": sendEmailResponse_1.SendEmailResponse,
+    "SendEmailSimple": sendEmailSimple_1.SendEmailSimple,
     "SimpleDocument": simpleDocument_1.SimpleDocument,
     "SimpleDocumentAllOf": simpleDocumentAllOf_1.SimpleDocumentAllOf,
     "SimpleDocumentResponse": simpleDocumentResponse_1.SimpleDocumentResponse,

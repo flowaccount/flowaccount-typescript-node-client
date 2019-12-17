@@ -8,24 +8,9 @@ class InlineObject1 {
 InlineObject1.discriminator = undefined;
 InlineObject1.attributeTypeMap = [
     {
-        "name": "grantType",
-        "baseName": "grant_type",
-        "type": "string"
-    },
-    {
-        "name": "scope",
-        "baseName": "scope",
-        "type": "string"
-    },
-    {
-        "name": "clientId",
-        "baseName": "client_id",
-        "type": "string"
-    },
-    {
-        "name": "clientSecret",
-        "baseName": "client_secret",
-        "type": "string"
+        "name": "file",
+        "baseName": "file",
+        "type": "RequestFile"
     }
 ];
 exports.InlineObject1 = InlineObject1;

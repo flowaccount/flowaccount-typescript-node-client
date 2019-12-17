@@ -1,8 +1,6 @@
+import { RequestFile } from "../api/apis";
 export declare class InlineObject1 {
-    'grantType'?: string;
-    'scope'?: string;
-    'clientId'?: string;
-    'clientSecret'?: string;
+    'file'?: RequestFile;
     static discriminator: string | undefined;
     static attributeTypeMap: Array<{
         name: string;

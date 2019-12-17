@@ -2,9 +2,12 @@
 import http = require('http');
 import { InlineDocument } from '../model/inlineDocument';
 import { InlineDocumentResponse } from '../model/inlineDocumentResponse';
+import { SendEmailResponse } from '../model/sendEmailResponse';
+import { SendEmailSimple } from '../model/sendEmailSimple';
 import { SimpleDocument } from '../model/simpleDocument';
 import { SimpleDocumentResponse } from '../model/simpleDocumentResponse';
 import { Authentication } from '../model/models';
+import { RequestFile } from './apis';
 export declare enum QuotationsApiApiKeys {
 }
 export declare class QuotationsApi {
@@ -19,6 +22,38 @@ export declare class QuotationsApi {
     basePath: string;
     setDefaultAuthentication(auth: Authentication): void;
     setApiKey(key: QuotationsApiApiKeys, value: string): void;
+    quotationsEmailDocumentPost(authorization: string, sendEmailSimple: SendEmailSimple, options?: {
+        headers: {
+            [name: string]: string;
+        };
+    }): Promise<{
+        response: http.IncomingMessage;
+        body: SendEmailResponse;
+    }>;
+    quotationsGet(authorization: string, options?: {
+        headers: {
+            [name: string]: string;
+        };
+    }): Promise<{
+        response: http.IncomingMessage;
+        body: SimpleDocumentResponse;
+    }>;
+    quotationsIdAttachmentPost(authorization: string, id: string, file?: RequestFile, options?: {
+        headers: {
+            [name: string]: string;
+        };
+    }): Promise<{
+        response: http.IncomingMessage;
+        body?: any;
+    }>;
+    quotationsIdGet(authorization: string, id: string, options?: {
+        headers: {
+            [name: string]: string;
+        };
+    }): Promise<{
+        response: http.IncomingMessage;
+        body: InlineDocumentResponse;
+    }>;
     quotationsInlinePost(authorization: string, inlineDocument: InlineDocument, options?: {
         headers: {
             [name: string]: string;

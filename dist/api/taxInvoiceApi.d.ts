@@ -2,6 +2,8 @@
 import http = require('http');
 import { InlineDocument } from '../model/inlineDocument';
 import { InlineDocumentResponse } from '../model/inlineDocumentResponse';
+import { SendEmailCoppies } from '../model/sendEmailCoppies';
+import { SendEmailResponse } from '../model/sendEmailResponse';
 import { SimpleDocument } from '../model/simpleDocument';
 import { SimpleDocumentResponse } from '../model/simpleDocumentResponse';
 import { Authentication } from '../model/models';
@@ -20,6 +22,14 @@ export declare class TaxInvoiceApi {
     basePath: string;
     setDefaultAuthentication(auth: Authentication): void;
     setApiKey(key: TaxInvoiceApiApiKeys, value: string): void;
+    taxInvoiceEmailDocumentPost(authorization: string, sendEmailCoppies: SendEmailCoppies, options?: {
+        headers: {
+            [name: string]: string;
+        };
+    }): Promise<{
+        response: http.IncomingMessage;
+        body: SendEmailResponse;
+    }>;
     taxInvoicesGet(currentPage: string, pageSize: string, authorization: string, sortBy?: string, filter?: string, options?: {
         headers: {
             [name: string]: string;
