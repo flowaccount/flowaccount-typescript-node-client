@@ -80,7 +80,7 @@ export class AuthenticationApi {
      * @param clientId 
      * @param clientSecret 
      */
-    public async tokenPost (contentType: string, grantType?: string, scope?: string, clientId?: string, clientSecret?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: AuthenResponse;  }> {
+    public async tokenPost (contentType: string, grantType?: string, scope?: string, clientId?: string, clientSecret?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: AuthenResponse;  }> {
         const localVarPath = this.basePath + '/token';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -138,7 +138,7 @@ export class AuthenticationApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.IncomingMessage; body: AuthenResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.ClientResponse; body: AuthenResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);

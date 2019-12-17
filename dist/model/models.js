@@ -35,39 +35,39 @@ __export(require("./simpleDocumentAllOf"));
 __export(require("./simpleDocumentResponse"));
 __export(require("./simpleDocumentResponseAllOf"));
 __export(require("./simpleProductItem"));
-const authenResponse_1 = require("./authenResponse");
-const businessCategory_1 = require("./businessCategory");
-const document_1 = require("./document");
-const documentResponse_1 = require("./documentResponse");
-const expenseDocument_1 = require("./expenseDocument");
-const expenseDocumentResponse_1 = require("./expenseDocumentResponse");
-const expenseInlineDocument_1 = require("./expenseInlineDocument");
-const expenseInlineProductItem_1 = require("./expenseInlineProductItem");
-const expenseSimpleProductItem_1 = require("./expenseSimpleProductItem");
-const expensenlineDocumentResponse_1 = require("./expensenlineDocumentResponse");
-const inlineDocument_1 = require("./inlineDocument");
-const inlineDocumentAllOf_1 = require("./inlineDocumentAllOf");
-const inlineDocumentResponse_1 = require("./inlineDocumentResponse");
-const inlineDocumentResponseAllOf_1 = require("./inlineDocumentResponseAllOf");
-const inlineObject_1 = require("./inlineObject");
-const inlineObject1_1 = require("./inlineObject1");
-const inlineObject2_1 = require("./inlineObject2");
-const inlineObject3_1 = require("./inlineObject3");
-const inlineObject4_1 = require("./inlineObject4");
-const inlineProductItem_1 = require("./inlineProductItem");
-const inlineProductItemAllOf_1 = require("./inlineProductItemAllOf");
-const productItem_1 = require("./productItem");
-const sendEmail_1 = require("./sendEmail");
-const sendEmailCoppies_1 = require("./sendEmailCoppies");
-const sendEmailCoppiesAllOf_1 = require("./sendEmailCoppiesAllOf");
-const sendEmailResponse_1 = require("./sendEmailResponse");
-const sendEmailSimple_1 = require("./sendEmailSimple");
-const simpleDocument_1 = require("./simpleDocument");
-const simpleDocumentAllOf_1 = require("./simpleDocumentAllOf");
-const simpleDocumentResponse_1 = require("./simpleDocumentResponse");
-const simpleDocumentResponseAllOf_1 = require("./simpleDocumentResponseAllOf");
-const simpleProductItem_1 = require("./simpleProductItem");
-let primitives = [
+var authenResponse_1 = require("./authenResponse");
+var businessCategory_1 = require("./businessCategory");
+var document_1 = require("./document");
+var documentResponse_1 = require("./documentResponse");
+var expenseDocument_1 = require("./expenseDocument");
+var expenseDocumentResponse_1 = require("./expenseDocumentResponse");
+var expenseInlineDocument_1 = require("./expenseInlineDocument");
+var expenseInlineProductItem_1 = require("./expenseInlineProductItem");
+var expenseSimpleProductItem_1 = require("./expenseSimpleProductItem");
+var expensenlineDocumentResponse_1 = require("./expensenlineDocumentResponse");
+var inlineDocument_1 = require("./inlineDocument");
+var inlineDocumentAllOf_1 = require("./inlineDocumentAllOf");
+var inlineDocumentResponse_1 = require("./inlineDocumentResponse");
+var inlineDocumentResponseAllOf_1 = require("./inlineDocumentResponseAllOf");
+var inlineObject_1 = require("./inlineObject");
+var inlineObject1_1 = require("./inlineObject1");
+var inlineObject2_1 = require("./inlineObject2");
+var inlineObject3_1 = require("./inlineObject3");
+var inlineObject4_1 = require("./inlineObject4");
+var inlineProductItem_1 = require("./inlineProductItem");
+var inlineProductItemAllOf_1 = require("./inlineProductItemAllOf");
+var productItem_1 = require("./productItem");
+var sendEmail_1 = require("./sendEmail");
+var sendEmailCoppies_1 = require("./sendEmailCoppies");
+var sendEmailCoppiesAllOf_1 = require("./sendEmailCoppiesAllOf");
+var sendEmailResponse_1 = require("./sendEmailResponse");
+var sendEmailSimple_1 = require("./sendEmailSimple");
+var simpleDocument_1 = require("./simpleDocument");
+var simpleDocumentAllOf_1 = require("./simpleDocumentAllOf");
+var simpleDocumentResponse_1 = require("./simpleDocumentResponse");
+var simpleDocumentResponseAllOf_1 = require("./simpleDocumentResponseAllOf");
+var simpleProductItem_1 = require("./simpleProductItem");
+var primitives = [
     "string",
     "boolean",
     "double",
@@ -77,8 +77,8 @@ let primitives = [
     "number",
     "any"
 ];
-let enumsMap = {};
-let typeMap = {
+var enumsMap = {};
+var typeMap = {
     "AuthenResponse": authenResponse_1.AuthenResponse,
     "BusinessCategory": businessCategory_1.BusinessCategory,
     "Document": document_1.Document,
@@ -112,8 +112,10 @@ let typeMap = {
     "SimpleDocumentResponseAllOf": simpleDocumentResponseAllOf_1.SimpleDocumentResponseAllOf,
     "SimpleProductItem": simpleProductItem_1.SimpleProductItem,
 };
-class ObjectSerializer {
-    static findCorrectType(data, expectedType) {
+var ObjectSerializer = (function () {
+    function ObjectSerializer() {
+    }
+    ObjectSerializer.findCorrectType = function (data, expectedType) {
         if (data == undefined) {
             return expectedType;
         }
@@ -130,7 +132,7 @@ class ObjectSerializer {
             if (!typeMap[expectedType]) {
                 return expectedType;
             }
-            let discriminatorProperty = typeMap[expectedType].discriminator;
+            var discriminatorProperty = typeMap[expectedType].discriminator;
             if (discriminatorProperty == null) {
                 return expectedType;
             }
@@ -149,8 +151,8 @@ class ObjectSerializer {
                 }
             }
         }
-    }
-    static serialize(data, type) {
+    };
+    ObjectSerializer.serialize = function (data, type) {
         if (data == undefined) {
             return data;
         }
@@ -158,11 +160,11 @@ class ObjectSerializer {
             return data;
         }
         else if (type.lastIndexOf("Array<", 0) === 0) {
-            let subType = type.replace("Array<", "");
+            var subType = type.replace("Array<", "");
             subType = subType.substring(0, subType.length - 1);
-            let transformedData = [];
-            for (let index in data) {
-                let date = data[index];
+            var transformedData = [];
+            for (var index in data) {
+                var date = data[index];
                 transformedData.push(ObjectSerializer.serialize(date, subType));
             }
             return transformedData;
@@ -178,16 +180,16 @@ class ObjectSerializer {
                 return data;
             }
             type = this.findCorrectType(data, type);
-            let attributeTypes = typeMap[type].getAttributeTypeMap();
-            let instance = {};
-            for (let index in attributeTypes) {
-                let attributeType = attributeTypes[index];
+            var attributeTypes = typeMap[type].getAttributeTypeMap();
+            var instance = {};
+            for (var index in attributeTypes) {
+                var attributeType = attributeTypes[index];
                 instance[attributeType.baseName] = ObjectSerializer.serialize(data[attributeType.name], attributeType.type);
             }
             return instance;
         }
-    }
-    static deserialize(data, type) {
+    };
+    ObjectSerializer.deserialize = function (data, type) {
         type = ObjectSerializer.findCorrectType(data, type);
         if (data == undefined) {
             return data;
@@ -196,11 +198,11 @@ class ObjectSerializer {
             return data;
         }
         else if (type.lastIndexOf("Array<", 0) === 0) {
-            let subType = type.replace("Array<", "");
+            var subType = type.replace("Array<", "");
             subType = subType.substring(0, subType.length - 1);
-            let transformedData = [];
-            for (let index in data) {
-                let date = data[index];
+            var transformedData = [];
+            for (var index in data) {
+                var date = data[index];
                 transformedData.push(ObjectSerializer.deserialize(date, subType));
             }
             return transformedData;
@@ -215,36 +217,38 @@ class ObjectSerializer {
             if (!typeMap[type]) {
                 return data;
             }
-            let instance = new typeMap[type]();
-            let attributeTypes = typeMap[type].getAttributeTypeMap();
-            for (let index in attributeTypes) {
-                let attributeType = attributeTypes[index];
+            var instance = new typeMap[type]();
+            var attributeTypes = typeMap[type].getAttributeTypeMap();
+            for (var index in attributeTypes) {
+                var attributeType = attributeTypes[index];
                 instance[attributeType.name] = ObjectSerializer.deserialize(data[attributeType.baseName], attributeType.type);
             }
             return instance;
         }
-    }
-}
+    };
+    return ObjectSerializer;
+}());
 exports.ObjectSerializer = ObjectSerializer;
-class HttpBasicAuth {
-    constructor() {
+var HttpBasicAuth = (function () {
+    function HttpBasicAuth() {
         this.username = '';
         this.password = '';
     }
-    applyToRequest(requestOptions) {
+    HttpBasicAuth.prototype.applyToRequest = function (requestOptions) {
         requestOptions.auth = {
             username: this.username, password: this.password
         };
-    }
-}
+    };
+    return HttpBasicAuth;
+}());
 exports.HttpBasicAuth = HttpBasicAuth;
-class ApiKeyAuth {
-    constructor(location, paramName) {
+var ApiKeyAuth = (function () {
+    function ApiKeyAuth(location, paramName) {
         this.location = location;
         this.paramName = paramName;
         this.apiKey = '';
     }
-    applyToRequest(requestOptions) {
+    ApiKeyAuth.prototype.applyToRequest = function (requestOptions) {
         if (this.location == "query") {
             requestOptions.qs[this.paramName] = this.apiKey;
         }
@@ -259,27 +263,30 @@ class ApiKeyAuth {
                 requestOptions.headers['Cookie'] = this.paramName + '=' + encodeURIComponent(this.apiKey);
             }
         }
-    }
-}
+    };
+    return ApiKeyAuth;
+}());
 exports.ApiKeyAuth = ApiKeyAuth;
-class OAuth {
-    constructor() {
+var OAuth = (function () {
+    function OAuth() {
         this.accessToken = '';
     }
-    applyToRequest(requestOptions) {
+    OAuth.prototype.applyToRequest = function (requestOptions) {
         if (requestOptions && requestOptions.headers) {
             requestOptions.headers["Authorization"] = "Bearer " + this.accessToken;
         }
-    }
-}
+    };
+    return OAuth;
+}());
 exports.OAuth = OAuth;
-class VoidAuth {
-    constructor() {
+var VoidAuth = (function () {
+    function VoidAuth() {
         this.username = '';
         this.password = '';
     }
-    applyToRequest(_) {
-    }
-}
+    VoidAuth.prototype.applyToRequest = function (_) {
+    };
+    return VoidAuth;
+}());
 exports.VoidAuth = VoidAuth;
 //# sourceMappingURL=models.js.map

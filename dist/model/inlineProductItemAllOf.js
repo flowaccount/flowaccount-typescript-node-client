@@ -1,27 +1,30 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-class InlineProductItemAllOf {
-    static getAttributeTypeMap() {
+var InlineProductItemAllOf = (function () {
+    function InlineProductItemAllOf() {
+    }
+    InlineProductItemAllOf.getAttributeTypeMap = function () {
         return InlineProductItemAllOf.attributeTypeMap;
-    }
-}
-InlineProductItemAllOf.discriminator = undefined;
-InlineProductItemAllOf.attributeTypeMap = [
-    {
-        "name": "discountAmountPercentage",
-        "baseName": "discountAmountPercentage",
-        "type": "number"
-    },
-    {
-        "name": "discountAmount",
-        "baseName": "discountAmount",
-        "type": "number"
-    },
-    {
-        "name": "vatRate",
-        "baseName": "vatRate",
-        "type": "number"
-    }
-];
+    };
+    InlineProductItemAllOf.discriminator = undefined;
+    InlineProductItemAllOf.attributeTypeMap = [
+        {
+            "name": "discountAmountPercentage",
+            "baseName": "discountAmountPercentage",
+            "type": "number"
+        },
+        {
+            "name": "discountAmount",
+            "baseName": "discountAmount",
+            "type": "number"
+        },
+        {
+            "name": "vatRate",
+            "baseName": "vatRate",
+            "type": "number"
+        }
+    ];
+    return InlineProductItemAllOf;
+}());
 exports.InlineProductItemAllOf = InlineProductItemAllOf;
 //# sourceMappingURL=inlineProductItemAllOf.js.map

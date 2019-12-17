@@ -26,7 +26,7 @@ export declare class ExpenseApi {
             [name: string]: string;
         };
     }): Promise<{
-        response: http.IncomingMessage;
+        response: http.ClientResponse;
         body: BusinessCategory;
     }>;
     expensesCategoriesBusinessGet(authorization: string, options?: {
@@ -34,7 +34,7 @@ export declare class ExpenseApi {
             [name: string]: string;
         };
     }): Promise<{
-        response: http.IncomingMessage;
+        response: http.ClientResponse;
         body: BusinessCategory;
     }>;
     expensesGet(authorization: string, options?: {
@@ -42,7 +42,7 @@ export declare class ExpenseApi {
             [name: string]: string;
         };
     }): Promise<{
-        response: http.IncomingMessage;
+        response: http.ClientResponse;
         body: ExpenseDocumentResponse;
     }>;
     expensesIdAttachmentPost(authorization: string, id: string, file?: RequestFile, options?: {
@@ -50,7 +50,7 @@ export declare class ExpenseApi {
             [name: string]: string;
         };
     }): Promise<{
-        response: http.IncomingMessage;
+        response: http.ClientResponse;
         body?: any;
     }>;
     expensesIdGet(authorization: string, id: string, options?: {
@@ -58,7 +58,7 @@ export declare class ExpenseApi {
             [name: string]: string;
         };
     }): Promise<{
-        response: http.IncomingMessage;
+        response: http.ClientResponse;
         body: ExpenseDocumentResponse;
     }>;
     expensesIdInlineGet(authorization: string, id: string, options?: {
@@ -66,7 +66,7 @@ export declare class ExpenseApi {
             [name: string]: string;
         };
     }): Promise<{
-        response: http.IncomingMessage;
+        response: http.ClientResponse;
         body: ExpenseInlineDocument;
     }>;
     expensesInlinePost(authorization: string, expenseInlineDocument: ExpenseInlineDocument, options?: {
@@ -74,7 +74,7 @@ export declare class ExpenseApi {
             [name: string]: string;
         };
     }): Promise<{
-        response: http.IncomingMessage;
+        response: http.ClientResponse;
         body: ExpensenlineDocumentResponse;
     }>;
     expensesPost(authorization: string, expenseDocument: ExpenseDocument, options?: {
@@ -82,7 +82,7 @@ export declare class ExpenseApi {
             [name: string]: string;
         };
     }): Promise<{
-        response: http.IncomingMessage;
+        response: http.ClientResponse;
         body: ExpenseDocumentResponse;
     }>;
 }

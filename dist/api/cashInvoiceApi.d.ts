@@ -22,7 +22,7 @@ export declare class CashInvoiceApi {
             [name: string]: string;
         };
     }): Promise<{
-        response: http.IncomingMessage;
+        response: http.ClientResponse;
         body: SimpleDocumentResponse;
     }>;
     cashInvoicesIdDelete(authorization: string, id: string, options?: {
@@ -30,7 +30,7 @@ export declare class CashInvoiceApi {
             [name: string]: string;
         };
     }): Promise<{
-        response: http.IncomingMessage;
+        response: http.ClientResponse;
         body: object;
     }>;
     cashInvoicesIdGet(authorization: string, id: string, options?: {
@@ -38,7 +38,7 @@ export declare class CashInvoiceApi {
             [name: string]: string;
         };
     }): Promise<{
-        response: http.IncomingMessage;
+        response: http.ClientResponse;
         body: SimpleDocumentResponse;
     }>;
     cashInvoicesIdPut(authorization: string, id: string, options?: {
@@ -46,7 +46,7 @@ export declare class CashInvoiceApi {
             [name: string]: string;
         };
     }): Promise<{
-        response: http.IncomingMessage;
+        response: http.ClientResponse;
         body: SimpleDocumentResponse;
     }>;
     cashInvoicesPost(authorization: string, simpleDocument: SimpleDocument, options?: {
@@ -54,7 +54,7 @@ export declare class CashInvoiceApi {
             [name: string]: string;
         };
     }): Promise<{
-        response: http.IncomingMessage;
+        response: http.ClientResponse;
         body: SimpleDocumentResponse;
     }>;
 }

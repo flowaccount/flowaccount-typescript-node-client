@@ -21,7 +21,7 @@ export declare class AuthenticationApi {
             [name: string]: string;
         };
     }): Promise<{
-        response: http.IncomingMessage;
+        response: http.ClientResponse;
         body: AuthenResponse;
     }>;
 }

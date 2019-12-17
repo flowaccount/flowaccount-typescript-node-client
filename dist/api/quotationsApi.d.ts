@@ -27,7 +27,7 @@ export declare class QuotationsApi {
             [name: string]: string;
         };
     }): Promise<{
-        response: http.IncomingMessage;
+        response: http.ClientResponse;
         body: SendEmailResponse;
     }>;
     quotationsGet(authorization: string, options?: {
@@ -35,7 +35,7 @@ export declare class QuotationsApi {
             [name: string]: string;
         };
     }): Promise<{
-        response: http.IncomingMessage;
+        response: http.ClientResponse;
         body: SimpleDocumentResponse;
     }>;
     quotationsIdAttachmentPost(authorization: string, id: string, file?: RequestFile, options?: {
@@ -43,7 +43,7 @@ export declare class QuotationsApi {
             [name: string]: string;
         };
     }): Promise<{
-        response: http.IncomingMessage;
+        response: http.ClientResponse;
         body?: any;
     }>;
     quotationsIdGet(authorization: string, id: string, options?: {
@@ -51,7 +51,7 @@ export declare class QuotationsApi {
             [name: string]: string;
         };
     }): Promise<{
-        response: http.IncomingMessage;
+        response: http.ClientResponse;
         body: InlineDocumentResponse;
     }>;
     quotationsInlinePost(authorization: string, inlineDocument: InlineDocument, options?: {
@@ -59,7 +59,7 @@ export declare class QuotationsApi {
             [name: string]: string;
         };
     }): Promise<{
-        response: http.IncomingMessage;
+        response: http.ClientResponse;
         body: InlineDocumentResponse;
     }>;
     quotationsPost(authorization: string, simpleDocument: SimpleDocument, options?: {
@@ -67,7 +67,7 @@ export declare class QuotationsApi {
             [name: string]: string;
         };
     }): Promise<{
-        response: http.IncomingMessage;
+        response: http.ClientResponse;
         body: SimpleDocumentResponse;
     }>;
 }
