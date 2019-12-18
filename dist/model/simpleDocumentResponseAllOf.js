@@ -1,20 +1,17 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var SimpleDocumentResponseAllOf = (function () {
-    function SimpleDocumentResponseAllOf() {
-    }
-    SimpleDocumentResponseAllOf.getAttributeTypeMap = function () {
+class SimpleDocumentResponseAllOf {
+    static getAttributeTypeMap() {
         return SimpleDocumentResponseAllOf.attributeTypeMap;
-    };
-    SimpleDocumentResponseAllOf.discriminator = undefined;
-    SimpleDocumentResponseAllOf.attributeTypeMap = [
-        {
-            "name": "data",
-            "baseName": "data",
-            "type": "SimpleDocument"
-        }
-    ];
-    return SimpleDocumentResponseAllOf;
-}());
+    }
+}
+SimpleDocumentResponseAllOf.discriminator = undefined;
+SimpleDocumentResponseAllOf.attributeTypeMap = [
+    {
+        "name": "data",
+        "baseName": "data",
+        "type": "SimpleDocument"
+    }
+];
 exports.SimpleDocumentResponseAllOf = SimpleDocumentResponseAllOf;
 //# sourceMappingURL=simpleDocumentResponseAllOf.js.map

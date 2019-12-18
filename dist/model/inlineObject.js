@@ -1,20 +1,17 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var InlineObject = (function () {
-    function InlineObject() {
-    }
-    InlineObject.getAttributeTypeMap = function () {
+class InlineObject {
+    static getAttributeTypeMap() {
         return InlineObject.attributeTypeMap;
-    };
-    InlineObject.discriminator = undefined;
-    InlineObject.attributeTypeMap = [
-        {
-            "name": "file",
-            "baseName": "file",
-            "type": "RequestFile"
-        }
-    ];
-    return InlineObject;
-}());
+    }
+}
+InlineObject.discriminator = undefined;
+InlineObject.attributeTypeMap = [
+    {
+        "name": "file",
+        "baseName": "file",
+        "type": "RequestFile"
+    }
+];
 exports.InlineObject = InlineObject;
 //# sourceMappingURL=inlineObject.js.map

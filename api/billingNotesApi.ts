@@ -82,7 +82,7 @@ export class BillingNotesApi {
      * @param authorization 
      * @param sendEmailCoppies 
      */
-    public async billingNotesEmailDocumentPost (authorization: string, sendEmailCoppies: SendEmailCoppies, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: SendEmailResponse;  }> {
+    public async billingNotesEmailDocumentPost (authorization: string, sendEmailCoppies: SendEmailCoppies, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: SendEmailResponse;  }> {
         const localVarPath = this.basePath + '/billing-notes/email-document';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -130,7 +130,7 @@ export class BillingNotesApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: SendEmailResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: SendEmailResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -151,7 +151,7 @@ export class BillingNotesApi {
      * @summary List all billing notes documents.
      * @param authorization 
      */
-    public async billingNotesGet (authorization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: SimpleDocumentResponse;  }> {
+    public async billingNotesGet (authorization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: SimpleDocumentResponse;  }> {
         const localVarPath = this.basePath + '/billing-notes';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -193,7 +193,7 @@ export class BillingNotesApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: SimpleDocumentResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: SimpleDocumentResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -216,7 +216,7 @@ export class BillingNotesApi {
      * @param id 
      * @param file 
      */
-    public async billingNotesIdAttachmentPost (authorization: string, id: string, file?: RequestFile, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body?: any;  }> {
+    public async billingNotesIdAttachmentPost (authorization: string, id: string, file?: RequestFile, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body?: any;  }> {
         const localVarPath = this.basePath + '/billing-notes/{id}/attachment'
             .replace('{' + 'id' + '}', encodeURIComponent(String(id)));
         let localVarQueryParameters: any = {};
@@ -262,7 +262,7 @@ export class BillingNotesApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body?: any;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body?: any;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -283,7 +283,7 @@ export class BillingNotesApi {
      * @param authorization 
      * @param id 
      */
-    public async billingNotesIdGet (authorization: string, id: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: InlineDocumentResponse;  }> {
+    public async billingNotesIdGet (authorization: string, id: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: InlineDocumentResponse;  }> {
         const localVarPath = this.basePath + '/billing-notes/{id}'
             .replace('{' + 'id' + '}', encodeURIComponent(String(id)));
         let localVarQueryParameters: any = {};
@@ -331,7 +331,7 @@ export class BillingNotesApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: InlineDocumentResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: InlineDocumentResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -353,7 +353,7 @@ export class BillingNotesApi {
      * @param authorization 
      * @param inlineDocument 
      */
-    public async billingNotesInlinePost (authorization: string, inlineDocument: InlineDocument, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: InlineDocumentResponse;  }> {
+    public async billingNotesInlinePost (authorization: string, inlineDocument: InlineDocument, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: InlineDocumentResponse;  }> {
         const localVarPath = this.basePath + '/billing-notes/inline';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -401,7 +401,7 @@ export class BillingNotesApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: InlineDocumentResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: InlineDocumentResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -423,7 +423,7 @@ export class BillingNotesApi {
      * @param authorization 
      * @param simpleDocument 
      */
-    public async billingNotesPost (authorization: string, simpleDocument: SimpleDocument, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: SimpleDocumentResponse;  }> {
+    public async billingNotesPost (authorization: string, simpleDocument: SimpleDocument, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: SimpleDocumentResponse;  }> {
         const localVarPath = this.basePath + '/billing-notes';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -471,7 +471,7 @@ export class BillingNotesApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: SimpleDocumentResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: SimpleDocumentResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);

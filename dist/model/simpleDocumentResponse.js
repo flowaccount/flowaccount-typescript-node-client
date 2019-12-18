@@ -1,33 +1,18 @@
 "use strict";
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
 Object.defineProperty(exports, "__esModule", { value: true });
-var documentResponse_1 = require("./documentResponse");
-var SimpleDocumentResponse = (function (_super) {
-    __extends(SimpleDocumentResponse, _super);
-    function SimpleDocumentResponse() {
-        return _super !== null && _super.apply(this, arguments) || this;
+const documentResponse_1 = require("./documentResponse");
+class SimpleDocumentResponse extends documentResponse_1.DocumentResponse {
+    static getAttributeTypeMap() {
+        return super.getAttributeTypeMap().concat(SimpleDocumentResponse.attributeTypeMap);
     }
-    SimpleDocumentResponse.getAttributeTypeMap = function () {
-        return _super.getAttributeTypeMap.call(this).concat(SimpleDocumentResponse.attributeTypeMap);
-    };
-    SimpleDocumentResponse.discriminator = undefined;
-    SimpleDocumentResponse.attributeTypeMap = [
-        {
-            "name": "data",
-            "baseName": "data",
-            "type": "SimpleDocument"
-        }
-    ];
-    return SimpleDocumentResponse;
-}(documentResponse_1.DocumentResponse));
+}
+SimpleDocumentResponse.discriminator = undefined;
+SimpleDocumentResponse.attributeTypeMap = [
+    {
+        "name": "data",
+        "baseName": "data",
+        "type": "SimpleDocument"
+    }
+];
 exports.SimpleDocumentResponse = SimpleDocumentResponse;
 //# sourceMappingURL=simpleDocumentResponse.js.map

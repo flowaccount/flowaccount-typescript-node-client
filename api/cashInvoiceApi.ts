@@ -81,7 +81,7 @@ export class CashInvoiceApi {
      * @param sortBy 
      * @param filter 
      */
-    public async cashInvoicesGet (currentPage: string, pageSize: string, authorization: string, sortBy?: string, filter?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: SimpleDocumentResponse;  }> {
+    public async cashInvoicesGet (currentPage: string, pageSize: string, authorization: string, sortBy?: string, filter?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: SimpleDocumentResponse;  }> {
         const localVarPath = this.basePath + '/cash-invoices';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -149,7 +149,7 @@ export class CashInvoiceApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: SimpleDocumentResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: SimpleDocumentResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -171,7 +171,7 @@ export class CashInvoiceApi {
      * @param authorization 
      * @param id 
      */
-    public async cashInvoicesIdDelete (authorization: string, id: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async cashInvoicesIdDelete (authorization: string, id: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/cash-invoices/{id}'
             .replace('{' + 'id' + '}', encodeURIComponent(String(id)));
         let localVarQueryParameters: any = {};
@@ -219,7 +219,7 @@ export class CashInvoiceApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -241,7 +241,7 @@ export class CashInvoiceApi {
      * @param authorization 
      * @param id 
      */
-    public async cashInvoicesIdGet (authorization: string, id: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: SimpleDocumentResponse;  }> {
+    public async cashInvoicesIdGet (authorization: string, id: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: SimpleDocumentResponse;  }> {
         const localVarPath = this.basePath + '/cash-invoices/{id}'
             .replace('{' + 'id' + '}', encodeURIComponent(String(id)));
         let localVarQueryParameters: any = {};
@@ -289,7 +289,7 @@ export class CashInvoiceApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: SimpleDocumentResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: SimpleDocumentResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -311,7 +311,7 @@ export class CashInvoiceApi {
      * @param authorization 
      * @param id 
      */
-    public async cashInvoicesIdPut (authorization: string, id: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: SimpleDocumentResponse;  }> {
+    public async cashInvoicesIdPut (authorization: string, id: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: SimpleDocumentResponse;  }> {
         const localVarPath = this.basePath + '/cash-invoices/{id}'
             .replace('{' + 'id' + '}', encodeURIComponent(String(id)));
         let localVarQueryParameters: any = {};
@@ -359,7 +359,7 @@ export class CashInvoiceApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: SimpleDocumentResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: SimpleDocumentResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -381,7 +381,7 @@ export class CashInvoiceApi {
      * @param authorization 
      * @param simpleDocument 
      */
-    public async cashInvoicesPost (authorization: string, simpleDocument: SimpleDocument, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: SimpleDocumentResponse;  }> {
+    public async cashInvoicesPost (authorization: string, simpleDocument: SimpleDocument, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: SimpleDocumentResponse;  }> {
         const localVarPath = this.basePath + '/cash-invoices';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -429,7 +429,7 @@ export class CashInvoiceApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: SimpleDocumentResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: SimpleDocumentResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);

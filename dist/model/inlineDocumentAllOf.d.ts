@@ -1,9 +1,9 @@
 import { InlineProductItem } from './inlineProductItem';
 export declare class InlineDocumentAllOf {
-    'items'?: Array<InlineProductItem>;
     'useInlineVat'?: boolean;
     'exemptAmount'?: number;
     'vatableAmount'?: number;
+    'items'?: Array<InlineProductItem>;
     static discriminator: string | undefined;
     static attributeTypeMap: Array<{
         name: string;

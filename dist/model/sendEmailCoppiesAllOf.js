@@ -1,20 +1,17 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var SendEmailCoppiesAllOf = (function () {
-    function SendEmailCoppiesAllOf() {
-    }
-    SendEmailCoppiesAllOf.getAttributeTypeMap = function () {
+class SendEmailCoppiesAllOf {
+    static getAttributeTypeMap() {
         return SendEmailCoppiesAllOf.attributeTypeMap;
-    };
-    SendEmailCoppiesAllOf.discriminator = undefined;
-    SendEmailCoppiesAllOf.attributeTypeMap = [
-        {
-            "name": "doCopy",
-            "baseName": "doCopy",
-            "type": "boolean"
-        }
-    ];
-    return SendEmailCoppiesAllOf;
-}());
+    }
+}
+SendEmailCoppiesAllOf.discriminator = undefined;
+SendEmailCoppiesAllOf.attributeTypeMap = [
+    {
+        "name": "doCopy",
+        "baseName": "doCopy",
+        "type": "boolean"
+    }
+];
 exports.SendEmailCoppiesAllOf = SendEmailCoppiesAllOf;
 //# sourceMappingURL=sendEmailCoppiesAllOf.js.map

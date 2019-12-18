@@ -20,7 +20,7 @@ export declare class ReportApi {
             [name: string]: string;
         };
     }): Promise<{
-        response: http.ClientResponse;
+        response: http.IncomingMessage;
         body: Buffer;
     }>;
 }

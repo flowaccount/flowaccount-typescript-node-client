@@ -27,7 +27,7 @@ export declare class BillingNotesApi {
             [name: string]: string;
         };
     }): Promise<{
-        response: http.ClientResponse;
+        response: http.IncomingMessage;
         body: SendEmailResponse;
     }>;
     billingNotesGet(authorization: string, options?: {
@@ -35,7 +35,7 @@ export declare class BillingNotesApi {
             [name: string]: string;
         };
     }): Promise<{
-        response: http.ClientResponse;
+        response: http.IncomingMessage;
         body: SimpleDocumentResponse;
     }>;
     billingNotesIdAttachmentPost(authorization: string, id: string, file?: RequestFile, options?: {
@@ -43,7 +43,7 @@ export declare class BillingNotesApi {
             [name: string]: string;
         };
     }): Promise<{
-        response: http.ClientResponse;
+        response: http.IncomingMessage;
         body?: any;
     }>;
     billingNotesIdGet(authorization: string, id: string, options?: {
@@ -51,7 +51,7 @@ export declare class BillingNotesApi {
             [name: string]: string;
         };
     }): Promise<{
-        response: http.ClientResponse;
+        response: http.IncomingMessage;
         body: InlineDocumentResponse;
     }>;
     billingNotesInlinePost(authorization: string, inlineDocument: InlineDocument, options?: {
@@ -59,7 +59,7 @@ export declare class BillingNotesApi {
             [name: string]: string;
         };
     }): Promise<{
-        response: http.ClientResponse;
+        response: http.IncomingMessage;
         body: InlineDocumentResponse;
     }>;
     billingNotesPost(authorization: string, simpleDocument: SimpleDocument, options?: {
@@ -67,7 +67,7 @@ export declare class BillingNotesApi {
             [name: string]: string;
         };
     }): Promise<{
-        response: http.ClientResponse;
+        response: http.IncomingMessage;
         body: SimpleDocumentResponse;
     }>;
 }

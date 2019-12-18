@@ -1,20 +1,17 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var InlineDocumentResponseAllOf = (function () {
-    function InlineDocumentResponseAllOf() {
-    }
-    InlineDocumentResponseAllOf.getAttributeTypeMap = function () {
+class InlineDocumentResponseAllOf {
+    static getAttributeTypeMap() {
         return InlineDocumentResponseAllOf.attributeTypeMap;
-    };
-    InlineDocumentResponseAllOf.discriminator = undefined;
-    InlineDocumentResponseAllOf.attributeTypeMap = [
-        {
-            "name": "data",
-            "baseName": "data",
-            "type": "InlineDocument"
-        }
-    ];
-    return InlineDocumentResponseAllOf;
-}());
+    }
+}
+InlineDocumentResponseAllOf.discriminator = undefined;
+InlineDocumentResponseAllOf.attributeTypeMap = [
+    {
+        "name": "data",
+        "baseName": "data",
+        "type": "InlineDocument"
+    }
+];
 exports.InlineDocumentResponseAllOf = InlineDocumentResponseAllOf;
 //# sourceMappingURL=inlineDocumentResponseAllOf.js.map

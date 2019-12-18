@@ -15,7 +15,6 @@ import { InlineDocumentAllOf } from './inlineDocumentAllOf';
 import { InlineProductItem } from './inlineProductItem';
 
 export class InlineDocument extends Document {
-    'items'?: Array<InlineProductItem>;
     /**
     * ใช้ inline แวทหรือไม่
     */
@@ -28,15 +27,11 @@ export class InlineDocument extends Document {
     * ยอดขายที่คิดภาษีมูลค่าเพิ่ม
     */
     'vatableAmount'?: number;
+    'items'?: Array<InlineProductItem>;
 
     static discriminator: string | undefined = undefined;
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-        {
-            "name": "items",
-            "baseName": "items",
-            "type": "Array<InlineProductItem>"
-        },
         {
             "name": "useInlineVat",
             "baseName": "useInlineVat",
@@ -51,6 +46,11 @@ export class InlineDocument extends Document {
             "name": "vatableAmount",
             "baseName": "vatableAmount",
             "type": "number"
+        },
+        {
+            "name": "items",
+            "baseName": "items",
+            "type": "Array<InlineProductItem>"
         }    ];
 
     static getAttributeTypeMap() {

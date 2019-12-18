@@ -14,7 +14,7 @@
 export class ProductItem {
     'documentStructureType': string;
     /**
-    * service=1, productWithoutStock=3, productWithStock=5
+    * ประเภทสินค้า 1 = บริการ, 3 = สินค้าไม่นับส๊อก, 5 = สินค้านับสต๊ฮก
     */
     'type'?: number;
     /**

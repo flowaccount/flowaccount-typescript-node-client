@@ -13,6 +13,10 @@
 
 export class Document {
     /**
+    * id ของเอกสาร
+    */
+    'recordId'?: number;
+    /**
     * เลขที่เอกสาร
     */
     'documentSerial'?: string;
@@ -57,15 +61,27 @@ export class Document {
     */
     'publishedOn': string;
     /**
+    * จำนวนวันที่ให้เครดิต
+    */
+    'creditDays'?: number;
+    /**
+    * รูปแบบเครดิต: 1 = เครดิต (วัน) / 3 = เงินสด  / 5 = เครดิต (ไม่แสดงวันที่ครบกำหนด)
+    */
+    'creditType'?: number;
+    /**
     * วันครบกำหนดเอกสาร รูปแบบ yyyy-MM-dd
     */
     'dueDate'?: string;
+    /**
+    * ชื่อผู้สร้างเอกสาร หรือ ชื่อพนักงานขาย
+    */
+    'salesName'?: string;
     /**
     * ชื่อโปรเจค
     */
     'projectName'?: string;
     /**
-    * เลขที่อ้างอิง
+    * เลขที่อ้างอิง หรือ เลขที่เอกสารที่เกี่ยวข้อง
     */
     'reference'?: string;
     /**
@@ -73,23 +89,19 @@ export class Document {
     */
     'isVatInclusive'?: boolean;
     /**
-    * none=0, percent=1, value=3
+    * รูปแบบส่วนลด 0 = ไม่มี / 1 =  เปอร์เซ็นต์ / 3 = จำนวน
     */
     'discountType'?: number;
     /**
-    * Value of discount by percentage
+    * มูลค่าส่วนลดเป็นเปอร์เซ็นต์
     */
     'discountPercentage'?: number;
     /**
-    * Value of discount by amount
+    * มูลค่าส่วนลดเป็นจำนวน
     */
     'discountAmount'?: number;
     /**
-    * Document creator or sale name
-    */
-    'salesName'?: string;
-    /**
-    * Total price of document
+    * มูลค่ารวมเป็นเงิน
     */
     'subTotal'?: number;
     /**
@@ -108,13 +120,29 @@ export class Document {
     * ภาษีมูลค่าเพิ่ม
     */
     'vatAmount'?: number;
+    /**
+    * แสดงหรือไแสดง หักณที่จ่ายท้ายบิล
+    */
+    'documentShowWithholdingTax'?: boolean;
+    /**
+    * ภาษี ณ ที่จ่าย (%)
+    */
+    'documentWithholdingTaxPercentage'?: number;
+    /**
+    * มูลค่าภาษีหักณที่จ่าย
+    */
+    'documentWithholdingTaxAmount'?: number;
     'remarks'?: string;
     /**
     * โน๊ตภายในบริษัท
     */
     'internalNotes'?: string;
     /**
-    * None=0, Cash=1, Transfer=5,CreditCard=7
+    * ลายเซ็นอิเล็กทรอนิกส์และตรายาง
+    */
+    'showSignatureOrStamp'?: boolean;
+    /**
+    * วิธีการชำระ 1 = เงินสด / 3 = เช็ค /  5 = โอนเงิน , 7 = เครดิต
     */
     'paymentMethod'?: number;
     /**
@@ -130,7 +158,7 @@ export class Document {
     */
     'bankAccountName'?: string;
     /**
-    * เลขที่ธนาคาร/บัตรเคดิต(สำหรับ MethodPayment=5,7)
+    * เลขที่ธนาคาร/บัตรเคดิต(สำหรับ MethodPayment : 5, 7)
     */
     'bankAccountNumber'?: string;
     /**
@@ -149,35 +177,16 @@ export class Document {
     * ค่าธรรมเนียม
     */
     'fee'?: number;
-    /**
-    * แสดงหรือไแสดง หักณที่จ่ายท้ายบิล
-    */
-    'documentShowWithholdingTax'?: boolean;
-    /**
-    * มูลค่าภาษีหักณที่จ่าย
-    */
-    'documentWithholdingTaxAmount'?: number;
-    /**
-    * ภาษี ณ ที่จ่าย (%)
-    */
-    'documentWithholdingTaxPercentage'?: number;
-    /**
-    * จำนวนวันที่ให้เครดิต
-    */
-    'creditDays'?: number;
-    /**
-    * รูปแบบเครดิต: 1 = เครดิต (วัน) / 5 = เครดิต (ไม่แสดงวันที่ครบกำหนด)
-    */
-    'creditType'?: number;
-    /**
-    * id ของเอกสาร
-    */
-    'recordId'?: number;
     'documentStructureType': string;
 
     static discriminator: string | undefined = "documentStructureType";
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+        {
+            "name": "recordId",
+            "baseName": "recordId",
+            "type": "number"
+        },
         {
             "name": "documentSerial",
             "baseName": "documentSerial",
@@ -234,8 +243,23 @@ export class Document {
             "type": "string"
         },
         {
+            "name": "creditDays",
+            "baseName": "creditDays",
+            "type": "number"
+        },
+        {
+            "name": "creditType",
+            "baseName": "creditType",
+            "type": "number"
+        },
+        {
             "name": "dueDate",
             "baseName": "dueDate",
+            "type": "string"
+        },
+        {
+            "name": "salesName",
+            "baseName": "salesName",
             "type": "string"
         },
         {
@@ -269,11 +293,6 @@ export class Document {
             "type": "number"
         },
         {
-            "name": "salesName",
-            "baseName": "salesName",
-            "type": "string"
-        },
-        {
             "name": "subTotal",
             "baseName": "subTotal",
             "type": "number"
@@ -299,6 +318,21 @@ export class Document {
             "type": "number"
         },
         {
+            "name": "documentShowWithholdingTax",
+            "baseName": "documentShowWithholdingTax",
+            "type": "boolean"
+        },
+        {
+            "name": "documentWithholdingTaxPercentage",
+            "baseName": "documentWithholdingTaxPercentage",
+            "type": "number"
+        },
+        {
+            "name": "documentWithholdingTaxAmount",
+            "baseName": "documentWithholdingTaxAmount",
+            "type": "number"
+        },
+        {
             "name": "remarks",
             "baseName": "remarks",
             "type": "string"
@@ -307,6 +341,11 @@ export class Document {
             "name": "internalNotes",
             "baseName": "internalNotes",
             "type": "string"
+        },
+        {
+            "name": "showSignatureOrStamp",
+            "baseName": "showSignatureOrStamp",
+            "type": "boolean"
         },
         {
             "name": "paymentMethod",
@@ -351,36 +390,6 @@ export class Document {
         {
             "name": "fee",
             "baseName": "fee",
-            "type": "number"
-        },
-        {
-            "name": "documentShowWithholdingTax",
-            "baseName": "documentShowWithholdingTax",
-            "type": "boolean"
-        },
-        {
-            "name": "documentWithholdingTaxAmount",
-            "baseName": "documentWithholdingTaxAmount",
-            "type": "number"
-        },
-        {
-            "name": "documentWithholdingTaxPercentage",
-            "baseName": "documentWithholdingTaxPercentage",
-            "type": "number"
-        },
-        {
-            "name": "creditDays",
-            "baseName": "creditDays",
-            "type": "number"
-        },
-        {
-            "name": "creditType",
-            "baseName": "creditType",
-            "type": "number"
-        },
-        {
-            "name": "recordId",
-            "baseName": "recordId",
             "type": "number"
         },
         {

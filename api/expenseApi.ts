@@ -80,7 +80,7 @@ export class ExpenseApi {
      * @summary Accounting categorys
      * @param authorization 
      */
-    public async expensesCategoriesAccountingGet (authorization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: BusinessCategory;  }> {
+    public async expensesCategoriesAccountingGet (authorization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: BusinessCategory;  }> {
         const localVarPath = this.basePath + '/expenses/categories/accounting';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -122,7 +122,7 @@ export class ExpenseApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: BusinessCategory;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: BusinessCategory;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -143,7 +143,7 @@ export class ExpenseApi {
      * @summary Business categorys
      * @param authorization 
      */
-    public async expensesCategoriesBusinessGet (authorization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: BusinessCategory;  }> {
+    public async expensesCategoriesBusinessGet (authorization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: BusinessCategory;  }> {
         const localVarPath = this.basePath + '/expenses/categories/business';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -185,7 +185,7 @@ export class ExpenseApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: BusinessCategory;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: BusinessCategory;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -206,7 +206,7 @@ export class ExpenseApi {
      * @summary List expense documents.
      * @param authorization 
      */
-    public async expensesGet (authorization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: ExpenseDocumentResponse;  }> {
+    public async expensesGet (authorization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: ExpenseDocumentResponse;  }> {
         const localVarPath = this.basePath + '/expenses';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -248,7 +248,7 @@ export class ExpenseApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: ExpenseDocumentResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: ExpenseDocumentResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -271,7 +271,7 @@ export class ExpenseApi {
      * @param id 
      * @param file 
      */
-    public async expensesIdAttachmentPost (authorization: string, id: string, file?: RequestFile, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body?: any;  }> {
+    public async expensesIdAttachmentPost (authorization: string, id: string, file?: RequestFile, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body?: any;  }> {
         const localVarPath = this.basePath + '/expenses/{id}/attachment'
             .replace('{' + 'id' + '}', encodeURIComponent(String(id)));
         let localVarQueryParameters: any = {};
@@ -317,7 +317,7 @@ export class ExpenseApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body?: any;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body?: any;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -338,7 +338,7 @@ export class ExpenseApi {
      * @param authorization 
      * @param id 
      */
-    public async expensesIdGet (authorization: string, id: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: ExpenseDocumentResponse;  }> {
+    public async expensesIdGet (authorization: string, id: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: ExpenseDocumentResponse;  }> {
         const localVarPath = this.basePath + '/expenses/{id}'
             .replace('{' + 'id' + '}', encodeURIComponent(String(id)));
         let localVarQueryParameters: any = {};
@@ -386,7 +386,7 @@ export class ExpenseApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: ExpenseDocumentResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: ExpenseDocumentResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -408,7 +408,7 @@ export class ExpenseApi {
      * @param authorization 
      * @param id 
      */
-    public async expensesIdInlineGet (authorization: string, id: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: ExpenseInlineDocument;  }> {
+    public async expensesIdInlineGet (authorization: string, id: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: ExpenseInlineDocument;  }> {
         const localVarPath = this.basePath + '/expenses/{id}/inline'
             .replace('{' + 'id' + '}', encodeURIComponent(String(id)));
         let localVarQueryParameters: any = {};
@@ -456,7 +456,7 @@ export class ExpenseApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: ExpenseInlineDocument;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: ExpenseInlineDocument;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -478,7 +478,7 @@ export class ExpenseApi {
      * @param authorization 
      * @param expenseInlineDocument 
      */
-    public async expensesInlinePost (authorization: string, expenseInlineDocument: ExpenseInlineDocument, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: ExpensenlineDocumentResponse;  }> {
+    public async expensesInlinePost (authorization: string, expenseInlineDocument: ExpenseInlineDocument, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: ExpensenlineDocumentResponse;  }> {
         const localVarPath = this.basePath + '/expenses/inline';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -526,7 +526,7 @@ export class ExpenseApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: ExpensenlineDocumentResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: ExpensenlineDocumentResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
@@ -548,7 +548,7 @@ export class ExpenseApi {
      * @param authorization 
      * @param expenseDocument 
      */
-    public async expensesPost (authorization: string, expenseDocument: ExpenseDocument, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: ExpenseDocumentResponse;  }> {
+    public async expensesPost (authorization: string, expenseDocument: ExpenseDocument, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: ExpenseDocumentResponse;  }> {
         const localVarPath = this.basePath + '/expenses';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -596,7 +596,7 @@ export class ExpenseApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: ExpenseDocumentResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: ExpenseDocumentResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);

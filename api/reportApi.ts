@@ -75,7 +75,7 @@ export class ReportApi {
      * @param culture 
      * @param authorization 
      */
-    public async reportCultureSalePost (culture: string, authorization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: Buffer;  }> {
+    public async reportCultureSalePost (culture: string, authorization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Buffer;  }> {
         const localVarPath = this.basePath + '/report/{culture}/sale'
             .replace('{' + 'culture' + '}', encodeURIComponent(String(culture)));
         let localVarQueryParameters: any = {};
@@ -123,7 +123,7 @@ export class ReportApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.ClientResponse; body: Buffer;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: Buffer;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);

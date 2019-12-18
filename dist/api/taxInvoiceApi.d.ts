@@ -27,7 +27,7 @@ export declare class TaxInvoiceApi {
             [name: string]: string;
         };
     }): Promise<{
-        response: http.ClientResponse;
+        response: http.IncomingMessage;
         body: SendEmailResponse;
     }>;
     taxInvoicesGet(currentPage: string, pageSize: string, authorization: string, sortBy?: string, filter?: string, options?: {
@@ -35,7 +35,7 @@ export declare class TaxInvoiceApi {
             [name: string]: string;
         };
     }): Promise<{
-        response: http.ClientResponse;
+        response: http.IncomingMessage;
         body: SimpleDocumentResponse;
     }>;
     taxInvoicesIdAttachmentPost(authorization: string, id: string, file?: RequestFile, options?: {
@@ -43,7 +43,7 @@ export declare class TaxInvoiceApi {
             [name: string]: string;
         };
     }): Promise<{
-        response: http.ClientResponse;
+        response: http.IncomingMessage;
         body?: any;
     }>;
     taxInvoicesIdGet(authorization: string, id: string, options?: {
@@ -51,7 +51,7 @@ export declare class TaxInvoiceApi {
             [name: string]: string;
         };
     }): Promise<{
-        response: http.ClientResponse;
+        response: http.IncomingMessage;
         body: SimpleDocumentResponse;
     }>;
     taxInvoicesIdInlinePut(authorization: string, id: string, inlineDocument: InlineDocument, options?: {
@@ -59,7 +59,7 @@ export declare class TaxInvoiceApi {
             [name: string]: string;
         };
     }): Promise<{
-        response: http.ClientResponse;
+        response: http.IncomingMessage;
         body: InlineDocumentResponse;
     }>;
     taxInvoicesIdPut(authorization: string, id: string, simpleDocument: SimpleDocument, options?: {
@@ -67,7 +67,7 @@ export declare class TaxInvoiceApi {
             [name: string]: string;
         };
     }): Promise<{
-        response: http.ClientResponse;
+        response: http.IncomingMessage;
         body: SimpleDocumentResponse;
     }>;
     taxInvoicesInlinePost(authorization: string, inlineDocument: InlineDocument, options?: {
@@ -75,7 +75,7 @@ export declare class TaxInvoiceApi {
             [name: string]: string;
         };
     }): Promise<{
-        response: http.ClientResponse;
+        response: http.IncomingMessage;
         body: InlineDocumentResponse;
     }>;
     taxInvoicesPost(authorization: string, simpleDocument: SimpleDocument, options?: {
@@ -83,7 +83,7 @@ export declare class TaxInvoiceApi {
             [name: string]: string;
         };
     }): Promise<{
-        response: http.ClientResponse;
+        response: http.IncomingMessage;
         body: SimpleDocumentResponse;
     }>;
 }

@@ -26,8 +26,6 @@ export declare class ExpenseDocument {
     'isVat'?: boolean;
     'vatAmount'?: number;
     'grandTotal': number;
-    'isWithholdingTax'?: boolean;
-    'withholdingTaxAmount'?: number;
     'remarks'?: string;
     'internalNotes'?: string;
     static discriminator: string | undefined;

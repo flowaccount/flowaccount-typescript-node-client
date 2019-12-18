@@ -16,10 +16,10 @@ import { TaxInvoiceApi } from './taxInvoiceApi';
 import * as fs from 'fs';
 import * as http from 'http';
 export declare class HttpError extends Error {
-    response: http.ClientResponse;
+    response: http.IncomingMessage;
     body: any;
     statusCode?: number | undefined;
-    constructor(response: http.ClientResponse, body: any, statusCode?: number | undefined);
+    constructor(response: http.IncomingMessage, body: any, statusCode?: number | undefined);
 }
 export interface RequestDetailedFile {
     value: Buffer;

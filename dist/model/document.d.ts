@@ -1,4 +1,5 @@
 export declare class Document {
+    'recordId'?: number;
     'documentSerial'?: string;
     'contactCode'?: string;
     'contactName': string;
@@ -10,21 +11,27 @@ export declare class Document {
     'contactNumber'?: string;
     'contactZipCode'?: string;
     'publishedOn': string;
+    'creditDays'?: number;
+    'creditType'?: number;
     'dueDate'?: string;
+    'salesName'?: string;
     'projectName'?: string;
     'reference'?: string;
     'isVatInclusive'?: boolean;
     'discountType'?: number;
     'discountPercentage'?: number;
     'discountAmount'?: number;
-    'salesName'?: string;
     'subTotal'?: number;
     'totalAfterDiscount': number;
     'grandTotal': number;
     'totalWithoutVat'?: number;
     'vatAmount'?: number;
+    'documentShowWithholdingTax'?: boolean;
+    'documentWithholdingTaxPercentage'?: number;
+    'documentWithholdingTaxAmount'?: number;
     'remarks'?: string;
     'internalNotes'?: string;
+    'showSignatureOrStamp'?: boolean;
     'paymentMethod'?: number;
     'paymentDate'?: string;
     'paymentRemarks'?: string;
@@ -34,12 +41,6 @@ export declare class Document {
     'withheldAmount'?: number;
     'withheldPercentage'?: number;
     'fee'?: number;
-    'documentShowWithholdingTax'?: boolean;
-    'documentWithholdingTaxAmount'?: number;
-    'documentWithholdingTaxPercentage'?: number;
-    'creditDays'?: number;
-    'creditType'?: number;
-    'recordId'?: number;
     'documentStructureType': string;
     static discriminator: string | undefined;
     static attributeTypeMap: Array<{

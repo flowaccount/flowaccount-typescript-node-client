@@ -115,14 +115,6 @@ export class ExpenseDocument {
     */
     'grandTotal': number;
     /**
-    * ยอดขายหลังหักส่วนลดหักภาษี ณ ที่จ่ายหรือไม่่
-    */
-    'isWithholdingTax'?: boolean;
-    /**
-    * ภาษี ณ ที่จ่าย (%)
-    */
-    'withholdingTaxAmount'?: number;
-    /**
     * หมายเหตุ
     */
     'remarks'?: string;
@@ -262,16 +254,6 @@ export class ExpenseDocument {
         {
             "name": "grandTotal",
             "baseName": "grandTotal",
-            "type": "number"
-        },
-        {
-            "name": "isWithholdingTax",
-            "baseName": "isWithholdingTax",
-            "type": "boolean"
-        },
-        {
-            "name": "withholdingTaxAmount",
-            "baseName": "withholdingTaxAmount",
             "type": "number"
         },
         {
