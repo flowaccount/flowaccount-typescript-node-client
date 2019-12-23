@@ -23,7 +23,7 @@ export class InlineProductItem extends ProductItem {
     */
     'discountAmount'?: number;
     /**
-    * ภาษี
+    * ภาษี: 7 = 7% / 0 = 0% / -1 = ยกเว้นภาษี
     */
     'vatRate'?: number;
 

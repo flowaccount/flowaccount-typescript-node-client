@@ -20,6 +20,8 @@ export * from './inlineObject4';
 export * from './inlineProductItem';
 export * from './inlineProductItemAllOf';
 export * from './productItem';
+export * from './referencedByMe';
+export * from './referencedToMe';
 export * from './sendEmail';
 export * from './sendEmailCoppies';
 export * from './sendEmailCoppiesAllOf';
@@ -30,6 +32,8 @@ export * from './simpleDocumentAllOf';
 export * from './simpleDocumentResponse';
 export * from './simpleDocumentResponseAllOf';
 export * from './simpleProductItem';
+export * from './statusResponse';
+export * from './upgradeDocument';
 
 import localVarRequest = require('request');
 
@@ -55,6 +59,8 @@ import { InlineObject4 } from './inlineObject4';
 import { InlineProductItem } from './inlineProductItem';
 import { InlineProductItemAllOf } from './inlineProductItemAllOf';
 import { ProductItem } from './productItem';
+import { ReferencedByMe } from './referencedByMe';
+import { ReferencedToMe } from './referencedToMe';
 import { SendEmail } from './sendEmail';
 import { SendEmailCoppies } from './sendEmailCoppies';
 import { SendEmailCoppiesAllOf } from './sendEmailCoppiesAllOf';
@@ -65,6 +71,8 @@ import { SimpleDocumentAllOf } from './simpleDocumentAllOf';
 import { SimpleDocumentResponse } from './simpleDocumentResponse';
 import { SimpleDocumentResponseAllOf } from './simpleDocumentResponseAllOf';
 import { SimpleProductItem } from './simpleProductItem';
+import { StatusResponse } from './statusResponse';
+import { UpgradeDocument } from './upgradeDocument';
 
 /* tslint:disable:no-unused-variable */
 let primitives = [
@@ -104,6 +112,8 @@ let typeMap: {[index: string]: any} = {
     "InlineProductItem": InlineProductItem,
     "InlineProductItemAllOf": InlineProductItemAllOf,
     "ProductItem": ProductItem,
+    "ReferencedByMe": ReferencedByMe,
+    "ReferencedToMe": ReferencedToMe,
     "SendEmail": SendEmail,
     "SendEmailCoppies": SendEmailCoppies,
     "SendEmailCoppiesAllOf": SendEmailCoppiesAllOf,
@@ -114,6 +124,8 @@ let typeMap: {[index: string]: any} = {
     "SimpleDocumentResponse": SimpleDocumentResponse,
     "SimpleDocumentResponseAllOf": SimpleDocumentResponseAllOf,
     "SimpleProductItem": SimpleProductItem,
+    "StatusResponse": StatusResponse,
+    "UpgradeDocument": UpgradeDocument,
 }
 
 export class ObjectSerializer {

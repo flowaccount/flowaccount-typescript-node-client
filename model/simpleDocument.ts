@@ -13,9 +13,11 @@
 import { Document } from './document';
 import { SimpleDocumentAllOf } from './simpleDocumentAllOf';
 import { SimpleProductItem } from './simpleProductItem';
+import { UpgradeDocument } from './upgradeDocument';
 
 export class SimpleDocument extends Document {
     'items'?: Array<SimpleProductItem>;
+    'documentReferences'?: Array<UpgradeDocument>;
 
     static discriminator: string | undefined = undefined;
 
@@ -24,6 +26,11 @@ export class SimpleDocument extends Document {
             "name": "items",
             "baseName": "items",
             "type": "Array<SimpleProductItem>"
+        },
+        {
+            "name": "documentReferences",
+            "baseName": "documentReferences",
+            "type": "Array<UpgradeDocument>"
         }    ];
 
     static getAttributeTypeMap() {

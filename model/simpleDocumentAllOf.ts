@@ -11,9 +11,11 @@
  */
 
 import { SimpleProductItem } from './simpleProductItem';
+import { UpgradeDocument } from './upgradeDocument';
 
 export class SimpleDocumentAllOf {
     'items'?: Array<SimpleProductItem>;
+    'documentReferences'?: Array<UpgradeDocument>;
 
     static discriminator: string | undefined = undefined;
 
@@ -22,6 +24,11 @@ export class SimpleDocumentAllOf {
             "name": "items",
             "baseName": "items",
             "type": "Array<SimpleProductItem>"
+        },
+        {
+            "name": "documentReferences",
+            "baseName": "documentReferences",
+            "type": "Array<UpgradeDocument>"
         }    ];
 
     static getAttributeTypeMap() {

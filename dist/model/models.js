@@ -25,6 +25,8 @@ __export(require("./inlineObject4"));
 __export(require("./inlineProductItem"));
 __export(require("./inlineProductItemAllOf"));
 __export(require("./productItem"));
+__export(require("./referencedByMe"));
+__export(require("./referencedToMe"));
 __export(require("./sendEmail"));
 __export(require("./sendEmailCoppies"));
 __export(require("./sendEmailCoppiesAllOf"));
@@ -35,6 +37,8 @@ __export(require("./simpleDocumentAllOf"));
 __export(require("./simpleDocumentResponse"));
 __export(require("./simpleDocumentResponseAllOf"));
 __export(require("./simpleProductItem"));
+__export(require("./statusResponse"));
+__export(require("./upgradeDocument"));
 const authenResponse_1 = require("./authenResponse");
 const businessCategory_1 = require("./businessCategory");
 const document_1 = require("./document");
@@ -57,6 +61,8 @@ const inlineObject4_1 = require("./inlineObject4");
 const inlineProductItem_1 = require("./inlineProductItem");
 const inlineProductItemAllOf_1 = require("./inlineProductItemAllOf");
 const productItem_1 = require("./productItem");
+const referencedByMe_1 = require("./referencedByMe");
+const referencedToMe_1 = require("./referencedToMe");
 const sendEmail_1 = require("./sendEmail");
 const sendEmailCoppies_1 = require("./sendEmailCoppies");
 const sendEmailCoppiesAllOf_1 = require("./sendEmailCoppiesAllOf");
@@ -67,6 +73,8 @@ const simpleDocumentAllOf_1 = require("./simpleDocumentAllOf");
 const simpleDocumentResponse_1 = require("./simpleDocumentResponse");
 const simpleDocumentResponseAllOf_1 = require("./simpleDocumentResponseAllOf");
 const simpleProductItem_1 = require("./simpleProductItem");
+const statusResponse_1 = require("./statusResponse");
+const upgradeDocument_1 = require("./upgradeDocument");
 let primitives = [
     "string",
     "boolean",
@@ -101,6 +109,8 @@ let typeMap = {
     "InlineProductItem": inlineProductItem_1.InlineProductItem,
     "InlineProductItemAllOf": inlineProductItemAllOf_1.InlineProductItemAllOf,
     "ProductItem": productItem_1.ProductItem,
+    "ReferencedByMe": referencedByMe_1.ReferencedByMe,
+    "ReferencedToMe": referencedToMe_1.ReferencedToMe,
     "SendEmail": sendEmail_1.SendEmail,
     "SendEmailCoppies": sendEmailCoppies_1.SendEmailCoppies,
     "SendEmailCoppiesAllOf": sendEmailCoppiesAllOf_1.SendEmailCoppiesAllOf,
@@ -111,6 +121,8 @@ let typeMap = {
     "SimpleDocumentResponse": simpleDocumentResponse_1.SimpleDocumentResponse,
     "SimpleDocumentResponseAllOf": simpleDocumentResponseAllOf_1.SimpleDocumentResponseAllOf,
     "SimpleProductItem": simpleProductItem_1.SimpleProductItem,
+    "StatusResponse": statusResponse_1.StatusResponse,
+    "UpgradeDocument": upgradeDocument_1.UpgradeDocument,
 };
 class ObjectSerializer {
     static findCorrectType(data, expectedType) {

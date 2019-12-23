@@ -11,10 +11,15 @@
  */
 
 import { InlineProductItem } from './inlineProductItem';
+import { UpgradeDocument } from './upgradeDocument';
 
 export class InlineDocumentAllOf {
     /**
-    * ใช้ inline แวทหรือไม่
+    * ใช้งาน inline discount ส่วนลดแยกตามรายการสินค้า
+    */
+    'useInlineDiscount'?: boolean;
+    /**
+    * ใช้ inline vat ส่วนลดและภาษี แยกตามรายการสินค้า
     */
     'useInlineVat'?: boolean;
     /**
@@ -26,10 +31,16 @@ export class InlineDocumentAllOf {
     */
     'vatableAmount'?: number;
     'items'?: Array<InlineProductItem>;
+    'documentReferences'?: Array<UpgradeDocument>;
 
     static discriminator: string | undefined = undefined;
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+        {
+            "name": "useInlineDiscount",
+            "baseName": "useInlineDiscount",
+            "type": "boolean"
+        },
         {
             "name": "useInlineVat",
             "baseName": "useInlineVat",
@@ -49,6 +60,11 @@ export class InlineDocumentAllOf {
             "name": "items",
             "baseName": "items",
             "type": "Array<InlineProductItem>"
+        },
+        {
+            "name": "documentReferences",
+            "baseName": "documentReferences",
+            "type": "Array<UpgradeDocument>"
         }    ];
 
     static getAttributeTypeMap() {

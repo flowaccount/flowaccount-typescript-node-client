@@ -6,6 +6,7 @@ import { SendEmailResponse } from '../model/sendEmailResponse';
 import { SendEmailSimple } from '../model/sendEmailSimple';
 import { SimpleDocument } from '../model/simpleDocument';
 import { SimpleDocumentResponse } from '../model/simpleDocumentResponse';
+import { StatusResponse } from '../model/statusResponse';
 import { Authentication } from '../model/models';
 import { RequestFile } from './apis';
 export declare enum QuotationsApiApiKeys {
@@ -53,6 +54,14 @@ export declare class QuotationsApi {
     }): Promise<{
         response: http.IncomingMessage;
         body: InlineDocumentResponse;
+    }>;
+    quotationsIdStatusKeyStatusIdPost(authorization: string, id: string, statusId: string, options?: {
+        headers: {
+            [name: string]: string;
+        };
+    }): Promise<{
+        response: http.IncomingMessage;
+        body: StatusResponse;
     }>;
     quotationsInlinePost(authorization: string, inlineDocument: InlineDocument, options?: {
         headers: {

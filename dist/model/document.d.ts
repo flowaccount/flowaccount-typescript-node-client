@@ -10,9 +10,10 @@ export declare class Document {
     'contactEmail'?: string;
     'contactNumber'?: string;
     'contactZipCode'?: string;
+    'contactGroup'?: number;
     'publishedOn': string;
-    'creditDays'?: number;
     'creditType'?: number;
+    'creditDays'?: number;
     'dueDate'?: string;
     'salesName'?: string;
     'projectName'?: string;

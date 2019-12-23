@@ -20,6 +20,8 @@ export * from './inlineObject4';
 export * from './inlineProductItem';
 export * from './inlineProductItemAllOf';
 export * from './productItem';
+export * from './referencedByMe';
+export * from './referencedToMe';
 export * from './sendEmail';
 export * from './sendEmailCoppies';
 export * from './sendEmailCoppiesAllOf';
@@ -30,6 +32,8 @@ export * from './simpleDocumentAllOf';
 export * from './simpleDocumentResponse';
 export * from './simpleDocumentResponseAllOf';
 export * from './simpleProductItem';
+export * from './statusResponse';
+export * from './upgradeDocument';
 import localVarRequest = require('request');
 export declare class ObjectSerializer {
     static findCorrectType(data: any, expectedType: string): any;

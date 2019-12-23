@@ -6,6 +6,7 @@ import { SendEmailCoppies } from '../model/sendEmailCoppies';
 import { SendEmailResponse } from '../model/sendEmailResponse';
 import { SimpleDocument } from '../model/simpleDocument';
 import { SimpleDocumentResponse } from '../model/simpleDocumentResponse';
+import { StatusResponse } from '../model/statusResponse';
 import { Authentication } from '../model/models';
 import { RequestFile } from './apis';
 export declare enum BillingNotesApiApiKeys {
@@ -53,6 +54,14 @@ export declare class BillingNotesApi {
     }): Promise<{
         response: http.IncomingMessage;
         body: InlineDocumentResponse;
+    }>;
+    billingNotesIdStatusKeyStatusIdPost(authorization: string, id: string, statusId: string, options?: {
+        headers: {
+            [name: string]: string;
+        };
+    }): Promise<{
+        response: http.IncomingMessage;
+        body: StatusResponse;
     }>;
     billingNotesInlinePost(authorization: string, inlineDocument: InlineDocument, options?: {
         headers: {

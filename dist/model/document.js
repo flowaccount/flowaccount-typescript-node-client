@@ -63,18 +63,23 @@ Document.attributeTypeMap = [
         "type": "string"
     },
     {
+        "name": "contactGroup",
+        "baseName": "contactGroup",
+        "type": "number"
+    },
+    {
         "name": "publishedOn",
         "baseName": "publishedOn",
         "type": "string"
     },
     {
-        "name": "creditDays",
-        "baseName": "creditDays",
+        "name": "creditType",
+        "baseName": "creditType",
         "type": "number"
     },
     {
-        "name": "creditType",
-        "baseName": "creditType",
+        "name": "creditDays",
+        "baseName": "creditDays",
         "type": "number"
     },
     {

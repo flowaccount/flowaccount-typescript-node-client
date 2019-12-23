@@ -11,6 +11,11 @@ SimpleDocumentAllOf.attributeTypeMap = [
         "name": "items",
         "baseName": "items",
         "type": "Array<SimpleProductItem>"
+    },
+    {
+        "name": "documentReferences",
+        "baseName": "documentReferences",
+        "type": "Array<UpgradeDocument>"
     }
 ];
 exports.SimpleDocumentAllOf = SimpleDocumentAllOf;

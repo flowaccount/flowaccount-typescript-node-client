@@ -1,8 +1,7 @@
-import { SimpleProductItem } from './simpleProductItem';
-import { UpgradeDocument } from './upgradeDocument';
-export declare class SimpleDocumentAllOf {
-    'items'?: Array<SimpleProductItem>;
-    'documentReferences'?: Array<UpgradeDocument>;
+export declare class UpgradeDocument {
+    'recordId': number;
+    'referenceDocumentSerial': string;
+    'referenceDocumentType': number;
     static discriminator: string | undefined;
     static attributeTypeMap: Array<{
         name: string;

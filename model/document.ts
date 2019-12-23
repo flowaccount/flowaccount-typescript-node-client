@@ -57,17 +57,21 @@ export class Document {
     */
     'contactZipCode'?: string;
     /**
+    * ประผู้ติดต่อ 1 = บุคคลธรรมดา / 3 = นิติบุคคล
+    */
+    'contactGroup'?: number;
+    /**
     * วันที่เอกสาร รูปแบบ yyyy-MM-dd
     */
     'publishedOn': string;
     /**
-    * จำนวนวันที่ให้เครดิต
-    */
-    'creditDays'?: number;
-    /**
     * รูปแบบเครดิต: 1 = เครดิต (วัน) / 3 = เงินสด  / 5 = เครดิต (ไม่แสดงวันที่ครบกำหนด)
     */
     'creditType'?: number;
+    /**
+    * จำนวนวันที่ให้เครดิต
+    */
+    'creditDays'?: number;
     /**
     * วันครบกำหนดเอกสาร รูปแบบ yyyy-MM-dd
     */
@@ -89,7 +93,7 @@ export class Document {
     */
     'isVatInclusive'?: boolean;
     /**
-    * รูปแบบส่วนลด 0 = ไม่มี / 1 =  เปอร์เซ็นต์ / 3 = จำนวน
+    * รูปแบบส่วนลด 1 =  เปอร์เซ็นต์ / 3 = จำนวน (บาท)
     */
     'discountType'?: number;
     /**
@@ -238,18 +242,23 @@ export class Document {
             "type": "string"
         },
         {
+            "name": "contactGroup",
+            "baseName": "contactGroup",
+            "type": "number"
+        },
+        {
             "name": "publishedOn",
             "baseName": "publishedOn",
             "type": "string"
         },
         {
-            "name": "creditDays",
-            "baseName": "creditDays",
+            "name": "creditType",
+            "baseName": "creditType",
             "type": "number"
         },
         {
-            "name": "creditType",
-            "baseName": "creditType",
+            "name": "creditDays",
+            "baseName": "creditDays",
             "type": "number"
         },
         {
