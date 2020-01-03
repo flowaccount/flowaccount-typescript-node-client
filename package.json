@@ -1,6 +1,6 @@
 {
     "name": "@flowaccount/openapi-sdk",
-    "version": "0.0.11",
+    "version": "0.0.15",
     "description": "NodeJS client for @flowaccount/openapi-sdk",
     "repository": "GIT_USER_ID/GIT_REPO_ID",
     "main": "dist/api.js",
@@ -15,12 +15,12 @@
     "dependencies": {
         "bluebird": "^3.5.0",
         "request": "^2.81.0",
+        "@types/bluebird": "*",
+        "@types/request": "*",
         "rewire": "^3.0.2"
     },
     "devDependencies": {
         "typescript": "^2.4.2",
-        "@types/node": "8.10.34",
-        "@types/bluebird": "*",
-        "@types/request": "*"
+        "@types/node": "8.10.34"
     }
 }

@@ -14,7 +14,7 @@ export declare class Document {
     'publishedOn': string;
     'creditType'?: number;
     'creditDays'?: number;
-    'dueDate'?: string;
+    'dueDate': string;
     'salesName'?: string;
     'projectName'?: string;
     'reference'?: string;

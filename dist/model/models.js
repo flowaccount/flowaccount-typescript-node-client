@@ -32,6 +32,8 @@ __export(require("./sendEmailCoppies"));
 __export(require("./sendEmailCoppiesAllOf"));
 __export(require("./sendEmailResponse"));
 __export(require("./sendEmailSimple"));
+__export(require("./shareDocument"));
+__export(require("./shareDocumentResponse"));
 __export(require("./simpleDocument"));
 __export(require("./simpleDocumentAllOf"));
 __export(require("./simpleDocumentResponse"));
@@ -68,6 +70,8 @@ const sendEmailCoppies_1 = require("./sendEmailCoppies");
 const sendEmailCoppiesAllOf_1 = require("./sendEmailCoppiesAllOf");
 const sendEmailResponse_1 = require("./sendEmailResponse");
 const sendEmailSimple_1 = require("./sendEmailSimple");
+const shareDocument_1 = require("./shareDocument");
+const shareDocumentResponse_1 = require("./shareDocumentResponse");
 const simpleDocument_1 = require("./simpleDocument");
 const simpleDocumentAllOf_1 = require("./simpleDocumentAllOf");
 const simpleDocumentResponse_1 = require("./simpleDocumentResponse");
@@ -116,6 +120,8 @@ let typeMap = {
     "SendEmailCoppiesAllOf": sendEmailCoppiesAllOf_1.SendEmailCoppiesAllOf,
     "SendEmailResponse": sendEmailResponse_1.SendEmailResponse,
     "SendEmailSimple": sendEmailSimple_1.SendEmailSimple,
+    "ShareDocument": shareDocument_1.ShareDocument,
+    "ShareDocumentResponse": shareDocumentResponse_1.ShareDocumentResponse,
     "SimpleDocument": simpleDocument_1.SimpleDocument,
     "SimpleDocumentAllOf": simpleDocumentAllOf_1.SimpleDocumentAllOf,
     "SimpleDocumentResponse": simpleDocumentResponse_1.SimpleDocumentResponse,

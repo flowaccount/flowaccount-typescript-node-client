@@ -11,41 +11,23 @@
  */
 
 
-export class SendEmailResponse {
+export class ShareDocumentResponse {
     /**
-    * Email sent successfully
+    * Link Document
     */
-    'message'?: string;
-    /**
-    * Status
-    */
-    'ok'?: boolean;
-    /**
-    * Change Status Complete
-    */
-    'successMsg'?: string;
+    'link'?: string;
 
     static discriminator: string | undefined = undefined;
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
         {
-            "name": "message",
-            "baseName": "message",
-            "type": "string"
-        },
-        {
-            "name": "ok",
-            "baseName": "ok",
-            "type": "boolean"
-        },
-        {
-            "name": "successMsg",
-            "baseName": "successMsg",
+            "name": "link",
+            "baseName": "link",
             "type": "string"
         }    ];
 
     static getAttributeTypeMap() {
-        return SendEmailResponse.attributeTypeMap;
+        return ShareDocumentResponse.attributeTypeMap;
     }
 }
 

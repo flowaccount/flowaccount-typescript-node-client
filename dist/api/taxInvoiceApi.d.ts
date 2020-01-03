@@ -4,8 +4,11 @@ import { InlineDocument } from '../model/inlineDocument';
 import { InlineDocumentResponse } from '../model/inlineDocumentResponse';
 import { SendEmailCoppies } from '../model/sendEmailCoppies';
 import { SendEmailResponse } from '../model/sendEmailResponse';
+import { ShareDocument } from '../model/shareDocument';
+import { ShareDocumentResponse } from '../model/shareDocumentResponse';
 import { SimpleDocument } from '../model/simpleDocument';
 import { SimpleDocumentResponse } from '../model/simpleDocumentResponse';
+import { StatusResponse } from '../model/statusResponse';
 import { Authentication } from '../model/models';
 import { RequestFile } from './apis';
 export declare enum TaxInvoiceApiApiKeys {
@@ -70,6 +73,14 @@ export declare class TaxInvoiceApi {
         response: http.IncomingMessage;
         body: SimpleDocumentResponse;
     }>;
+    taxInvoicesIdStatusKeyStatusIdPost(authorization: string, id: string, statusId: string, options?: {
+        headers: {
+            [name: string]: string;
+        };
+    }): Promise<{
+        response: http.IncomingMessage;
+        body: StatusResponse;
+    }>;
     taxInvoicesInlinePost(authorization: string, inlineDocument: InlineDocument, options?: {
         headers: {
             [name: string]: string;
@@ -85,5 +96,13 @@ export declare class TaxInvoiceApi {
     }): Promise<{
         response: http.IncomingMessage;
         body: SimpleDocumentResponse;
+    }>;
+    taxInvoicesSharedocumentPost(authorization: string, shareDocument: ShareDocument, options?: {
+        headers: {
+            [name: string]: string;
+        };
+    }): Promise<{
+        response: http.IncomingMessage;
+        body: ShareDocumentResponse;
     }>;
 }

@@ -4,6 +4,8 @@ import { InlineDocument } from '../model/inlineDocument';
 import { InlineDocumentResponse } from '../model/inlineDocumentResponse';
 import { SendEmailCoppies } from '../model/sendEmailCoppies';
 import { SendEmailResponse } from '../model/sendEmailResponse';
+import { ShareDocument } from '../model/shareDocument';
+import { ShareDocumentResponse } from '../model/shareDocumentResponse';
 import { SimpleDocument } from '../model/simpleDocument';
 import { SimpleDocumentResponse } from '../model/simpleDocumentResponse';
 import { StatusResponse } from '../model/statusResponse';
@@ -78,5 +80,13 @@ export declare class BillingNotesApi {
     }): Promise<{
         response: http.IncomingMessage;
         body: SimpleDocumentResponse;
+    }>;
+    billingNotesSharedocumentPost(authorization: string, shareDocument: ShareDocument, options?: {
+        headers: {
+            [name: string]: string;
+        };
+    }): Promise<{
+        response: http.IncomingMessage;
+        body: ShareDocumentResponse;
     }>;
 }

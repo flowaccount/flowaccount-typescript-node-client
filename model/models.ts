@@ -27,6 +27,8 @@ export * from './sendEmailCoppies';
 export * from './sendEmailCoppiesAllOf';
 export * from './sendEmailResponse';
 export * from './sendEmailSimple';
+export * from './shareDocument';
+export * from './shareDocumentResponse';
 export * from './simpleDocument';
 export * from './simpleDocumentAllOf';
 export * from './simpleDocumentResponse';
@@ -66,6 +68,8 @@ import { SendEmailCoppies } from './sendEmailCoppies';
 import { SendEmailCoppiesAllOf } from './sendEmailCoppiesAllOf';
 import { SendEmailResponse } from './sendEmailResponse';
 import { SendEmailSimple } from './sendEmailSimple';
+import { ShareDocument } from './shareDocument';
+import { ShareDocumentResponse } from './shareDocumentResponse';
 import { SimpleDocument } from './simpleDocument';
 import { SimpleDocumentAllOf } from './simpleDocumentAllOf';
 import { SimpleDocumentResponse } from './simpleDocumentResponse';
@@ -119,6 +123,8 @@ let typeMap: {[index: string]: any} = {
     "SendEmailCoppiesAllOf": SendEmailCoppiesAllOf,
     "SendEmailResponse": SendEmailResponse,
     "SendEmailSimple": SendEmailSimple,
+    "ShareDocument": ShareDocument,
+    "ShareDocumentResponse": ShareDocumentResponse,
     "SimpleDocument": SimpleDocument,
     "SimpleDocumentAllOf": SimpleDocumentAllOf,
     "SimpleDocumentResponse": SimpleDocumentResponse,

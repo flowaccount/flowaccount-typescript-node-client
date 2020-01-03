@@ -11,41 +11,32 @@
  */
 
 
-export class SendEmailResponse {
+export class ShareDocument {
     /**
-    * Email sent successfully
+    * documentId
     */
-    'message'?: string;
+    'documentId': number;
     /**
-    * Status
+    * เลือกภาษาของเอกสาร: th = ไทย / en = อังกฤษ
     */
-    'ok'?: boolean;
-    /**
-    * Change Status Complete
-    */
-    'successMsg'?: string;
+    'culture'?: string;
 
-    static discriminator: string | undefined = undefined;
+    static discriminator: string | undefined = "documentStructureType";
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
         {
-            "name": "message",
-            "baseName": "message",
-            "type": "string"
+            "name": "documentId",
+            "baseName": "documentId",
+            "type": "number"
         },
         {
-            "name": "ok",
-            "baseName": "ok",
-            "type": "boolean"
-        },
-        {
-            "name": "successMsg",
-            "baseName": "successMsg",
+            "name": "culture",
+            "baseName": "culture",
             "type": "string"
         }    ];
 
     static getAttributeTypeMap() {
-        return SendEmailResponse.attributeTypeMap;
+        return ShareDocument.attributeTypeMap;
     }
 }
 

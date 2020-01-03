@@ -27,6 +27,8 @@ export * from './sendEmailCoppies';
 export * from './sendEmailCoppiesAllOf';
 export * from './sendEmailResponse';
 export * from './sendEmailSimple';
+export * from './shareDocument';
+export * from './shareDocumentResponse';
 export * from './simpleDocument';
 export * from './simpleDocumentAllOf';
 export * from './simpleDocumentResponse';

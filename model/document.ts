@@ -75,7 +75,7 @@ export class Document {
     /**
     * วันครบกำหนดเอกสาร รูปแบบ yyyy-MM-dd
     */
-    'dueDate'?: string;
+    'dueDate': string;
     /**
     * ชื่อผู้สร้างเอกสาร หรือ ชื่อพนักงานขาย
     */
