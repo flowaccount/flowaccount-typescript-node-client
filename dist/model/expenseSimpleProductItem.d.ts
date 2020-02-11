@@ -1,19 +1,19 @@
 export declare class ExpenseSimpleProductItem {
-    'description': string;
     'systemCode': number;
     'categoryId': number;
-    'nameForeign': string;
+    'description': string;
     'nameLocal': string;
+    'nameForeign': string;
     'creditCategory': number;
     'creditId': number;
     'creditCode': string;
-    'creditNameForeign': string;
     'creditNameLocal': string;
+    'creditNameForeign': string;
     'debitCategory': number;
     'debitId': number;
     'debitCode': string;
-    'debitNameForeign': string;
     'debitNameLocal': string;
+    'debitNameForeign': string;
     'quantity': number;
     'unitName'?: string;
     'pricePerUnit': number;

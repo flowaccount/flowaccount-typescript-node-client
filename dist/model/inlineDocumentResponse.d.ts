@@ -1,7 +1,8 @@
 import { DocumentResponse } from './documentResponse';
 import { InlineDocument } from './inlineDocument';
+import { StatusResponse } from './statusResponse';
 export declare class InlineDocumentResponse extends DocumentResponse {
-    'data'?: InlineDocument;
+    'data'?: object & InlineDocument & StatusResponse;
     static discriminator: string | undefined;
     static attributeTypeMap: Array<{
         name: string;

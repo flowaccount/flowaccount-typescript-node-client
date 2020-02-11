@@ -3,7 +3,7 @@ import { SimpleProductItem } from './simpleProductItem';
 import { UpgradeDocument } from './upgradeDocument';
 export declare class SimpleDocument extends Document {
     'items'?: Array<SimpleProductItem>;
-    'documentReferences'?: Array<UpgradeDocument>;
+    'documentReference'?: Array<UpgradeDocument>;
     static discriminator: string | undefined;
     static attributeTypeMap: Array<{
         name: string;

@@ -11,7 +11,7 @@ InlineDocumentResponse.attributeTypeMap = [
     {
         "name": "data",
         "baseName": "data",
-        "type": "InlineDocument"
+        "type": "object & InlineDocument & StatusResponse"
     }
 ];
 exports.InlineDocumentResponse = InlineDocumentResponse;

@@ -154,7 +154,7 @@ class BillingNotesApi {
                             reject(error);
                         }
                         else {
-                            body = models_1.ObjectSerializer.deserialize(body, "SimpleDocumentResponse");
+                            body = models_1.ObjectSerializer.deserialize(body, "InlineDocumentResponse");
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
                                 resolve({ response: response, body: body });
                             }
@@ -337,7 +337,7 @@ class BillingNotesApi {
                             reject(error);
                         }
                         else {
-                            body = models_1.ObjectSerializer.deserialize(body, "StatusResponse");
+                            body = models_1.ObjectSerializer.deserialize(body, "InlineDocumentResponse");
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
                                 resolve({ response: response, body: body });
                             }

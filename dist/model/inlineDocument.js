@@ -9,6 +9,11 @@ class InlineDocument extends document_1.Document {
 InlineDocument.discriminator = undefined;
 InlineDocument.attributeTypeMap = [
     {
+        "name": "discountType",
+        "baseName": "discountType",
+        "type": "number"
+    },
+    {
         "name": "useInlineDiscount",
         "baseName": "useInlineDiscount",
         "type": "boolean"
@@ -34,8 +39,8 @@ InlineDocument.attributeTypeMap = [
         "type": "Array<InlineProductItem>"
     },
     {
-        "name": "documentReferences",
-        "baseName": "documentReferences",
+        "name": "documentReference",
+        "baseName": "documentReference",
         "type": "Array<UpgradeDocument>"
     }
 ];

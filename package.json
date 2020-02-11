@@ -1,6 +1,6 @@
 {
     "name": "@flowaccount/openapi-sdk",
-    "version": "0.0.15",
+    "version": "0.0.16",
     "description": "NodeJS client for @flowaccount/openapi-sdk",
     "repository": "GIT_USER_ID/GIT_REPO_ID",
     "main": "dist/api.js",
@@ -11,7 +11,7 @@
         "test": "npm run build && node dist/client.js"
     },
     "author": "OpenAPI-Generator Contributors",
-    "license": "Unlicense",
+    "license": "MIT",
     "dependencies": {
         "bluebird": "^3.5.0",
         "request": "^2.81.0",

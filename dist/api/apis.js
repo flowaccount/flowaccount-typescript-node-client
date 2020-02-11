@@ -9,14 +9,18 @@ __export(require("./billingNotesApi"));
 const billingNotesApi_1 = require("./billingNotesApi");
 __export(require("./cashInvoiceApi"));
 const cashInvoiceApi_1 = require("./cashInvoiceApi");
+__export(require("./contactsApi"));
+const contactsApi_1 = require("./contactsApi");
 __export(require("./expenseApi"));
 const expenseApi_1 = require("./expenseApi");
+__export(require("./productsApi"));
+const productsApi_1 = require("./productsApi");
 __export(require("./quotationsApi"));
 const quotationsApi_1 = require("./quotationsApi");
-__export(require("./reportApi"));
-const reportApi_1 = require("./reportApi");
 __export(require("./taxInvoiceApi"));
 const taxInvoiceApi_1 = require("./taxInvoiceApi");
+__export(require("./withholdingTaxApi"));
+const withholdingTaxApi_1 = require("./withholdingTaxApi");
 class HttpError extends Error {
     constructor(response, body, statusCode) {
         super('HTTP request failed');
@@ -27,5 +31,5 @@ class HttpError extends Error {
     }
 }
 exports.HttpError = HttpError;
-exports.APIS = [authenticationApi_1.AuthenticationApi, billingNotesApi_1.BillingNotesApi, cashInvoiceApi_1.CashInvoiceApi, expenseApi_1.ExpenseApi, quotationsApi_1.QuotationsApi, reportApi_1.ReportApi, taxInvoiceApi_1.TaxInvoiceApi];
+exports.APIS = [authenticationApi_1.AuthenticationApi, billingNotesApi_1.BillingNotesApi, cashInvoiceApi_1.CashInvoiceApi, contactsApi_1.ContactsApi, expenseApi_1.ExpenseApi, productsApi_1.ProductsApi, quotationsApi_1.QuotationsApi, taxInvoiceApi_1.TaxInvoiceApi, withholdingTaxApi_1.WithholdingTaxApi];
 //# sourceMappingURL=apis.js.map

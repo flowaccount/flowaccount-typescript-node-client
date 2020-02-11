@@ -8,11 +8,6 @@ class InlineProductItemAllOf {
 InlineProductItemAllOf.discriminator = undefined;
 InlineProductItemAllOf.attributeTypeMap = [
     {
-        "name": "discountAmountPercentage",
-        "baseName": "discountAmountPercentage",
-        "type": "number"
-    },
-    {
         "name": "discountAmount",
         "baseName": "discountAmount",
         "type": "number"

@@ -5,7 +5,7 @@ class ShareDocument {
         return ShareDocument.attributeTypeMap;
     }
 }
-ShareDocument.discriminator = "documentStructureType";
+ShareDocument.discriminator = undefined;
 ShareDocument.attributeTypeMap = [
     {
         "name": "documentId",

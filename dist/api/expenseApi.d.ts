@@ -5,6 +5,8 @@ import { ExpenseDocument } from '../model/expenseDocument';
 import { ExpenseDocumentResponse } from '../model/expenseDocumentResponse';
 import { ExpenseInlineDocument } from '../model/expenseInlineDocument';
 import { ExpensenlineDocumentResponse } from '../model/expensenlineDocumentResponse';
+import { PaymentDocument } from '../model/paymentDocument';
+import { PaymentDocumentResponse } from '../model/paymentDocumentResponse';
 import { Authentication } from '../model/models';
 import { RequestFile } from './apis';
 export declare enum ExpenseApiApiKeys {
@@ -68,6 +70,14 @@ export declare class ExpenseApi {
     }): Promise<{
         response: http.IncomingMessage;
         body: ExpenseInlineDocument;
+    }>;
+    expensesIdPaymentPost(authorization: string, id: string, paymentDocument: PaymentDocument, options?: {
+        headers: {
+            [name: string]: string;
+        };
+    }): Promise<{
+        response: http.IncomingMessage;
+        body: PaymentDocumentResponse;
     }>;
     expensesInlinePost(authorization: string, expenseInlineDocument: ExpenseInlineDocument, options?: {
         headers: {

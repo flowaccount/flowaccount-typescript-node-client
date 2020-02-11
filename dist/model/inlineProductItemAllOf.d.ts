@@ -1,5 +1,4 @@
 export declare class InlineProductItemAllOf {
-    'discountAmountPercentage'?: number;
     'discountAmount'?: number;
     'vatRate'?: number;
     static discriminator: string | undefined;

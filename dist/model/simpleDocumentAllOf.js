@@ -13,8 +13,8 @@ SimpleDocumentAllOf.attributeTypeMap = [
         "type": "Array<SimpleProductItem>"
     },
     {
-        "name": "documentReferences",
-        "baseName": "documentReferences",
+        "name": "documentReference",
+        "baseName": "documentReference",
         "type": "Array<UpgradeDocument>"
     }
 ];

@@ -1,5 +1,8 @@
 export * from './authenResponse';
 export * from './businessCategory';
+export * from './contact';
+export * from './contactResponse';
+export * from './contactResponseAllOf';
 export * from './document';
 export * from './documentResponse';
 export * from './expenseDocument';
@@ -19,7 +22,12 @@ export * from './inlineObject3';
 export * from './inlineObject4';
 export * from './inlineProductItem';
 export * from './inlineProductItemAllOf';
+export * from './paymentDocument';
+export * from './paymentDocumentResponse';
+export * from './product';
 export * from './productItem';
+export * from './productResponse';
+export * from './productResponseAllOf';
 export * from './referencedByMe';
 export * from './referencedToMe';
 export * from './sendEmail';
@@ -36,11 +44,18 @@ export * from './simpleDocumentResponseAllOf';
 export * from './simpleProductItem';
 export * from './statusResponse';
 export * from './upgradeDocument';
+export * from './withholidingTaxDocument';
+export * from './withholidingTaxDocumentResponse';
+export * from './withholidingTaxDocumentResponseData';
+export * from './withholidingTaxItem';
 
 import localVarRequest = require('request');
 
 import { AuthenResponse } from './authenResponse';
 import { BusinessCategory } from './businessCategory';
+import { Contact } from './contact';
+import { ContactResponse } from './contactResponse';
+import { ContactResponseAllOf } from './contactResponseAllOf';
 import { Document } from './document';
 import { DocumentResponse } from './documentResponse';
 import { ExpenseDocument } from './expenseDocument';
@@ -60,7 +75,12 @@ import { InlineObject3 } from './inlineObject3';
 import { InlineObject4 } from './inlineObject4';
 import { InlineProductItem } from './inlineProductItem';
 import { InlineProductItemAllOf } from './inlineProductItemAllOf';
+import { PaymentDocument } from './paymentDocument';
+import { PaymentDocumentResponse } from './paymentDocumentResponse';
+import { Product } from './product';
 import { ProductItem } from './productItem';
+import { ProductResponse } from './productResponse';
+import { ProductResponseAllOf } from './productResponseAllOf';
 import { ReferencedByMe } from './referencedByMe';
 import { ReferencedToMe } from './referencedToMe';
 import { SendEmail } from './sendEmail';
@@ -77,6 +97,10 @@ import { SimpleDocumentResponseAllOf } from './simpleDocumentResponseAllOf';
 import { SimpleProductItem } from './simpleProductItem';
 import { StatusResponse } from './statusResponse';
 import { UpgradeDocument } from './upgradeDocument';
+import { WithholidingTaxDocument } from './withholidingTaxDocument';
+import { WithholidingTaxDocumentResponse } from './withholidingTaxDocumentResponse';
+import { WithholidingTaxDocumentResponseData } from './withholidingTaxDocumentResponseData';
+import { WithholidingTaxItem } from './withholidingTaxItem';
 
 /* tslint:disable:no-unused-variable */
 let primitives = [
@@ -96,6 +120,9 @@ let enumsMap: {[index: string]: any} = {
 let typeMap: {[index: string]: any} = {
     "AuthenResponse": AuthenResponse,
     "BusinessCategory": BusinessCategory,
+    "Contact": Contact,
+    "ContactResponse": ContactResponse,
+    "ContactResponseAllOf": ContactResponseAllOf,
     "Document": Document,
     "DocumentResponse": DocumentResponse,
     "ExpenseDocument": ExpenseDocument,
@@ -115,7 +142,12 @@ let typeMap: {[index: string]: any} = {
     "InlineObject4": InlineObject4,
     "InlineProductItem": InlineProductItem,
     "InlineProductItemAllOf": InlineProductItemAllOf,
+    "PaymentDocument": PaymentDocument,
+    "PaymentDocumentResponse": PaymentDocumentResponse,
+    "Product": Product,
     "ProductItem": ProductItem,
+    "ProductResponse": ProductResponse,
+    "ProductResponseAllOf": ProductResponseAllOf,
     "ReferencedByMe": ReferencedByMe,
     "ReferencedToMe": ReferencedToMe,
     "SendEmail": SendEmail,
@@ -132,6 +164,10 @@ let typeMap: {[index: string]: any} = {
     "SimpleProductItem": SimpleProductItem,
     "StatusResponse": StatusResponse,
     "UpgradeDocument": UpgradeDocument,
+    "WithholidingTaxDocument": WithholidingTaxDocument,
+    "WithholidingTaxDocumentResponse": WithholidingTaxDocumentResponse,
+    "WithholidingTaxDocumentResponseData": WithholidingTaxDocumentResponseData,
+    "WithholidingTaxItem": WithholidingTaxItem,
 }
 
 export class ObjectSerializer {

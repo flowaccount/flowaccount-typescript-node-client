@@ -8,11 +8,6 @@ class ExpenseSimpleProductItem {
 ExpenseSimpleProductItem.discriminator = undefined;
 ExpenseSimpleProductItem.attributeTypeMap = [
     {
-        "name": "description",
-        "baseName": "description",
-        "type": "string"
-    },
-    {
         "name": "systemCode",
         "baseName": "systemCode",
         "type": "number"
@@ -23,13 +18,18 @@ ExpenseSimpleProductItem.attributeTypeMap = [
         "type": "number"
     },
     {
-        "name": "nameForeign",
-        "baseName": "nameForeign",
+        "name": "description",
+        "baseName": "description",
         "type": "string"
     },
     {
         "name": "nameLocal",
         "baseName": "nameLocal",
+        "type": "string"
+    },
+    {
+        "name": "nameForeign",
+        "baseName": "nameForeign",
         "type": "string"
     },
     {
@@ -48,13 +48,13 @@ ExpenseSimpleProductItem.attributeTypeMap = [
         "type": "string"
     },
     {
-        "name": "creditNameForeign",
-        "baseName": "creditNameForeign",
+        "name": "creditNameLocal",
+        "baseName": "creditNameLocal",
         "type": "string"
     },
     {
-        "name": "creditNameLocal",
-        "baseName": "creditNameLocal",
+        "name": "creditNameForeign",
+        "baseName": "creditNameForeign",
         "type": "string"
     },
     {
@@ -73,13 +73,13 @@ ExpenseSimpleProductItem.attributeTypeMap = [
         "type": "string"
     },
     {
-        "name": "debitNameForeign",
-        "baseName": "debitNameForeign",
+        "name": "debitNameLocal",
+        "baseName": "debitNameLocal",
         "type": "string"
     },
     {
-        "name": "debitNameLocal",
-        "baseName": "debitNameLocal",
+        "name": "debitNameForeign",
+        "baseName": "debitNameForeign",
         "type": "string"
     },
     {

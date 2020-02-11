@@ -9,11 +9,6 @@ class InlineProductItem extends productItem_1.ProductItem {
 InlineProductItem.discriminator = undefined;
 InlineProductItem.attributeTypeMap = [
     {
-        "name": "discountAmountPercentage",
-        "baseName": "discountAmountPercentage",
-        "type": "number"
-    },
-    {
         "name": "discountAmount",
         "baseName": "discountAmount",
         "type": "number"

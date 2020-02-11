@@ -10,6 +10,7 @@ export declare class ExpenseDocument {
     'contactEmail'?: string;
     'contactNumber'?: string;
     'contactZipCode'?: string;
+    'contactGroup'?: number;
     'publishedOn': string;
     'creditType'?: number;
     'creditDays'?: number;
@@ -28,6 +29,7 @@ export declare class ExpenseDocument {
     'grandTotal': number;
     'remarks'?: string;
     'internalNotes'?: string;
+    'showSignatureOrStamp'?: boolean;
     static discriminator: string | undefined;
     static attributeTypeMap: Array<{
         name: string;

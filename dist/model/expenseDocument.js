@@ -58,6 +58,11 @@ ExpenseDocument.attributeTypeMap = [
         "type": "string"
     },
     {
+        "name": "contactGroup",
+        "baseName": "contactGroup",
+        "type": "number"
+    },
+    {
         "name": "publishedOn",
         "baseName": "publishedOn",
         "type": "string"
@@ -146,6 +151,11 @@ ExpenseDocument.attributeTypeMap = [
         "name": "internalNotes",
         "baseName": "internalNotes",
         "type": "string"
+    },
+    {
+        "name": "showSignatureOrStamp",
+        "baseName": "showSignatureOrStamp",
+        "type": "boolean"
     }
 ];
 exports.ExpenseDocument = ExpenseDocument;

@@ -10,7 +10,7 @@ SimpleDocumentResponseAllOf.attributeTypeMap = [
     {
         "name": "data",
         "baseName": "data",
-        "type": "SimpleDocument"
+        "type": "object & SimpleDocument & StatusResponse"
     }
 ];
 exports.SimpleDocumentResponseAllOf = SimpleDocumentResponseAllOf;

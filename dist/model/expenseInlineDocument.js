@@ -58,6 +58,11 @@ ExpenseInlineDocument.attributeTypeMap = [
         "type": "string"
     },
     {
+        "name": "contactGroup",
+        "baseName": "contactGroup",
+        "type": "number"
+    },
+    {
         "name": "publishedOn",
         "baseName": "publishedOn",
         "type": "string"
@@ -103,6 +108,16 @@ ExpenseInlineDocument.attributeTypeMap = [
         "type": "number"
     },
     {
+        "name": "useInlineDiscount",
+        "baseName": "useInlineDiscount",
+        "type": "boolean"
+    },
+    {
+        "name": "useInlineVat",
+        "baseName": "useInlineVat",
+        "type": "boolean"
+    },
+    {
         "name": "items",
         "baseName": "items",
         "type": "Array<ExpenseInlineProductItem>"
@@ -133,6 +148,11 @@ ExpenseInlineDocument.attributeTypeMap = [
         "type": "number"
     },
     {
+        "name": "isVat",
+        "baseName": "isVat",
+        "type": "boolean"
+    },
+    {
         "name": "vatAmount",
         "baseName": "vatAmount",
         "type": "number"
@@ -151,6 +171,11 @@ ExpenseInlineDocument.attributeTypeMap = [
         "name": "internalNotes",
         "baseName": "internalNotes",
         "type": "string"
+    },
+    {
+        "name": "showSignatureOrStamp",
+        "baseName": "showSignatureOrStamp",
+        "type": "boolean"
     }
 ];
 exports.ExpenseInlineDocument = ExpenseInlineDocument;

@@ -8,7 +8,6 @@ import { ShareDocument } from '../model/shareDocument';
 import { ShareDocumentResponse } from '../model/shareDocumentResponse';
 import { SimpleDocument } from '../model/simpleDocument';
 import { SimpleDocumentResponse } from '../model/simpleDocumentResponse';
-import { StatusResponse } from '../model/statusResponse';
 import { Authentication } from '../model/models';
 import { RequestFile } from './apis';
 export declare enum BillingNotesApiApiKeys {
@@ -39,7 +38,7 @@ export declare class BillingNotesApi {
         };
     }): Promise<{
         response: http.IncomingMessage;
-        body: SimpleDocumentResponse;
+        body: InlineDocumentResponse;
     }>;
     billingNotesIdAttachmentPost(authorization: string, id: string, file?: RequestFile, options?: {
         headers: {
@@ -63,7 +62,7 @@ export declare class BillingNotesApi {
         };
     }): Promise<{
         response: http.IncomingMessage;
-        body: StatusResponse;
+        body: InlineDocumentResponse;
     }>;
     billingNotesInlinePost(authorization: string, inlineDocument: InlineDocument, options?: {
         headers: {

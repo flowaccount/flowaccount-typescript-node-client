@@ -5,7 +5,7 @@ class UpgradeDocument {
         return UpgradeDocument.attributeTypeMap;
     }
 }
-UpgradeDocument.discriminator = "documentStructureType";
+UpgradeDocument.discriminator = undefined;
 UpgradeDocument.attributeTypeMap = [
     {
         "name": "recordId",

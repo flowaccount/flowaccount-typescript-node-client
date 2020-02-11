@@ -5,6 +5,9 @@ function __export(m) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __export(require("./authenResponse"));
 __export(require("./businessCategory"));
+__export(require("./contact"));
+__export(require("./contactResponse"));
+__export(require("./contactResponseAllOf"));
 __export(require("./document"));
 __export(require("./documentResponse"));
 __export(require("./expenseDocument"));
@@ -24,7 +27,12 @@ __export(require("./inlineObject3"));
 __export(require("./inlineObject4"));
 __export(require("./inlineProductItem"));
 __export(require("./inlineProductItemAllOf"));
+__export(require("./paymentDocument"));
+__export(require("./paymentDocumentResponse"));
+__export(require("./product"));
 __export(require("./productItem"));
+__export(require("./productResponse"));
+__export(require("./productResponseAllOf"));
 __export(require("./referencedByMe"));
 __export(require("./referencedToMe"));
 __export(require("./sendEmail"));
@@ -41,8 +49,15 @@ __export(require("./simpleDocumentResponseAllOf"));
 __export(require("./simpleProductItem"));
 __export(require("./statusResponse"));
 __export(require("./upgradeDocument"));
+__export(require("./withholidingTaxDocument"));
+__export(require("./withholidingTaxDocumentResponse"));
+__export(require("./withholidingTaxDocumentResponseData"));
+__export(require("./withholidingTaxItem"));
 const authenResponse_1 = require("./authenResponse");
 const businessCategory_1 = require("./businessCategory");
+const contact_1 = require("./contact");
+const contactResponse_1 = require("./contactResponse");
+const contactResponseAllOf_1 = require("./contactResponseAllOf");
 const document_1 = require("./document");
 const documentResponse_1 = require("./documentResponse");
 const expenseDocument_1 = require("./expenseDocument");
@@ -62,7 +77,12 @@ const inlineObject3_1 = require("./inlineObject3");
 const inlineObject4_1 = require("./inlineObject4");
 const inlineProductItem_1 = require("./inlineProductItem");
 const inlineProductItemAllOf_1 = require("./inlineProductItemAllOf");
+const paymentDocument_1 = require("./paymentDocument");
+const paymentDocumentResponse_1 = require("./paymentDocumentResponse");
+const product_1 = require("./product");
 const productItem_1 = require("./productItem");
+const productResponse_1 = require("./productResponse");
+const productResponseAllOf_1 = require("./productResponseAllOf");
 const referencedByMe_1 = require("./referencedByMe");
 const referencedToMe_1 = require("./referencedToMe");
 const sendEmail_1 = require("./sendEmail");
@@ -79,6 +99,10 @@ const simpleDocumentResponseAllOf_1 = require("./simpleDocumentResponseAllOf");
 const simpleProductItem_1 = require("./simpleProductItem");
 const statusResponse_1 = require("./statusResponse");
 const upgradeDocument_1 = require("./upgradeDocument");
+const withholidingTaxDocument_1 = require("./withholidingTaxDocument");
+const withholidingTaxDocumentResponse_1 = require("./withholidingTaxDocumentResponse");
+const withholidingTaxDocumentResponseData_1 = require("./withholidingTaxDocumentResponseData");
+const withholidingTaxItem_1 = require("./withholidingTaxItem");
 let primitives = [
     "string",
     "boolean",
@@ -93,6 +117,9 @@ let enumsMap = {};
 let typeMap = {
     "AuthenResponse": authenResponse_1.AuthenResponse,
     "BusinessCategory": businessCategory_1.BusinessCategory,
+    "Contact": contact_1.Contact,
+    "ContactResponse": contactResponse_1.ContactResponse,
+    "ContactResponseAllOf": contactResponseAllOf_1.ContactResponseAllOf,
     "Document": document_1.Document,
     "DocumentResponse": documentResponse_1.DocumentResponse,
     "ExpenseDocument": expenseDocument_1.ExpenseDocument,
@@ -112,7 +139,12 @@ let typeMap = {
     "InlineObject4": inlineObject4_1.InlineObject4,
     "InlineProductItem": inlineProductItem_1.InlineProductItem,
     "InlineProductItemAllOf": inlineProductItemAllOf_1.InlineProductItemAllOf,
+    "PaymentDocument": paymentDocument_1.PaymentDocument,
+    "PaymentDocumentResponse": paymentDocumentResponse_1.PaymentDocumentResponse,
+    "Product": product_1.Product,
     "ProductItem": productItem_1.ProductItem,
+    "ProductResponse": productResponse_1.ProductResponse,
+    "ProductResponseAllOf": productResponseAllOf_1.ProductResponseAllOf,
     "ReferencedByMe": referencedByMe_1.ReferencedByMe,
     "ReferencedToMe": referencedToMe_1.ReferencedToMe,
     "SendEmail": sendEmail_1.SendEmail,
@@ -129,6 +161,10 @@ let typeMap = {
     "SimpleProductItem": simpleProductItem_1.SimpleProductItem,
     "StatusResponse": statusResponse_1.StatusResponse,
     "UpgradeDocument": upgradeDocument_1.UpgradeDocument,
+    "WithholidingTaxDocument": withholidingTaxDocument_1.WithholidingTaxDocument,
+    "WithholidingTaxDocumentResponse": withholidingTaxDocumentResponse_1.WithholidingTaxDocumentResponse,
+    "WithholidingTaxDocumentResponseData": withholidingTaxDocumentResponseData_1.WithholidingTaxDocumentResponseData,
+    "WithholidingTaxItem": withholidingTaxItem_1.WithholidingTaxItem,
 };
 class ObjectSerializer {
     static findCorrectType(data, expectedType) {

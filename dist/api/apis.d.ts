@@ -5,14 +5,18 @@ export * from './billingNotesApi';
 import { BillingNotesApi } from './billingNotesApi';
 export * from './cashInvoiceApi';
 import { CashInvoiceApi } from './cashInvoiceApi';
+export * from './contactsApi';
+import { ContactsApi } from './contactsApi';
 export * from './expenseApi';
 import { ExpenseApi } from './expenseApi';
+export * from './productsApi';
+import { ProductsApi } from './productsApi';
 export * from './quotationsApi';
 import { QuotationsApi } from './quotationsApi';
-export * from './reportApi';
-import { ReportApi } from './reportApi';
 export * from './taxInvoiceApi';
 import { TaxInvoiceApi } from './taxInvoiceApi';
+export * from './withholdingTaxApi';
+import { WithholdingTaxApi } from './withholdingTaxApi';
 import * as fs from 'fs';
 import * as http from 'http';
 export declare class HttpError extends Error {
@@ -29,4 +33,4 @@ export interface RequestDetailedFile {
     };
 }
 export declare type RequestFile = string | Buffer | fs.ReadStream | RequestDetailedFile;
-export declare const APIS: (typeof AuthenticationApi | typeof BillingNotesApi | typeof CashInvoiceApi | typeof ExpenseApi | typeof QuotationsApi | typeof ReportApi | typeof TaxInvoiceApi)[];
+export declare const APIS: (typeof AuthenticationApi | typeof BillingNotesApi | typeof CashInvoiceApi | typeof ContactsApi | typeof ExpenseApi | typeof ProductsApi | typeof QuotationsApi | typeof TaxInvoiceApi | typeof WithholdingTaxApi)[];

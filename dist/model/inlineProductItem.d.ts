@@ -1,6 +1,5 @@
 import { ProductItem } from './productItem';
 export declare class InlineProductItem extends ProductItem {
-    'discountAmountPercentage'?: number;
     'discountAmount'?: number;
     'vatRate'?: number;
     static discriminator: string | undefined;

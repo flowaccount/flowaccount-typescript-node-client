@@ -8,6 +8,11 @@ class InlineDocumentAllOf {
 InlineDocumentAllOf.discriminator = undefined;
 InlineDocumentAllOf.attributeTypeMap = [
     {
+        "name": "discountType",
+        "baseName": "discountType",
+        "type": "number"
+    },
+    {
         "name": "useInlineDiscount",
         "baseName": "useInlineDiscount",
         "type": "boolean"
@@ -33,8 +38,8 @@ InlineDocumentAllOf.attributeTypeMap = [
         "type": "Array<InlineProductItem>"
     },
     {
-        "name": "documentReferences",
-        "baseName": "documentReferences",
+        "name": "documentReference",
+        "baseName": "documentReference",
         "type": "Array<UpgradeDocument>"
     }
 ];
