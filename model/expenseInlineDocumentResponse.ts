@@ -12,7 +12,7 @@
 
 import { ExpenseInlineDocument } from './expenseInlineDocument';
 
-export class ExpensenlineDocumentResponse {
+export class ExpenseInlineDocumentResponse {
     /**
     * action success
     */
@@ -25,7 +25,7 @@ export class ExpensenlineDocumentResponse {
     * error code
     */
     'code'?: number;
-    'data'?: ExpenseInlineDocument;
+    'data'?: object & ExpenseInlineDocument;
 
     static discriminator: string | undefined = undefined;
 
@@ -48,11 +48,11 @@ export class ExpensenlineDocumentResponse {
         {
             "name": "data",
             "baseName": "data",
-            "type": "ExpenseInlineDocument"
+            "type": "object & ExpenseInlineDocument"
         }    ];
 
     static getAttributeTypeMap() {
-        return ExpensenlineDocumentResponse.attributeTypeMap;
+        return ExpenseInlineDocumentResponse.attributeTypeMap;
     }
 }
 

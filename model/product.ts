@@ -17,11 +17,11 @@ export class Product {
     */
     'type': number;
     /**
-    * รหัสสินค้า
+    * รหัสสินค้า <br> <ex>Example: P001</ex>
     */
     'code'?: string;
     /**
-    * ชื่อสินค้า
+    * ชื่อสินค้า <br> <ex>Example: Product</ex>
     */
     'name': string;
     /**
@@ -33,7 +33,7 @@ export class Product {
     */
     'sellPrice'?: number;
     /**
-    * ภาษีขาย
+    * ภาษีขาย: <br> 1 = ราคาขายรวมภาษี <br> 3 = ราคาขายไม่รวมภาษี <br> 5 = ราคาขายภาษี 0% <br> 7 = ราคาขายสินค้าได้รับการยกเว้นภาษี
     */
     'sellVatType'?: number;
     /**
@@ -57,15 +57,15 @@ export class Product {
     */
     'buyPrice'?: number;
     /**
-    * ภาษีขาย
+    * ภาษีซื้อ: <br> 1 = ราคาซื้อรวมภาษี <br> 3 = ราคาซื้อไม่รวมภาษี <br> 5 = ราคาซื้อภาษี 0% <br> 7 = ราคาซื้อสินค้าได้รับการยกเว้นภาษี
     */
     'buyVatType'?: number;
     /**
-    * วันที่ตั้งต้นสินค้า รูปแบบ yyyy-MM-dd
+    * วันที่ตั้งต้นสินค้า รูปแบบ yyyy-MM-dd <br> <ex>Example: 2020-01-01</ex>
     */
     'inventoryPublishedOn'?: string;
     /**
-    * ราคาซื้อสินค้า
+    * จำนวนยอดตั้งต้นสินค้า
     */
     'inventoryQuantity'?: number;
     /**

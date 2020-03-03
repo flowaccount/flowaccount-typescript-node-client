@@ -17,7 +17,7 @@ export class Document {
     */
     'contactCode'?: string;
     /**
-    * ชื่อ ลูกค้า/ผู้จำหน่าย
+    * ชื่อ ลูกค้า/ผู้จำหน่าย <br> <ex>Example: บริษัท ลูกค้า จำกัด, คุณลูกค้า ซื้อประจำ</ex>
     */
     'contactName': string;
     /**
@@ -25,7 +25,7 @@ export class Document {
     */
     'contactAddress'?: string;
     /**
-    * เลขประจำตัวผู้เสียภาษี ลูกค้า/ผู้จำหน่าย
+    * เลขประจำตัวผู้เสียภาษี ลูกค้า หรือ ผู้จำหน่าย/ลูกค้า <br> (ถ้ามีจำเป็นต้องครบ 13 หลัก) <br> <ex>Example: 1234567890123 </ex>
     */
     'contactTaxId'?: string;
     /**
@@ -37,11 +37,11 @@ export class Document {
     */
     'contactPerson'?: string;
     /**
-    * อีเมลผู้ติดต่อ
+    * อีเมลผู้ติดต่อ <br> <ex>Example: contact@email.com</ex>
     */
     'contactEmail'?: string;
     /**
-    * เบอร์มือถือผู้ติดต่อ
+    * เบอร์มือถือผู้ติดต่อ <br> <ex>Example: 099-999-9999</ex>
     */
     'contactNumber'?: string;
     /**
@@ -53,7 +53,7 @@ export class Document {
     */
     'contactGroup'?: number;
     /**
-    * วันที่เอกสาร รูปแบบ yyyy-MM-dd
+    * วันที่เอกสาร รูปแบบ yyyy-MM-dd <br> <ex>Example: 2020-01-01</ex>
     */
     'publishedOn': string;
     /**
@@ -61,15 +61,15 @@ export class Document {
     */
     'creditType'?: number;
     /**
-    * จำนวนวันที่ให้เครดิต
+    * จำนวนวันที่ให้เครดิต <br> <ex>Example: 30</ex>
     */
     'creditDays'?: number;
     /**
-    * วันครบกำหนดเอกสาร รูปแบบ yyyy-MM-dd
+    * วันครบกำหนดเอกสาร รูปแบบ yyyy-MM-dd <br> <ex>Example: 2020-01-01</ex>
     */
     'dueDate': string;
     /**
-    * ชื่อผู้สร้างเอกสาร หรือ ชื่อพนักงานขาย
+    * ชื่อผู้สร้างเอกสาร หรือ ชื่อพนักงานขาย <br> <ex>Example: sale@email.com or Mr.Sale Shop</ex>
     */
     'salesName'?: string;
     /**
@@ -77,13 +77,17 @@ export class Document {
     */
     'projectName'?: string;
     /**
-    * เลขที่อ้างอิง หรือ เลขที่เอกสารที่เกี่ยวข้อง
+    * เลขที่อ้างอิง หรือ เลขที่เอกสารที่เกี่ยวข้อง <br> <ex>Example: INV2020010001</ex>
     */
     'reference'?: string;
     /**
     * มูลค่าเอกสารรวมภาษีแล้วหรือไม่
     */
     'isVatInclusive'?: boolean;
+    /**
+    * เปิดใช้งานฟังก์ชั่น ปรับลดท้ายเอกสาร <br> (เฉพาะเอกสารใบกำกับภาษี / ใบเสร็จรับเงิน และ ใบเสร็จรับเงิน)
+    */
+    'useReceiptDeduction'?: boolean;
     /**
     * มูลค่ารวมเป็นเงิน
     */
@@ -120,6 +124,14 @@ export class Document {
     * ภาษี ณ ที่จ่าย (%)
     */
     'documentWithholdingTaxPercentage'?: number;
+    /**
+    * ประเภทรายการปรับลด <br> 1 = ส่วนลดพิเศษ <br> 3 = ค่านายหน้าและส่วนแบ่งการขาย <br> 5 = ค่าดำเนินการ <br> 7 = ปัดเศษ <br> (เฉพาะเอกสารใบกำกับภาษี/ใบเสร็จรับเงิน)
+    */
+    'documentDeductionType'?: number;
+    /**
+    * จำนวนเงินยอดรายการปรับลด <br> (เฉพาะเอกสารใบกำกับภาษี/ใบเสร็จรับเงิน)
+    */
+    'documentDeductionAmount'?: number;
     /**
     * หมายเหตุเอกสาร
     */
@@ -228,6 +240,11 @@ export class Document {
             "type": "boolean"
         },
         {
+            "name": "useReceiptDeduction",
+            "baseName": "useReceiptDeduction",
+            "type": "boolean"
+        },
+        {
             "name": "subTotal",
             "baseName": "subTotal",
             "type": "number"
@@ -270,6 +287,16 @@ export class Document {
         {
             "name": "documentWithholdingTaxPercentage",
             "baseName": "documentWithholdingTaxPercentage",
+            "type": "number"
+        },
+        {
+            "name": "documentDeductionType",
+            "baseName": "documentDeductionType",
+            "type": "number"
+        },
+        {
+            "name": "documentDeductionAmount",
+            "baseName": "documentDeductionAmount",
             "type": "number"
         },
         {

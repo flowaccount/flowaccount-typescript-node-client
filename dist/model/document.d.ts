@@ -17,6 +17,7 @@ export declare class Document {
     'projectName'?: string;
     'reference'?: string;
     'isVatInclusive'?: boolean;
+    'useReceiptDeduction'?: boolean;
     'subTotal'?: number;
     'discountPercentage'?: number;
     'discountAmount'?: number;
@@ -26,6 +27,8 @@ export declare class Document {
     'grandTotal': number;
     'documentShowWithholdingTax'?: boolean;
     'documentWithholdingTaxPercentage'?: number;
+    'documentDeductionType'?: number;
+    'documentDeductionAmount'?: number;
     'remarks'?: string;
     'internalNotes'?: string;
     'showSignatureOrStamp'?: boolean;

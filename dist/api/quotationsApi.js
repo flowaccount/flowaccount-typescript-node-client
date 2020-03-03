@@ -173,6 +173,13 @@ class QuotationsApi {
                 .replace('{' + 'id' + '}', encodeURIComponent(String(id)));
             let localVarQueryParameters = {};
             let localVarHeaderParams = Object.assign({}, this.defaultHeaders);
+            const produces = ['application/json'];
+            if (produces.indexOf('application/json') >= 0) {
+                localVarHeaderParams.Accept = 'application/json';
+            }
+            else {
+                localVarHeaderParams.Accept = produces.join(',');
+            }
             let localVarFormParams = {};
             if (authorization === null || authorization === undefined) {
                 throw new Error('Required parameter authorization was null or undefined when calling quotationsIdAttachmentPost.');
@@ -212,6 +219,7 @@ class QuotationsApi {
                             reject(error);
                         }
                         else {
+                            body = models_1.ObjectSerializer.deserialize(body, "AttachmentResponse");
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
                                 resolve({ response: response, body: body });
                             }

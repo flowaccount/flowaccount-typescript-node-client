@@ -39,7 +39,7 @@ export class ContactResponse {
     */
     'contactAddress'?: string;
     /**
-    * เลขประจำตัวผู้เสียภาษี 13 หลัก
+    * เลขประจำตัวผู้เสียภาษี 13 หลัก ​<br><ex>Example: 1234567890123</ex>
     */
     'contactTaxId'?: number;
     /**
@@ -55,11 +55,11 @@ export class ContactResponse {
     */
     'contactPerson'?: string;
     /**
-    * อีเมลผู้ติดต่อ
+    * อีเมลผู้ติดต่อ <br> <ex>Example: contact@email.com</ex>
     */
     'contactEmail'?: string;
     /**
-    * เบอร์มือถือผู้ติดต่อ
+    * เบอร์มือถือผู้ติดต่อ <br> <ex>Example: 099-999-9999</ex>
     */
     'contactMobile'?: string;
     /**
@@ -67,31 +67,31 @@ export class ContactResponse {
     */
     'contactBankId'?: number;
     /**
-    * เลขที่บัญชีธนาคาร
+    * เลขที่บัญชีธนาคาร <br> <ex>Example: 1111111111</ex>
     */
     'contactBankAccountNumber'?: number;
     /**
-    * สาขาธนาคาร
+    * สาขาธนาคาร <br> <ex>Example: บางรัก</ex>
     */
     'contactBankBranch'?: string;
     /**
-    * เบอร์โทรศัพท์มือถือผู้ติดต่อ
+    * ประเภทบัญชีธนาคาร: <br> 1 = บัญชีออมทรัพย์ <br> 3 = บัญชีกระแสรายวัน
     */
     'contactBankAccountType'?: number;
     /**
-    * เครดิต (วัน)
+    * เครดิต (วัน) <br> <ex>Example: 30</ex>
     */
     'contactCreditDays'?: number;
     /**
-    * เบอร์โทรศัพท์สำนักงาน
+    * เบอร์โทรศัพท์สำนักงาน <br> <ex>Example: 02-999-9999</ex>
     */
     'contactOffice'?: string;
     /**
-    * เบอร์โทรสาร
+    * เบอร์โทรสาร <br> <ex>Example: 02-888-8888</ex>
     */
     'contactFax'?: string;
     /**
-    * เว็บไซต์ ผู้ติดต่อ
+    * เว็บไซต์ ผู้ติดต่อ <br> <ex>Eample: www.flowaccount.com</ex>
     */
     'contactWebsite'?: string;
     /**

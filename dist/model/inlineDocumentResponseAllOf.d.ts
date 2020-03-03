@@ -1,7 +1,5 @@
-import { InlineDocument } from './inlineDocument';
-import { StatusResponse } from './statusResponse';
 export declare class InlineDocumentResponseAllOf {
-    'data'?: object & InlineDocument & StatusResponse;
+    'data'?: object;
     static discriminator: string | undefined;
     static attributeTypeMap: Array<{
         name: string;

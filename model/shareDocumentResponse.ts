@@ -10,20 +10,45 @@
  * Do not edit the class manually.
  */
 
+import { ShareDocumentResponseData } from './shareDocumentResponseData';
 
 export class ShareDocumentResponse {
     /**
-    * Link Document
+    * action success
     */
-    'link'?: string;
+    'status'?: boolean;
+    /**
+    * error message
+    */
+    'message'?: string;
+    /**
+    * error code
+    */
+    'code'?: number;
+    'data'?: ShareDocumentResponseData;
 
     static discriminator: string | undefined = undefined;
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
         {
-            "name": "link",
-            "baseName": "link",
+            "name": "status",
+            "baseName": "status",
+            "type": "boolean"
+        },
+        {
+            "name": "message",
+            "baseName": "message",
             "type": "string"
+        },
+        {
+            "name": "code",
+            "baseName": "code",
+            "type": "number"
+        },
+        {
+            "name": "data",
+            "baseName": "data",
+            "type": "ShareDocumentResponseData"
         }    ];
 
     static getAttributeTypeMap() {

@@ -1,3 +1,5 @@
+export * from './attachmentResponse';
+export * from './attachmentResponseData';
 export * from './authenResponse';
 export * from './businessCategory';
 export * from './contact';
@@ -8,9 +10,9 @@ export * from './documentResponse';
 export * from './expenseDocument';
 export * from './expenseDocumentResponse';
 export * from './expenseInlineDocument';
+export * from './expenseInlineDocumentResponse';
 export * from './expenseInlineProductItem';
 export * from './expenseSimpleProductItem';
-export * from './expensenlineDocumentResponse';
 export * from './inlineDocument';
 export * from './inlineDocumentAllOf';
 export * from './inlineDocumentResponse';
@@ -20,6 +22,7 @@ export * from './inlineObject1';
 export * from './inlineObject2';
 export * from './inlineObject3';
 export * from './inlineObject4';
+export * from './inlineObject5';
 export * from './inlineProductItem';
 export * from './inlineProductItemAllOf';
 export * from './paymentDocument';
@@ -27,22 +30,24 @@ export * from './paymentDocumentResponse';
 export * from './product';
 export * from './productItem';
 export * from './productResponse';
-export * from './productResponseAllOf';
+export * from './productResponseData';
 export * from './referencedByMe';
 export * from './referencedToMe';
 export * from './sendEmail';
 export * from './sendEmailCoppies';
 export * from './sendEmailCoppiesAllOf';
 export * from './sendEmailResponse';
+export * from './sendEmailResponseData';
 export * from './sendEmailSimple';
 export * from './shareDocument';
 export * from './shareDocumentResponse';
+export * from './shareDocumentResponseData';
 export * from './simpleDocument';
 export * from './simpleDocumentAllOf';
 export * from './simpleDocumentResponse';
 export * from './simpleDocumentResponseAllOf';
 export * from './simpleProductItem';
-export * from './statusResponse';
+export * from './statusDocument';
 export * from './upgradeDocument';
 export * from './withholidingTaxDocument';
 export * from './withholidingTaxDocumentResponse';
@@ -51,6 +56,8 @@ export * from './withholidingTaxItem';
 
 import localVarRequest = require('request');
 
+import { AttachmentResponse } from './attachmentResponse';
+import { AttachmentResponseData } from './attachmentResponseData';
 import { AuthenResponse } from './authenResponse';
 import { BusinessCategory } from './businessCategory';
 import { Contact } from './contact';
@@ -61,9 +68,9 @@ import { DocumentResponse } from './documentResponse';
 import { ExpenseDocument } from './expenseDocument';
 import { ExpenseDocumentResponse } from './expenseDocumentResponse';
 import { ExpenseInlineDocument } from './expenseInlineDocument';
+import { ExpenseInlineDocumentResponse } from './expenseInlineDocumentResponse';
 import { ExpenseInlineProductItem } from './expenseInlineProductItem';
 import { ExpenseSimpleProductItem } from './expenseSimpleProductItem';
-import { ExpensenlineDocumentResponse } from './expensenlineDocumentResponse';
 import { InlineDocument } from './inlineDocument';
 import { InlineDocumentAllOf } from './inlineDocumentAllOf';
 import { InlineDocumentResponse } from './inlineDocumentResponse';
@@ -73,6 +80,7 @@ import { InlineObject1 } from './inlineObject1';
 import { InlineObject2 } from './inlineObject2';
 import { InlineObject3 } from './inlineObject3';
 import { InlineObject4 } from './inlineObject4';
+import { InlineObject5 } from './inlineObject5';
 import { InlineProductItem } from './inlineProductItem';
 import { InlineProductItemAllOf } from './inlineProductItemAllOf';
 import { PaymentDocument } from './paymentDocument';
@@ -80,22 +88,24 @@ import { PaymentDocumentResponse } from './paymentDocumentResponse';
 import { Product } from './product';
 import { ProductItem } from './productItem';
 import { ProductResponse } from './productResponse';
-import { ProductResponseAllOf } from './productResponseAllOf';
+import { ProductResponseData } from './productResponseData';
 import { ReferencedByMe } from './referencedByMe';
 import { ReferencedToMe } from './referencedToMe';
 import { SendEmail } from './sendEmail';
 import { SendEmailCoppies } from './sendEmailCoppies';
 import { SendEmailCoppiesAllOf } from './sendEmailCoppiesAllOf';
 import { SendEmailResponse } from './sendEmailResponse';
+import { SendEmailResponseData } from './sendEmailResponseData';
 import { SendEmailSimple } from './sendEmailSimple';
 import { ShareDocument } from './shareDocument';
 import { ShareDocumentResponse } from './shareDocumentResponse';
+import { ShareDocumentResponseData } from './shareDocumentResponseData';
 import { SimpleDocument } from './simpleDocument';
 import { SimpleDocumentAllOf } from './simpleDocumentAllOf';
 import { SimpleDocumentResponse } from './simpleDocumentResponse';
 import { SimpleDocumentResponseAllOf } from './simpleDocumentResponseAllOf';
 import { SimpleProductItem } from './simpleProductItem';
-import { StatusResponse } from './statusResponse';
+import { StatusDocument } from './statusDocument';
 import { UpgradeDocument } from './upgradeDocument';
 import { WithholidingTaxDocument } from './withholidingTaxDocument';
 import { WithholidingTaxDocumentResponse } from './withholidingTaxDocumentResponse';
@@ -118,6 +128,8 @@ let enumsMap: {[index: string]: any} = {
 }
 
 let typeMap: {[index: string]: any} = {
+    "AttachmentResponse": AttachmentResponse,
+    "AttachmentResponseData": AttachmentResponseData,
     "AuthenResponse": AuthenResponse,
     "BusinessCategory": BusinessCategory,
     "Contact": Contact,
@@ -128,9 +140,9 @@ let typeMap: {[index: string]: any} = {
     "ExpenseDocument": ExpenseDocument,
     "ExpenseDocumentResponse": ExpenseDocumentResponse,
     "ExpenseInlineDocument": ExpenseInlineDocument,
+    "ExpenseInlineDocumentResponse": ExpenseInlineDocumentResponse,
     "ExpenseInlineProductItem": ExpenseInlineProductItem,
     "ExpenseSimpleProductItem": ExpenseSimpleProductItem,
-    "ExpensenlineDocumentResponse": ExpensenlineDocumentResponse,
     "InlineDocument": InlineDocument,
     "InlineDocumentAllOf": InlineDocumentAllOf,
     "InlineDocumentResponse": InlineDocumentResponse,
@@ -140,6 +152,7 @@ let typeMap: {[index: string]: any} = {
     "InlineObject2": InlineObject2,
     "InlineObject3": InlineObject3,
     "InlineObject4": InlineObject4,
+    "InlineObject5": InlineObject5,
     "InlineProductItem": InlineProductItem,
     "InlineProductItemAllOf": InlineProductItemAllOf,
     "PaymentDocument": PaymentDocument,
@@ -147,22 +160,24 @@ let typeMap: {[index: string]: any} = {
     "Product": Product,
     "ProductItem": ProductItem,
     "ProductResponse": ProductResponse,
-    "ProductResponseAllOf": ProductResponseAllOf,
+    "ProductResponseData": ProductResponseData,
     "ReferencedByMe": ReferencedByMe,
     "ReferencedToMe": ReferencedToMe,
     "SendEmail": SendEmail,
     "SendEmailCoppies": SendEmailCoppies,
     "SendEmailCoppiesAllOf": SendEmailCoppiesAllOf,
     "SendEmailResponse": SendEmailResponse,
+    "SendEmailResponseData": SendEmailResponseData,
     "SendEmailSimple": SendEmailSimple,
     "ShareDocument": ShareDocument,
     "ShareDocumentResponse": ShareDocumentResponse,
+    "ShareDocumentResponseData": ShareDocumentResponseData,
     "SimpleDocument": SimpleDocument,
     "SimpleDocumentAllOf": SimpleDocumentAllOf,
     "SimpleDocumentResponse": SimpleDocumentResponse,
     "SimpleDocumentResponseAllOf": SimpleDocumentResponseAllOf,
     "SimpleProductItem": SimpleProductItem,
-    "StatusResponse": StatusResponse,
+    "StatusDocument": StatusDocument,
     "UpgradeDocument": UpgradeDocument,
     "WithholidingTaxDocument": WithholidingTaxDocument,
     "WithholidingTaxDocumentResponse": WithholidingTaxDocumentResponse,

@@ -13,63 +13,63 @@
 
 export class BusinessCategory {
     /**
-    * id of category
+    * id ของหมวดหมู่ค่าใช้จ่าย
     */
     'id'?: number;
     /**
-    * system code
+    * เลขที่ system code หมวดหมู่ค่าใช้จ่าย (เลือกใช้ หมวดหมู่ค่าใช้จ่ายสำหรับธุรกิจ)
     */
     'systemCode'?: number;
     /**
-    * id of business category
+    * เลขที่ id หมวดหมู่ค่าใช้จ่าย (เลือกใช้ หมวดหมู่ค่าใช้จ่ายสำหรับธุรกิจ)
     */
     'categoryId'?: number;
     /**
-    * name local of category
+    * ชื่อหมวดหมู่ค่าใช้จ่าย
     */
     'categoryNameLocal'?: string;
     /**
-    * name foreign of category
+    * ชื่อหมวดหมู่ค่าใช้จ่าย (ภาษาอังกฤษ)
     */
     'categoryNameForeign'?: string;
     /**
-    * id of debit
+    * เลข id หมวดหมู่ค่าใช้จ่ายทางบัญชี ฝั่งเดบิต
     */
     'debitId'?: number;
     /**
-    * id of debit category
+    * เลขหมวดหมู่ ฝั่งเดบิต ของ หมวดหมู่ค่าใช้จ่าย
     */
     'debitCategory'?: number;
     /**
-    * code of debit category
+    * เลขที่หมวดหมู่ค่าใช้จ่ายทางบัญชี ฝั่งเดบิต
     */
     'debitCode'?: string;
     /**
-    * name local of debit
+    * ชื่อหมวดหมู่ค่าใช้จ่ายทางบัญชี ฝั่งเดบิต
     */
     'debitNameLocal'?: string;
     /**
-    * name foreign of debit
+    * ชื่อหมวดหมู่ค่าใช้จ่ายทางบัญชี ฝั่งเดบิต (ภาษาอังกฤษ)
     */
     'debitNameForeign'?: string;
     /**
-    * id of credit
+    * เลข id หมวดหมู่ค่าใช้จ่ายทางบัญชี ฝั่งเครดิิต
     */
     'creditId'?: number;
     /**
-    * id of credit category
+    * เลขหมวดหมู่ ฝั่งเครดิต ของ หมวดหมู่ค่าใช้จ่าย
     */
     'creditCategory'?: number;
     /**
-    * code of credit category
+    * เลขที่หมวดหมู่ค่าใช้จ่ายทางบัญชี ฝั่งเครดิต
     */
     'creditCode'?: string;
     /**
-    * name local of credit
+    * ชื่อหมวดหมู่ค่าใช้จ่ายทางบัญชี ฝั่งเครดิต 
     */
     'creditNameLocal'?: string;
     /**
-    * name foreign of credit
+    * ชื่อหมวดหมู่ค่าใช้จ่ายทางบัญชี ฝั่งเครดิต (ภาษาอังกฤษ)
     */
     'creditNameForeign'?: string;
     /**

@@ -18,11 +18,6 @@ WithholidingTaxDocumentResponseData.attributeTypeMap = [
         "type": "string"
     },
     {
-        "name": "status",
-        "baseName": "status",
-        "type": "number"
-    },
-    {
         "name": "contactCode",
         "baseName": "contactCode",
         "type": "string"
@@ -140,6 +135,26 @@ WithholidingTaxDocumentResponseData.attributeTypeMap = [
     {
         "name": "showSignatureOrStamp",
         "baseName": "showSignatureOrStamp",
+        "type": "boolean"
+    },
+    {
+        "name": "status",
+        "baseName": "status",
+        "type": "number"
+    },
+    {
+        "name": "statusString",
+        "baseName": "statusString",
+        "type": "number"
+    },
+    {
+        "name": "documentType",
+        "baseName": "documentType",
+        "type": "number"
+    },
+    {
+        "name": "allowDelete",
+        "baseName": "allowDelete",
         "type": "boolean"
     }
 ];

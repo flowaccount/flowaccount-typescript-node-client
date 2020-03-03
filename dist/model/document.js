@@ -98,6 +98,11 @@ Document.attributeTypeMap = [
         "type": "boolean"
     },
     {
+        "name": "useReceiptDeduction",
+        "baseName": "useReceiptDeduction",
+        "type": "boolean"
+    },
+    {
         "name": "subTotal",
         "baseName": "subTotal",
         "type": "number"
@@ -140,6 +145,16 @@ Document.attributeTypeMap = [
     {
         "name": "documentWithholdingTaxPercentage",
         "baseName": "documentWithholdingTaxPercentage",
+        "type": "number"
+    },
+    {
+        "name": "documentDeductionType",
+        "baseName": "documentDeductionType",
+        "type": "number"
+    },
+    {
+        "name": "documentDeductionAmount",
+        "baseName": "documentDeductionAmount",
         "type": "number"
     },
     {

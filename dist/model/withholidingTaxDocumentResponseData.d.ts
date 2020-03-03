@@ -2,7 +2,6 @@ import { WithholidingTaxItem } from './withholidingTaxItem';
 export declare class WithholidingTaxDocumentResponseData {
     'documentId'?: string;
     'documentSerial'?: string;
-    'status'?: number;
     'contactCode'?: string;
     'contactName'?: string;
     'contactAddress'?: string;
@@ -27,6 +26,10 @@ export declare class WithholidingTaxDocumentResponseData {
     'remarks'?: string;
     'internalNotes'?: string;
     'showSignatureOrStamp'?: boolean;
+    'status'?: number;
+    'statusString'?: number;
+    'documentType'?: number;
+    'allowDelete'?: boolean;
     static discriminator: string | undefined;
     static attributeTypeMap: Array<{
         name: string;

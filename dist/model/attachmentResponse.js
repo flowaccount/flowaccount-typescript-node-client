@@ -1,12 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-class ExpensenlineDocumentResponse {
+class AttachmentResponse {
     static getAttributeTypeMap() {
-        return ExpensenlineDocumentResponse.attributeTypeMap;
+        return AttachmentResponse.attributeTypeMap;
     }
 }
-ExpensenlineDocumentResponse.discriminator = undefined;
-ExpensenlineDocumentResponse.attributeTypeMap = [
+AttachmentResponse.discriminator = undefined;
+AttachmentResponse.attributeTypeMap = [
     {
         "name": "status",
         "baseName": "status",
@@ -25,8 +25,8 @@ ExpensenlineDocumentResponse.attributeTypeMap = [
     {
         "name": "data",
         "baseName": "data",
-        "type": "ExpenseInlineDocument"
+        "type": "AttachmentResponseData"
     }
 ];
-exports.ExpensenlineDocumentResponse = ExpensenlineDocumentResponse;
-//# sourceMappingURL=expensenlineDocumentResponse.js.map
+exports.AttachmentResponse = AttachmentResponse;
+//# sourceMappingURL=attachmentResponse.js.map

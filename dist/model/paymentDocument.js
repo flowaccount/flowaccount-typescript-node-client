@@ -13,8 +13,8 @@ PaymentDocument.attributeTypeMap = [
         "type": "number"
     },
     {
-        "name": "dateNow",
-        "baseName": "dateNow",
+        "name": "paymentDate",
+        "baseName": "paymentDate",
         "type": "string"
     },
     {
@@ -28,8 +28,8 @@ PaymentDocument.attributeTypeMap = [
         "type": "number"
     },
     {
-        "name": "deductionAmount",
-        "baseName": "deductionAmount",
+        "name": "paymentDeductionAmount",
+        "baseName": "paymentDeductionAmount",
         "type": "number"
     },
     {
@@ -43,8 +43,8 @@ PaymentDocument.attributeTypeMap = [
         "type": "number"
     },
     {
-        "name": "charge",
-        "baseName": "charge",
+        "name": "paymentCharge",
+        "baseName": "paymentCharge",
         "type": "number"
     },
     {
@@ -59,7 +59,7 @@ PaymentDocument.attributeTypeMap = [
     },
     {
         "name": "bankAccountId",
-        "baseName": "BankAccountId",
+        "baseName": "bankAccountId",
         "type": "number"
     },
     {
@@ -83,8 +83,8 @@ PaymentDocument.attributeTypeMap = [
         "type": "number"
     },
     {
-        "name": "remarks",
-        "baseName": "remarks",
+        "name": "paymentRemarks",
+        "baseName": "paymentRemarks",
         "type": "string"
     },
     {

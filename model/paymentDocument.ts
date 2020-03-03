@@ -20,9 +20,9 @@ export class PaymentDocument {
     */
     'documentId': number;
     /**
-    * วันที่รับชำระเงิน / วันที่ชำระเงิน รูปแบบ yyyy-MM-dd
+    * วันที่รับชำระเงิน / วันที่ชำระเงิน รูปแบบ yyyy-MM-dd <br> <ex>Example: 2020-01-01</ex>
     */
-    'dateNow': string;
+    'paymentDate': string;
     /**
     * จำนวนเงินยอดรับสุทธิ
     */
@@ -34,7 +34,7 @@ export class PaymentDocument {
     /**
     * จำนวนเงินยอดรายการปรับลด <br> (เฉพาะเอกสารใบกำกับภาษี/ใบเสร็จรับเงิน)
     */
-    'deductionAmount'?: number;
+    'paymentDeductionAmount'?: number;
     /**
     * เปอร์เซ็น หัก ณ ที่จ่าย
     */
@@ -46,7 +46,7 @@ export class PaymentDocument {
     /**
     * ค่าธรรมเนียม ที่ชำระโดยการโอนเงิน หรือ เช็ค <br> (เฉพาะเอกสารค่าใช้จ่าย)
     */
-    'charge'?: number;
+    'paymentCharge'?: number;
     /**
     * ประเภทการเก็บเงิน <br> 1 = เงินสด <br> 3 = เช็ค <br> 5 = โอนเงิน <br> 7 = บัตรเครดิต
     */
@@ -56,15 +56,15 @@ export class PaymentDocument {
     */
     'transferBankAccountId'?: number;
     /**
-    * บัญชีธนาคารที่ใช้รับชำระเงิน
+    * บัญชีธนาคารที่ใช้รับชำระเงิน <br> <ex>Example: 1012013014</ex>
     */
     'bankAccountId'?: number;
     /**
-    * วันที่หน้าเช็ค รูปแบบ yyyy-MM-dd
+    * วันที่หน้าเช็ค รูปแบบ yyyy-MM-dd <br> <ex>Example: 2020-01-01</ex>
     */
     'chequeDate'?: string;
     /**
-    * เลขที่เช็คธนาคาร
+    * เลขที่เช็คธนาคาร <br> <ex>Example: 122-122-122</ex>
     */
     'chequeNumber'?: string;
     /**
@@ -78,7 +78,7 @@ export class PaymentDocument {
     /**
     * หมายเหตุ การรับชำระเงิน หรือ จ่ายเงิน
     */
-    'remarks'?: string;
+    'paymentRemarks'?: string;
     /**
     * สาเหตุเงินขาด เงินเกิน <br> 51 = เงินขาดหรือเงินกิน <br> 55 = ค่าธรรมเนียมธนาคาร 
     */
@@ -97,8 +97,8 @@ export class PaymentDocument {
             "type": "number"
         },
         {
-            "name": "dateNow",
-            "baseName": "dateNow",
+            "name": "paymentDate",
+            "baseName": "paymentDate",
             "type": "string"
         },
         {
@@ -112,8 +112,8 @@ export class PaymentDocument {
             "type": "number"
         },
         {
-            "name": "deductionAmount",
-            "baseName": "deductionAmount",
+            "name": "paymentDeductionAmount",
+            "baseName": "paymentDeductionAmount",
             "type": "number"
         },
         {
@@ -127,8 +127,8 @@ export class PaymentDocument {
             "type": "number"
         },
         {
-            "name": "charge",
-            "baseName": "charge",
+            "name": "paymentCharge",
+            "baseName": "paymentCharge",
             "type": "number"
         },
         {
@@ -143,7 +143,7 @@ export class PaymentDocument {
         },
         {
             "name": "bankAccountId",
-            "baseName": "BankAccountId",
+            "baseName": "bankAccountId",
             "type": "number"
         },
         {
@@ -167,8 +167,8 @@ export class PaymentDocument {
             "type": "number"
         },
         {
-            "name": "remarks",
-            "baseName": "remarks",
+            "name": "paymentRemarks",
+            "baseName": "paymentRemarks",
             "type": "string"
         },
         {

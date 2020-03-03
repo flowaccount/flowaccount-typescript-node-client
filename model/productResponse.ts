@@ -10,157 +10,45 @@
  * Do not edit the class manually.
  */
 
-import { Product } from './product';
-import { ProductResponseAllOf } from './productResponseAllOf';
+import { ProductResponseData } from './productResponseData';
 
 export class ProductResponse {
     /**
-    * เลข id Product
+    * action success
     */
-    'id'?: number;
+    'status'?: boolean;
     /**
-    * ประเภทสินค้า: 1 = บริการ / 3 = ไม่นับสต๊อก / 5 = นับสต๊อก
+    * error message
     */
-    'type': number;
+    'message'?: string;
     /**
-    * รหัสสินค้า
+    * error code
     */
-    'code'?: string;
-    /**
-    * ชื่อสินค้า
-    */
-    'name': string;
-    /**
-    * รายละเอียดสินค้า ฝั่งขาย
-    */
-    'sellDescription'?: string;
-    /**
-    * ราคาขายสินค้า
-    */
-    'sellPrice'?: number;
-    /**
-    * ภาษีขาย
-    */
-    'sellVatType'?: number;
-    /**
-    * หน่วยสินค้า
-    */
-    'unitName'?: string;
-    /**
-    * หมวดสินค้า
-    */
-    'categoryName'?: string;
-    /**
-    * บาร์โค้ด
-    */
-    'barcode'?: string;
-    /**
-    * รายละเอียดสินค้า ฝั่งซื้อ
-    */
-    'buyDescription'?: string;
-    /**
-    * ราคาซื้อสินค้า
-    */
-    'buyPrice'?: number;
-    /**
-    * ภาษีขาย
-    */
-    'buyVatType'?: number;
-    /**
-    * วันที่ตั้งต้นสินค้า รูปแบบ yyyy-MM-dd
-    */
-    'inventoryPublishedOn'?: string;
-    /**
-    * ราคาซื้อสินค้า
-    */
-    'inventoryQuantity'?: number;
-    /**
-    * ราคาซื้อสินค้า
-    */
-    'inventoryPrice'?: number;
+    'code'?: number;
+    'data'?: ProductResponseData;
 
     static discriminator: string | undefined = undefined;
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
         {
-            "name": "id",
-            "baseName": "id",
-            "type": "number"
+            "name": "status",
+            "baseName": "status",
+            "type": "boolean"
         },
         {
-            "name": "type",
-            "baseName": "type",
-            "type": "number"
+            "name": "message",
+            "baseName": "message",
+            "type": "string"
         },
         {
             "name": "code",
             "baseName": "code",
-            "type": "string"
-        },
-        {
-            "name": "name",
-            "baseName": "name",
-            "type": "string"
-        },
-        {
-            "name": "sellDescription",
-            "baseName": "sellDescription",
-            "type": "string"
-        },
-        {
-            "name": "sellPrice",
-            "baseName": "sellPrice",
             "type": "number"
         },
         {
-            "name": "sellVatType",
-            "baseName": "sellVatType",
-            "type": "number"
-        },
-        {
-            "name": "unitName",
-            "baseName": "unitName",
-            "type": "string"
-        },
-        {
-            "name": "categoryName",
-            "baseName": "categoryName",
-            "type": "string"
-        },
-        {
-            "name": "barcode",
-            "baseName": "barcode",
-            "type": "string"
-        },
-        {
-            "name": "buyDescription",
-            "baseName": "buyDescription",
-            "type": "string"
-        },
-        {
-            "name": "buyPrice",
-            "baseName": "buyPrice",
-            "type": "number"
-        },
-        {
-            "name": "buyVatType",
-            "baseName": "buyVatType",
-            "type": "number"
-        },
-        {
-            "name": "inventoryPublishedOn",
-            "baseName": "inventoryPublishedOn",
-            "type": "string"
-        },
-        {
-            "name": "inventoryQuantity",
-            "baseName": "inventoryQuantity",
-            "type": "number"
-        },
-        {
-            "name": "inventoryPrice",
-            "baseName": "inventoryPrice",
-            "type": "number"
+            "name": "data",
+            "baseName": "data",
+            "type": "ProductResponseData"
         }    ];
 
     static getAttributeTypeMap() {

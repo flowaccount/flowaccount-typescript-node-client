@@ -35,7 +35,7 @@ export class InlineDocumentAllOf {
     */
     'vatableAmount'?: number;
     /**
-    * รายการสินค้าใช้งานสำหรับเอกสาร Inline
+    * รายการสินค้าใช้งานสำหรับเอกสาร Simple
     */
     'items'?: Array<InlineProductItem>;
     /**

@@ -1,5 +1,9 @@
-export declare class ProductResponseAllOf {
-    'id'?: number;
+import { AttachmentResponseData } from './attachmentResponseData';
+export declare class AttachmentResponse {
+    'status'?: boolean;
+    'message'?: string;
+    'code'?: number;
+    'data'?: AttachmentResponseData;
     static discriminator: string | undefined;
     static attributeTypeMap: Array<{
         name: string;

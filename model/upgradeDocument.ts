@@ -20,11 +20,11 @@ export class UpgradeDocument {
     */
     'recordId': number;
     /**
-    * เลขที่เอกสารต้นทาง
+    * เลขที่เอกสารต้นทาง <br> <ex>Example: QT20200101</ex>
     */
     'referenceDocumentSerial': string;
     /**
-    * เลขประเภทของเอกสารต้นทาง <br> Quotaions = 3 <br> Billing Notes = 5 <br> Tax Invoices = 7
+    * เลขประเภทของเอกสารต้นทาง <br> Quotaions = 3 <br> Billing Notes = 5 <br> Tax Invoices = 7 <br> <ex>Example: 3</ex>
     */
     'referenceDocumentType': number;
 

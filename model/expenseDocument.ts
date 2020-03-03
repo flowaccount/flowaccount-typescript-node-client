@@ -30,7 +30,7 @@ export class ExpenseDocument {
     */
     'contactAddress'?: string;
     /**
-    * เลขประจำตัวผู้เสียภาษี ผู้จำหน่าย หรือ ผู้จำหน่าย/ลูกค้า
+    * เลขประจำตัวผู้เสียภาษี ผู้จำหน่าย หรือ ผู้จำหน่าย/ลูกค้า <br> (ถ้ามีจำเป็นต้องครบ 13 หลัก) <br> <ex>Example: 1234567890123 </ex>
     */
     'contactTaxId'?: string;
     /**
@@ -42,11 +42,11 @@ export class ExpenseDocument {
     */
     'contactPerson'?: string;
     /**
-    * อีเมลผู้ติดต่อ
+    * อีเมลผู้ติดต่อ <br> <ex>Example: supplier@email.com</ex>
     */
     'contactEmail'?: string;
     /**
-    * เบอร์มือถือผู้ติดต่อ
+    * เบอร์มือถือผู้ติดต่อ <br> <ex>Example: 099-999-9999</ex>
     */
     'contactNumber'?: string;
     /**
@@ -58,7 +58,7 @@ export class ExpenseDocument {
     */
     'contactGroup'?: number;
     /**
-    * วันที่เอกสาร รูปแบบ yyyy-MM-dd
+    * วันที่เอกสาร รูปแบบ yyyy-MM-dd <br> <ex>Example: 2020-01-01</ex>
     */
     'publishedOn': string;
     /**
@@ -66,15 +66,15 @@ export class ExpenseDocument {
     */
     'creditType'?: number;
     /**
-    * จำนวนวันที่ให้เครดิต
+    * จำนวนวันที่ให้เครดิต <br> <ex>Example: 30</ex>
     */
     'creditDays'?: number;
     /**
-    * วันครบกำหนดเอกสาร รูปแบบ yyyy-MM-dd
+    * วันครบกำหนดเอกสาร รูปแบบ yyyy-MM-dd <br> <ex>Example: 2020-01-01</ex>
     */
     'dueDate'?: string;
     /**
-    * ชื่อผู้สร้างเอกสาร หรือ ชื่อพนักงานขาย
+    * ชื่อผู้สร้างเอกสาร หรือ ชื่อพนักงานขาย <br> <ex>Example: sale@email.com or Mr.Sale Shop</ex>
     */
     'salesName'?: string;
     /**
@@ -82,7 +82,7 @@ export class ExpenseDocument {
     */
     'projectName'?: string;
     /**
-    * เลขที่อ้างอิง หรือ เลขที่เอกสารที่เกี่ยวข้อง
+    * เลขที่อ้างอิง หรือ เลขที่เอกสารที่เกี่ยวข้อง <br> <ex>Example: INV2020010001</ex>
     */
     'reference'?: string;
     /**

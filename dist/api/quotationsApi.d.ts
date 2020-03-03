@@ -1,5 +1,6 @@
 /// <reference types="node" />
 import http = require('http');
+import { AttachmentResponse } from '../model/attachmentResponse';
 import { InlineDocument } from '../model/inlineDocument';
 import { InlineDocumentResponse } from '../model/inlineDocumentResponse';
 import { SendEmailResponse } from '../model/sendEmailResponse';
@@ -45,7 +46,7 @@ export declare class QuotationsApi {
         };
     }): Promise<{
         response: http.IncomingMessage;
-        body?: any;
+        body: AttachmentResponse;
     }>;
     quotationsIdGet(authorization: string, id: string, options?: {
         headers: {

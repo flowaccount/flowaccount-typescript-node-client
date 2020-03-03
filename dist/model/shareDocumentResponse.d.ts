@@ -1,5 +1,9 @@
+import { ShareDocumentResponseData } from './shareDocumentResponseData';
 export declare class ShareDocumentResponse {
-    'link'?: string;
+    'status'?: boolean;
+    'message'?: string;
+    'code'?: number;
+    'data'?: ShareDocumentResponseData;
     static discriminator: string | undefined;
     static attributeTypeMap: Array<{
         name: string;

@@ -1,9 +1,5 @@
-import { ExpenseInlineDocument } from './expenseInlineDocument';
-export declare class ExpensenlineDocumentResponse {
-    'status'?: boolean;
-    'message'?: string;
-    'code'?: number;
-    'data'?: ExpenseInlineDocument;
+export declare class ShareDocumentResponseData {
+    'link'?: string;
     static discriminator: string | undefined;
     static attributeTypeMap: Array<{
         name: string;

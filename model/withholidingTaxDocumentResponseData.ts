@@ -22,10 +22,6 @@ export class WithholidingTaxDocumentResponseData {
     */
     'documentSerial'?: string;
     /**
-    * สถานะเอกสาร แสดงสถานะดำเนินการแล้ว
-    */
-    'status'?: number;
-    /**
     * รหัส ผู้จำหน่าย หรือ ผู้จำหน่าย/ลูกค้า
     */
     'contactCode'?: string;
@@ -38,7 +34,7 @@ export class WithholidingTaxDocumentResponseData {
     */
     'contactAddress'?: string;
     /**
-    * เลขประจำตัวผู้เสียภาษี ผู้จำหน่าย หรือ ผู้จำหน่าย/ลูกค้า
+    * เลขประจำตัวผู้เสียภาษี ผู้จำหน่าย หรือ ผู้จำหน่าย/ลูกค้า <br> (ถ้ามีจำเป็นต้องครบ 13 หลัก) <br> <ex>Example: 1234567890123 </ex>
     */
     'contactTaxId'?: string;
     /**
@@ -50,11 +46,11 @@ export class WithholidingTaxDocumentResponseData {
     */
     'contactPerson'?: string;
     /**
-    * อีเมลผู้ติดต่อ
+    * อีเมลผู้ติดต่อ <br> <ex>Example: contact@email.com</ex>
     */
     'contactEmail'?: string;
     /**
-    * เบอร์มือถือผู้ติดต่อ
+    * เบอร์มือถือผู้ติดต่อ <br> <ex>Example: 099-999-9999</ex>
     */
     'contactNumber'?: string;
     /**
@@ -66,7 +62,7 @@ export class WithholidingTaxDocumentResponseData {
     */
     'contactGroup'?: number;
     /**
-    * วันที่เอกสาร รูปแบบ yyyy-MM-dd
+    * วันที่เอกสาร รูปแบบ yyyy-MM-dd <br> <ex>Example: 2020-01-01</ex>
     */
     'publishedOn'?: string;
     /**
@@ -74,7 +70,7 @@ export class WithholidingTaxDocumentResponseData {
     */
     'entity'?: number;
     /**
-    * ระบุปีของเอกสาร เช่น 2020 (สำหรับแบบฟอร์มเอกสาร ภงด 1ก หรือ ภงด 1ก (พิเศษ)
+    * ระบุปีของเอกสาร เช่น 2020 (สำหรับแบบฟอร์มเอกสาร ภงด 1ก หรือ ภงด 1ก (พิเศษ) Example: 2020
     */
     'textOther'?: string;
     /**
@@ -121,6 +117,22 @@ export class WithholidingTaxDocumentResponseData {
     * ลายเซ็นอิเล็กทรอนิกส์และตรายาง
     */
     'showSignatureOrStamp'?: boolean;
+    /**
+    * เลขสถานะเอกสารฉบับนี้
+    */
+    'status'?: number;
+    /**
+    * ชื่อสถานะเอกสารฉบับนี้
+    */
+    'statusString'?: number;
+    /**
+    * เลขประเภทเอกสารฉบับนี้
+    */
+    'documentType'?: number;
+    /**
+    * สามารถลบเอกสาร :<br> true = ลบได้ <br> false = ลบไม่ได้
+    */
+    'allowDelete'?: boolean;
 
     static discriminator: string | undefined = undefined;
 
@@ -134,11 +146,6 @@ export class WithholidingTaxDocumentResponseData {
             "name": "documentSerial",
             "baseName": "documentSerial",
             "type": "string"
-        },
-        {
-            "name": "status",
-            "baseName": "status",
-            "type": "number"
         },
         {
             "name": "contactCode",
@@ -258,6 +265,26 @@ export class WithholidingTaxDocumentResponseData {
         {
             "name": "showSignatureOrStamp",
             "baseName": "showSignatureOrStamp",
+            "type": "boolean"
+        },
+        {
+            "name": "status",
+            "baseName": "status",
+            "type": "number"
+        },
+        {
+            "name": "statusString",
+            "baseName": "statusString",
+            "type": "number"
+        },
+        {
+            "name": "documentType",
+            "baseName": "documentType",
+            "type": "number"
+        },
+        {
+            "name": "allowDelete",
+            "baseName": "allowDelete",
             "type": "boolean"
         }    ];
 

@@ -3,7 +3,7 @@ export declare class ExpenseDocumentResponse {
     'status'?: boolean;
     'message'?: string;
     'code'?: number;
-    'data'?: ExpenseDocument;
+    'data'?: object & ExpenseDocument;
     static discriminator: string | undefined;
     static attributeTypeMap: Array<{
         name: string;

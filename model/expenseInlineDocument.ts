@@ -30,7 +30,7 @@ export class ExpenseInlineDocument {
     */
     'contactAddress'?: string;
     /**
-    * เลขประจำตัวผู้เสียภาษี ผู้จำหน่าย หรือ ผู้จำหน่าย/ลูกค้า
+    * เลขประจำตัวผู้เสียภาษี ผู้จำหน่าย หรือ ผู้จำหน่าย/ลูกค้า <br> (ถ้ามีจำเป็นต้องครบ 13 หลัก) <br> <ex>Example: 1234567890123 </ex>
     */
     'contactTaxId'?: string;
     /**
@@ -42,11 +42,11 @@ export class ExpenseInlineDocument {
     */
     'contactPerson'?: string;
     /**
-    * อีเมลผู้ติดต่อ
+    * อีเมลผู้ติดต่อ <br> <ex>Example: email@email.com</ex>
     */
     'contactEmail'?: string;
     /**
-    * เบอร์มือถือผู้ติดต่อ
+    * เบอร์มือถือผู้ติดต่อ <br> <ex>Example: 099-999-9999</ex>
     */
     'contactNumber'?: string;
     /**
@@ -58,7 +58,7 @@ export class ExpenseInlineDocument {
     */
     'contactGroup'?: number;
     /**
-    * วันที่เอกสาร รูปแบบ yyyy-MM-dd
+    * วันที่เอกสาร รูปแบบ yyyy-MM-dd <br> <ex>Example: 2020-01-01</ex>
     */
     'publishedOn': string;
     /**
@@ -70,11 +70,11 @@ export class ExpenseInlineDocument {
     */
     'creditDays'?: number;
     /**
-    * วันครบกำหนดเอกสาร รูปแบบ yyyy-MM-dd
+    * วันครบกำหนดเอกสาร รูปแบบ yyyy-MM-dd <br> <ex>Example: 2020-01-01</ex>
     */
     'dueDate'?: string;
     /**
-    * ชื่อผู้สร้างเอกสาร หรือ ชื่อพนักงานขาย
+    * ชื่อผู้สร้างเอกสาร หรือ ชื่อพนักงานขาย <br> <ex>Example: sale@email.com or Mr.Sale Shop</ex>
     */
     'salesName'?: string;
     /**

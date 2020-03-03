@@ -10,38 +10,45 @@
  * Do not edit the class manually.
  */
 
+import { SendEmailResponseData } from './sendEmailResponseData';
 
 export class SendEmailResponse {
     /**
-    * Email sent successfully
+    * action success
+    */
+    'status'?: boolean;
+    /**
+    * error message
     */
     'message'?: string;
     /**
-    * Status
+    * error code
     */
-    'ok'?: boolean;
-    /**
-    * Change Status Complete
-    */
-    'successMsg'?: string;
+    'code'?: number;
+    'data'?: SendEmailResponseData;
 
     static discriminator: string | undefined = undefined;
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+        {
+            "name": "status",
+            "baseName": "status",
+            "type": "boolean"
+        },
         {
             "name": "message",
             "baseName": "message",
             "type": "string"
         },
         {
-            "name": "ok",
-            "baseName": "ok",
-            "type": "boolean"
+            "name": "code",
+            "baseName": "code",
+            "type": "number"
         },
         {
-            "name": "successMsg",
-            "baseName": "successMsg",
-            "type": "string"
+            "name": "data",
+            "baseName": "data",
+            "type": "SendEmailResponseData"
         }    ];
 
     static getAttributeTypeMap() {

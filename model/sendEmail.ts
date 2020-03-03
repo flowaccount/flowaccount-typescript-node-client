@@ -17,11 +17,11 @@ export class SendEmail {
     */
     'documentId': number;
     /**
-    * ใส่อีเมลผู้ส่ง
+    * ใส่อีเมลผู้ส่ง <br> <ex>Example: myemail@email.com</ex>
     */
     'fromemail': string;
     /**
-    * ใส่อีเมลผู้รับ
+    * ใส่อีเมลผู้รับ <br> <ex>Example: contact@email.com</ex>
     */
     'toemail': string;
     /**
@@ -29,11 +29,11 @@ export class SendEmail {
     */
     'cCMyself'?: boolean;
     /**
-    * สำเนา (CC)
+    * สำเนา (CC) <br> <ex>Example: cc@email.com</ex>
     */
     'ccEmail'?: string;
     /**
-    * สำเนาลับ (BCC)
+    * สำเนาลับ (BCC) <br> <ex>Example: bcc@email.com</ex>
     */
     'bccEmail'?: string;
     /**

@@ -10,11 +10,9 @@
  * Do not edit the class manually.
  */
 
-import { SimpleDocument } from './simpleDocument';
-import { StatusResponse } from './statusResponse';
 
 export class SimpleDocumentResponseAllOf {
-    'data'?: object & SimpleDocument & StatusResponse;
+    'data'?: object;
 
     static discriminator: string | undefined = undefined;
 
@@ -22,7 +20,7 @@ export class SimpleDocumentResponseAllOf {
         {
             "name": "data",
             "baseName": "data",
-            "type": "object & SimpleDocument & StatusResponse"
+            "type": "object"
         }    ];
 
     static getAttributeTypeMap() {

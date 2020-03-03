@@ -37,7 +37,7 @@ export class InlineDocument extends Document {
     */
     'vatableAmount'?: number;
     /**
-    * รายการสินค้าใช้งานสำหรับเอกสาร Inline
+    * รายการสินค้าใช้งานสำหรับเอกสาร Simple
     */
     'items'?: Array<InlineProductItem>;
     /**

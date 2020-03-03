@@ -1,22 +1,20 @@
 export declare class PaymentDocumentResponse {
-    'documentId'?: number;
     'paymentDate'?: string;
     'collected'?: number;
     'paymentDeductionType'?: number;
-    'deductionAmount'?: number;
+    'paymentDeductionAmount'?: number;
     'withheldPercentage'?: number;
     'withheldAmount'?: number;
-    'charge'?: number;
+    'paymentCharge'?: number;
     'paymentMethod'?: number;
     'paymentChannel'?: string;
-    'paymentRemarks'?: string;
+    'bankAccountType'?: number;
     'bankAccountName'?: string;
     'bankAccountNumber'?: string;
     'chequeDate'?: string;
     'chequeNumber'?: string;
-    'chequeBankAccountId'?: number;
     'creditCardBankAccountId'?: number;
-    'remarks'?: string;
+    'paymentRemarks'?: string;
     'remainingCollectedType'?: number;
     'remainingCollected'?: number;
     static discriminator: string | undefined;

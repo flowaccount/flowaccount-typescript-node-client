@@ -1,17 +1,21 @@
 /// <reference types="node" />
 import http = require('http');
+import { AttachmentResponse } from '../model/attachmentResponse';
 import { BusinessCategory } from '../model/businessCategory';
 import { ExpenseDocument } from '../model/expenseDocument';
 import { ExpenseDocumentResponse } from '../model/expenseDocumentResponse';
 import { ExpenseInlineDocument } from '../model/expenseInlineDocument';
-import { ExpensenlineDocumentResponse } from '../model/expensenlineDocumentResponse';
+import { ExpenseInlineDocumentResponse } from '../model/expenseInlineDocumentResponse';
 import { PaymentDocument } from '../model/paymentDocument';
-import { PaymentDocumentResponse } from '../model/paymentDocumentResponse';
+import { SendEmailResponse } from '../model/sendEmailResponse';
+import { SendEmailSimple } from '../model/sendEmailSimple';
+import { ShareDocument } from '../model/shareDocument';
+import { ShareDocumentResponse } from '../model/shareDocumentResponse';
 import { Authentication } from '../model/models';
 import { RequestFile } from './apis';
-export declare enum ExpenseApiApiKeys {
+export declare enum ExpensesApiApiKeys {
 }
-export declare class ExpenseApi {
+export declare class ExpensesApi {
     protected _basePath: string;
     protected defaultHeaders: any;
     protected _useQuerystring: boolean;
@@ -22,7 +26,7 @@ export declare class ExpenseApi {
     useQuerystring: boolean;
     basePath: string;
     setDefaultAuthentication(auth: Authentication): void;
-    setApiKey(key: ExpenseApiApiKeys, value: string): void;
+    setApiKey(key: ExpensesApiApiKeys, value: string): void;
     expensesCategoriesAccountingGet(authorization: string, options?: {
         headers: {
             [name: string]: string;
@@ -39,13 +43,21 @@ export declare class ExpenseApi {
         response: http.IncomingMessage;
         body: BusinessCategory;
     }>;
+    expensesEmailDocumentPost(authorization: string, sendEmailSimple: SendEmailSimple, options?: {
+        headers: {
+            [name: string]: string;
+        };
+    }): Promise<{
+        response: http.IncomingMessage;
+        body: SendEmailResponse;
+    }>;
     expensesGet(authorization: string, options?: {
         headers: {
             [name: string]: string;
         };
     }): Promise<{
         response: http.IncomingMessage;
-        body: ExpenseDocumentResponse;
+        body: ExpenseInlineDocumentResponse;
     }>;
     expensesIdAttachmentPost(authorization: string, id: string, file?: RequestFile, options?: {
         headers: {
@@ -53,7 +65,7 @@ export declare class ExpenseApi {
         };
     }): Promise<{
         response: http.IncomingMessage;
-        body?: any;
+        body: AttachmentResponse;
     }>;
     expensesIdGet(authorization: string, id: string, options?: {
         headers: {
@@ -61,15 +73,7 @@ export declare class ExpenseApi {
         };
     }): Promise<{
         response: http.IncomingMessage;
-        body: ExpenseDocumentResponse;
-    }>;
-    expensesIdInlineGet(authorization: string, id: string, options?: {
-        headers: {
-            [name: string]: string;
-        };
-    }): Promise<{
-        response: http.IncomingMessage;
-        body: ExpenseInlineDocument;
+        body: ExpenseInlineDocumentResponse;
     }>;
     expensesIdPaymentPost(authorization: string, id: string, paymentDocument: PaymentDocument, options?: {
         headers: {
@@ -77,7 +81,15 @@ export declare class ExpenseApi {
         };
     }): Promise<{
         response: http.IncomingMessage;
-        body: PaymentDocumentResponse;
+        body: ExpenseDocumentResponse;
+    }>;
+    expensesIdStatusKeyStatusIdPost(authorization: string, id: string, statusId: string, options?: {
+        headers: {
+            [name: string]: string;
+        };
+    }): Promise<{
+        response: http.IncomingMessage;
+        body: ExpenseInlineDocumentResponse;
     }>;
     expensesInlinePost(authorization: string, expenseInlineDocument: ExpenseInlineDocument, options?: {
         headers: {
@@ -85,7 +97,7 @@ export declare class ExpenseApi {
         };
     }): Promise<{
         response: http.IncomingMessage;
-        body: ExpensenlineDocumentResponse;
+        body: ExpenseInlineDocumentResponse;
     }>;
     expensesPost(authorization: string, expenseDocument: ExpenseDocument, options?: {
         headers: {
@@ -94,5 +106,13 @@ export declare class ExpenseApi {
     }): Promise<{
         response: http.IncomingMessage;
         body: ExpenseDocumentResponse;
+    }>;
+    expensesSharedocumentPost(authorization: string, shareDocument: ShareDocument, options?: {
+        headers: {
+            [name: string]: string;
+        };
+    }): Promise<{
+        response: http.IncomingMessage;
+        body: ShareDocumentResponse;
     }>;
 }

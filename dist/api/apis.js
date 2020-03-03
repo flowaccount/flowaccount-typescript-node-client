@@ -11,8 +11,8 @@ __export(require("./cashInvoiceApi"));
 const cashInvoiceApi_1 = require("./cashInvoiceApi");
 __export(require("./contactsApi"));
 const contactsApi_1 = require("./contactsApi");
-__export(require("./expenseApi"));
-const expenseApi_1 = require("./expenseApi");
+__export(require("./expensesApi"));
+const expensesApi_1 = require("./expensesApi");
 __export(require("./productsApi"));
 const productsApi_1 = require("./productsApi");
 __export(require("./quotationsApi"));
@@ -31,5 +31,5 @@ class HttpError extends Error {
     }
 }
 exports.HttpError = HttpError;
-exports.APIS = [authenticationApi_1.AuthenticationApi, billingNotesApi_1.BillingNotesApi, cashInvoiceApi_1.CashInvoiceApi, contactsApi_1.ContactsApi, expenseApi_1.ExpenseApi, productsApi_1.ProductsApi, quotationsApi_1.QuotationsApi, taxInvoiceApi_1.TaxInvoiceApi, withholdingTaxApi_1.WithholdingTaxApi];
+exports.APIS = [authenticationApi_1.AuthenticationApi, billingNotesApi_1.BillingNotesApi, cashInvoiceApi_1.CashInvoiceApi, contactsApi_1.ContactsApi, expensesApi_1.ExpensesApi, productsApi_1.ProductsApi, quotationsApi_1.QuotationsApi, taxInvoiceApi_1.TaxInvoiceApi, withholdingTaxApi_1.WithholdingTaxApi];
 //# sourceMappingURL=apis.js.map

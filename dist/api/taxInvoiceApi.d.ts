@@ -1,9 +1,9 @@
 /// <reference types="node" />
 import http = require('http');
+import { AttachmentResponse } from '../model/attachmentResponse';
 import { InlineDocument } from '../model/inlineDocument';
 import { InlineDocumentResponse } from '../model/inlineDocumentResponse';
 import { PaymentDocument } from '../model/paymentDocument';
-import { PaymentDocumentResponse } from '../model/paymentDocumentResponse';
 import { SendEmailCoppies } from '../model/sendEmailCoppies';
 import { SendEmailResponse } from '../model/sendEmailResponse';
 import { ShareDocument } from '../model/shareDocument';
@@ -26,6 +26,14 @@ export declare class TaxInvoiceApi {
     basePath: string;
     setDefaultAuthentication(auth: Authentication): void;
     setApiKey(key: TaxInvoiceApiApiKeys, value: string): void;
+    cashInvoicesIdStatusKeyStatusIdPost(authorization: string, id: string, statusId: string, options?: {
+        headers: {
+            [name: string]: string;
+        };
+    }): Promise<{
+        response: http.IncomingMessage;
+        body: InlineDocumentResponse;
+    }>;
     taxInvoicesEmailDocumentPost(authorization: string, sendEmailCoppies: SendEmailCoppies, options?: {
         headers: {
             [name: string]: string;
@@ -48,7 +56,7 @@ export declare class TaxInvoiceApi {
         };
     }): Promise<{
         response: http.IncomingMessage;
-        body?: any;
+        body: AttachmentResponse;
     }>;
     taxInvoicesIdGet(authorization: string, id: string, options?: {
         headers: {
@@ -64,7 +72,7 @@ export declare class TaxInvoiceApi {
         };
     }): Promise<{
         response: http.IncomingMessage;
-        body: PaymentDocumentResponse;
+        body: InlineDocumentResponse;
     }>;
     taxInvoicesIdStatusKeyStatusIdPost(authorization: string, id: string, statusId: string, options?: {
         headers: {

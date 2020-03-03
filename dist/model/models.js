@@ -3,6 +3,8 @@ function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
 Object.defineProperty(exports, "__esModule", { value: true });
+__export(require("./attachmentResponse"));
+__export(require("./attachmentResponseData"));
 __export(require("./authenResponse"));
 __export(require("./businessCategory"));
 __export(require("./contact"));
@@ -13,9 +15,9 @@ __export(require("./documentResponse"));
 __export(require("./expenseDocument"));
 __export(require("./expenseDocumentResponse"));
 __export(require("./expenseInlineDocument"));
+__export(require("./expenseInlineDocumentResponse"));
 __export(require("./expenseInlineProductItem"));
 __export(require("./expenseSimpleProductItem"));
-__export(require("./expensenlineDocumentResponse"));
 __export(require("./inlineDocument"));
 __export(require("./inlineDocumentAllOf"));
 __export(require("./inlineDocumentResponse"));
@@ -25,6 +27,7 @@ __export(require("./inlineObject1"));
 __export(require("./inlineObject2"));
 __export(require("./inlineObject3"));
 __export(require("./inlineObject4"));
+__export(require("./inlineObject5"));
 __export(require("./inlineProductItem"));
 __export(require("./inlineProductItemAllOf"));
 __export(require("./paymentDocument"));
@@ -32,27 +35,31 @@ __export(require("./paymentDocumentResponse"));
 __export(require("./product"));
 __export(require("./productItem"));
 __export(require("./productResponse"));
-__export(require("./productResponseAllOf"));
+__export(require("./productResponseData"));
 __export(require("./referencedByMe"));
 __export(require("./referencedToMe"));
 __export(require("./sendEmail"));
 __export(require("./sendEmailCoppies"));
 __export(require("./sendEmailCoppiesAllOf"));
 __export(require("./sendEmailResponse"));
+__export(require("./sendEmailResponseData"));
 __export(require("./sendEmailSimple"));
 __export(require("./shareDocument"));
 __export(require("./shareDocumentResponse"));
+__export(require("./shareDocumentResponseData"));
 __export(require("./simpleDocument"));
 __export(require("./simpleDocumentAllOf"));
 __export(require("./simpleDocumentResponse"));
 __export(require("./simpleDocumentResponseAllOf"));
 __export(require("./simpleProductItem"));
-__export(require("./statusResponse"));
+__export(require("./statusDocument"));
 __export(require("./upgradeDocument"));
 __export(require("./withholidingTaxDocument"));
 __export(require("./withholidingTaxDocumentResponse"));
 __export(require("./withholidingTaxDocumentResponseData"));
 __export(require("./withholidingTaxItem"));
+const attachmentResponse_1 = require("./attachmentResponse");
+const attachmentResponseData_1 = require("./attachmentResponseData");
 const authenResponse_1 = require("./authenResponse");
 const businessCategory_1 = require("./businessCategory");
 const contact_1 = require("./contact");
@@ -63,9 +70,9 @@ const documentResponse_1 = require("./documentResponse");
 const expenseDocument_1 = require("./expenseDocument");
 const expenseDocumentResponse_1 = require("./expenseDocumentResponse");
 const expenseInlineDocument_1 = require("./expenseInlineDocument");
+const expenseInlineDocumentResponse_1 = require("./expenseInlineDocumentResponse");
 const expenseInlineProductItem_1 = require("./expenseInlineProductItem");
 const expenseSimpleProductItem_1 = require("./expenseSimpleProductItem");
-const expensenlineDocumentResponse_1 = require("./expensenlineDocumentResponse");
 const inlineDocument_1 = require("./inlineDocument");
 const inlineDocumentAllOf_1 = require("./inlineDocumentAllOf");
 const inlineDocumentResponse_1 = require("./inlineDocumentResponse");
@@ -75,6 +82,7 @@ const inlineObject1_1 = require("./inlineObject1");
 const inlineObject2_1 = require("./inlineObject2");
 const inlineObject3_1 = require("./inlineObject3");
 const inlineObject4_1 = require("./inlineObject4");
+const inlineObject5_1 = require("./inlineObject5");
 const inlineProductItem_1 = require("./inlineProductItem");
 const inlineProductItemAllOf_1 = require("./inlineProductItemAllOf");
 const paymentDocument_1 = require("./paymentDocument");
@@ -82,22 +90,24 @@ const paymentDocumentResponse_1 = require("./paymentDocumentResponse");
 const product_1 = require("./product");
 const productItem_1 = require("./productItem");
 const productResponse_1 = require("./productResponse");
-const productResponseAllOf_1 = require("./productResponseAllOf");
+const productResponseData_1 = require("./productResponseData");
 const referencedByMe_1 = require("./referencedByMe");
 const referencedToMe_1 = require("./referencedToMe");
 const sendEmail_1 = require("./sendEmail");
 const sendEmailCoppies_1 = require("./sendEmailCoppies");
 const sendEmailCoppiesAllOf_1 = require("./sendEmailCoppiesAllOf");
 const sendEmailResponse_1 = require("./sendEmailResponse");
+const sendEmailResponseData_1 = require("./sendEmailResponseData");
 const sendEmailSimple_1 = require("./sendEmailSimple");
 const shareDocument_1 = require("./shareDocument");
 const shareDocumentResponse_1 = require("./shareDocumentResponse");
+const shareDocumentResponseData_1 = require("./shareDocumentResponseData");
 const simpleDocument_1 = require("./simpleDocument");
 const simpleDocumentAllOf_1 = require("./simpleDocumentAllOf");
 const simpleDocumentResponse_1 = require("./simpleDocumentResponse");
 const simpleDocumentResponseAllOf_1 = require("./simpleDocumentResponseAllOf");
 const simpleProductItem_1 = require("./simpleProductItem");
-const statusResponse_1 = require("./statusResponse");
+const statusDocument_1 = require("./statusDocument");
 const upgradeDocument_1 = require("./upgradeDocument");
 const withholidingTaxDocument_1 = require("./withholidingTaxDocument");
 const withholidingTaxDocumentResponse_1 = require("./withholidingTaxDocumentResponse");
@@ -115,6 +125,8 @@ let primitives = [
 ];
 let enumsMap = {};
 let typeMap = {
+    "AttachmentResponse": attachmentResponse_1.AttachmentResponse,
+    "AttachmentResponseData": attachmentResponseData_1.AttachmentResponseData,
     "AuthenResponse": authenResponse_1.AuthenResponse,
     "BusinessCategory": businessCategory_1.BusinessCategory,
     "Contact": contact_1.Contact,
@@ -125,9 +137,9 @@ let typeMap = {
     "ExpenseDocument": expenseDocument_1.ExpenseDocument,
     "ExpenseDocumentResponse": expenseDocumentResponse_1.ExpenseDocumentResponse,
     "ExpenseInlineDocument": expenseInlineDocument_1.ExpenseInlineDocument,
+    "ExpenseInlineDocumentResponse": expenseInlineDocumentResponse_1.ExpenseInlineDocumentResponse,
     "ExpenseInlineProductItem": expenseInlineProductItem_1.ExpenseInlineProductItem,
     "ExpenseSimpleProductItem": expenseSimpleProductItem_1.ExpenseSimpleProductItem,
-    "ExpensenlineDocumentResponse": expensenlineDocumentResponse_1.ExpensenlineDocumentResponse,
     "InlineDocument": inlineDocument_1.InlineDocument,
     "InlineDocumentAllOf": inlineDocumentAllOf_1.InlineDocumentAllOf,
     "InlineDocumentResponse": inlineDocumentResponse_1.InlineDocumentResponse,
@@ -137,6 +149,7 @@ let typeMap = {
     "InlineObject2": inlineObject2_1.InlineObject2,
     "InlineObject3": inlineObject3_1.InlineObject3,
     "InlineObject4": inlineObject4_1.InlineObject4,
+    "InlineObject5": inlineObject5_1.InlineObject5,
     "InlineProductItem": inlineProductItem_1.InlineProductItem,
     "InlineProductItemAllOf": inlineProductItemAllOf_1.InlineProductItemAllOf,
     "PaymentDocument": paymentDocument_1.PaymentDocument,
@@ -144,22 +157,24 @@ let typeMap = {
     "Product": product_1.Product,
     "ProductItem": productItem_1.ProductItem,
     "ProductResponse": productResponse_1.ProductResponse,
-    "ProductResponseAllOf": productResponseAllOf_1.ProductResponseAllOf,
+    "ProductResponseData": productResponseData_1.ProductResponseData,
     "ReferencedByMe": referencedByMe_1.ReferencedByMe,
     "ReferencedToMe": referencedToMe_1.ReferencedToMe,
     "SendEmail": sendEmail_1.SendEmail,
     "SendEmailCoppies": sendEmailCoppies_1.SendEmailCoppies,
     "SendEmailCoppiesAllOf": sendEmailCoppiesAllOf_1.SendEmailCoppiesAllOf,
     "SendEmailResponse": sendEmailResponse_1.SendEmailResponse,
+    "SendEmailResponseData": sendEmailResponseData_1.SendEmailResponseData,
     "SendEmailSimple": sendEmailSimple_1.SendEmailSimple,
     "ShareDocument": shareDocument_1.ShareDocument,
     "ShareDocumentResponse": shareDocumentResponse_1.ShareDocumentResponse,
+    "ShareDocumentResponseData": shareDocumentResponseData_1.ShareDocumentResponseData,
     "SimpleDocument": simpleDocument_1.SimpleDocument,
     "SimpleDocumentAllOf": simpleDocumentAllOf_1.SimpleDocumentAllOf,
     "SimpleDocumentResponse": simpleDocumentResponse_1.SimpleDocumentResponse,
     "SimpleDocumentResponseAllOf": simpleDocumentResponseAllOf_1.SimpleDocumentResponseAllOf,
     "SimpleProductItem": simpleProductItem_1.SimpleProductItem,
-    "StatusResponse": statusResponse_1.StatusResponse,
+    "StatusDocument": statusDocument_1.StatusDocument,
     "UpgradeDocument": upgradeDocument_1.UpgradeDocument,
     "WithholidingTaxDocument": withholidingTaxDocument_1.WithholidingTaxDocument,
     "WithholidingTaxDocumentResponse": withholidingTaxDocumentResponse_1.WithholidingTaxDocumentResponse,

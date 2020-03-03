@@ -1,5 +1,10 @@
 /// <reference types="node" />
 import http = require('http');
+import { InlineDocumentResponse } from '../model/inlineDocumentResponse';
+import { SendEmailCoppies } from '../model/sendEmailCoppies';
+import { SendEmailResponse } from '../model/sendEmailResponse';
+import { ShareDocument } from '../model/shareDocument';
+import { ShareDocumentResponse } from '../model/shareDocumentResponse';
 import { SimpleDocument } from '../model/simpleDocument';
 import { SimpleDocumentResponse } from '../model/simpleDocumentResponse';
 import { Authentication } from '../model/models';
@@ -17,21 +22,21 @@ export declare class CashInvoiceApi {
     basePath: string;
     setDefaultAuthentication(auth: Authentication): void;
     setApiKey(key: CashInvoiceApiApiKeys, value: string): void;
+    cashInvoicesEmailDocumentPost(authorization: string, sendEmailCoppies: SendEmailCoppies, options?: {
+        headers: {
+            [name: string]: string;
+        };
+    }): Promise<{
+        response: http.IncomingMessage;
+        body: SendEmailResponse;
+    }>;
     cashInvoicesGet(currentPage: string, pageSize: string, authorization: string, sortBy?: string, filter?: string, options?: {
         headers: {
             [name: string]: string;
         };
     }): Promise<{
         response: http.IncomingMessage;
-        body: SimpleDocumentResponse;
-    }>;
-    cashInvoicesIdDelete(authorization: string, id: string, options?: {
-        headers: {
-            [name: string]: string;
-        };
-    }): Promise<{
-        response: http.IncomingMessage;
-        body: object;
+        body: InlineDocumentResponse;
     }>;
     cashInvoicesIdGet(authorization: string, id: string, options?: {
         headers: {
@@ -39,15 +44,7 @@ export declare class CashInvoiceApi {
         };
     }): Promise<{
         response: http.IncomingMessage;
-        body: SimpleDocumentResponse;
-    }>;
-    cashInvoicesIdPut(authorization: string, id: string, options?: {
-        headers: {
-            [name: string]: string;
-        };
-    }): Promise<{
-        response: http.IncomingMessage;
-        body: SimpleDocumentResponse;
+        body: InlineDocumentResponse;
     }>;
     cashInvoicesPost(authorization: string, simpleDocument: SimpleDocument, options?: {
         headers: {
@@ -56,5 +53,13 @@ export declare class CashInvoiceApi {
     }): Promise<{
         response: http.IncomingMessage;
         body: SimpleDocumentResponse;
+    }>;
+    cashInvoicesSharedocumentPost(authorization: string, shareDocument: ShareDocument, options?: {
+        headers: {
+            [name: string]: string;
+        };
+    }): Promise<{
+        response: http.IncomingMessage;
+        body: ShareDocumentResponse;
     }>;
 }

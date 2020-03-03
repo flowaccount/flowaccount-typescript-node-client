@@ -14,7 +14,7 @@
 export class ProductItem {
     'documentStructureType': string;
     /**
-    * ประเภทสินค้า <br> 1 = บริการ <br> 3 = สินค้าไม่นับส๊อก <br> 5 = สินค้านับสต๊ฮก
+    * ประเภทสินค้า <br> 1 = บริการ (service) <br> 3 = สินค้าไม่นับสต๊อก (non inventory) <br> 5 = สินค้านับสต๊อก (inventory)
     */
     'type'?: number;
     /**

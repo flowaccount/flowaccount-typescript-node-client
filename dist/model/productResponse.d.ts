@@ -1,20 +1,9 @@
+import { ProductResponseData } from './productResponseData';
 export declare class ProductResponse {
-    'id'?: number;
-    'type': number;
-    'code'?: string;
-    'name': string;
-    'sellDescription'?: string;
-    'sellPrice'?: number;
-    'sellVatType'?: number;
-    'unitName'?: string;
-    'categoryName'?: string;
-    'barcode'?: string;
-    'buyDescription'?: string;
-    'buyPrice'?: number;
-    'buyVatType'?: number;
-    'inventoryPublishedOn'?: string;
-    'inventoryQuantity'?: number;
-    'inventoryPrice'?: number;
+    'status'?: boolean;
+    'message'?: string;
+    'code'?: number;
+    'data'?: ProductResponseData;
     static discriminator: string | undefined;
     static attributeTypeMap: Array<{
         name: string;

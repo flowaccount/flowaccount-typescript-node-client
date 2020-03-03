@@ -8,19 +8,24 @@ class SendEmailResponse {
 SendEmailResponse.discriminator = undefined;
 SendEmailResponse.attributeTypeMap = [
     {
+        "name": "status",
+        "baseName": "status",
+        "type": "boolean"
+    },
+    {
         "name": "message",
         "baseName": "message",
         "type": "string"
     },
     {
-        "name": "ok",
-        "baseName": "ok",
-        "type": "boolean"
+        "name": "code",
+        "baseName": "code",
+        "type": "number"
     },
     {
-        "name": "successMsg",
-        "baseName": "successMsg",
-        "type": "string"
+        "name": "data",
+        "baseName": "data",
+        "type": "SendEmailResponseData"
     }
 ];
 exports.SendEmailResponse = SendEmailResponse;

@@ -14,6 +14,7 @@ import localVarRequest = require('request');
 import http = require('http');
 
 /* tslint:disable:no-unused-locals */
+import { AttachmentResponse } from '../model/attachmentResponse';
 import { InlineDocument } from '../model/inlineDocument';
 import { InlineDocumentResponse } from '../model/inlineDocumentResponse';
 import { SendEmailCoppies } from '../model/sendEmailCoppies';
@@ -218,11 +219,18 @@ export class BillingNotesApi {
      * @param id documentId หรือ recordId ของเอกสารที่ต้องการแนบ
      * @param file รูปแบบ file ที่ใช้แนบในเอกสารเป็นแบบ Binary
      */
-    public async billingNotesIdAttachmentPost (authorization: string, id: string, file?: RequestFile, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body?: any;  }> {
+    public async billingNotesIdAttachmentPost (authorization: string, id: string, file?: RequestFile, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: AttachmentResponse;  }> {
         const localVarPath = this.basePath + '/billing-notes/{id}/attachment'
             .replace('{' + 'id' + '}', encodeURIComponent(String(id)));
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
+        const produces = ['application/json'];
+        // give precedence to 'application/json'
+        if (produces.indexOf('application/json') >= 0) {
+            localVarHeaderParams.Accept = 'application/json';
+        } else {
+            localVarHeaderParams.Accept = produces.join(',');
+        }
         let localVarFormParams: any = {};
 
         // verify required parameter 'authorization' is not null or undefined
@@ -264,11 +272,12 @@ export class BillingNotesApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.IncomingMessage; body?: any;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: AttachmentResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
                     } else {
+                        body = ObjectSerializer.deserialize(body, "AttachmentResponse");
                         if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
                             resolve({ response: response, body: body });
                         } else {
@@ -350,7 +359,7 @@ export class BillingNotesApi {
         });
     }
     /**
-     * เปลี่ยนสถานะของเอกสารใบวางบิล สร้างเอกสารใบวางบิลใหม่ครั้งแรกจะได้รับสถานะ รอวางบิล (awaiting)
+     * เปลี่ยนสถานะของเอกสารใบวางบิล สร้างเอกสารใหม่ครั้งแรกจะได้รับสถานะ รอวางบิล (awaiting)
      * @summary Change status of billing notes document.
      * @param authorization 
      * @param id ID เอกสารใช้ recordId

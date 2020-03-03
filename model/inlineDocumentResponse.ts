@@ -11,12 +11,10 @@
  */
 
 import { DocumentResponse } from './documentResponse';
-import { InlineDocument } from './inlineDocument';
 import { InlineDocumentResponseAllOf } from './inlineDocumentResponseAllOf';
-import { StatusResponse } from './statusResponse';
 
 export class InlineDocumentResponse extends DocumentResponse {
-    'data'?: object & InlineDocument & StatusResponse;
+    'data'?: object;
 
     static discriminator: string | undefined = undefined;
 
@@ -24,7 +22,7 @@ export class InlineDocumentResponse extends DocumentResponse {
         {
             "name": "data",
             "baseName": "data",
-            "type": "object & InlineDocument & StatusResponse"
+            "type": "object"
         }    ];
 
     static getAttributeTypeMap() {

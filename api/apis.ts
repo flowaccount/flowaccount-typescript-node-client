@@ -6,8 +6,8 @@ export * from './cashInvoiceApi';
 import { CashInvoiceApi } from './cashInvoiceApi';
 export * from './contactsApi';
 import { ContactsApi } from './contactsApi';
-export * from './expenseApi';
-import { ExpenseApi } from './expenseApi';
+export * from './expensesApi';
+import { ExpensesApi } from './expensesApi';
 export * from './productsApi';
 import { ProductsApi } from './productsApi';
 export * from './quotationsApi';
@@ -36,4 +36,4 @@ export interface RequestDetailedFile {
 
 export type RequestFile = string | Buffer | fs.ReadStream | RequestDetailedFile;
 
-export const APIS = [AuthenticationApi, BillingNotesApi, CashInvoiceApi, ContactsApi, ExpenseApi, ProductsApi, QuotationsApi, TaxInvoiceApi, WithholdingTaxApi];
+export const APIS = [AuthenticationApi, BillingNotesApi, CashInvoiceApi, ContactsApi, ExpensesApi, ProductsApi, QuotationsApi, TaxInvoiceApi, WithholdingTaxApi];

@@ -49,6 +49,67 @@ class CashInvoiceApi {
     setApiKey(key, value) {
         this.authentications[CashInvoiceApiApiKeys[key]].apiKey = value;
     }
+    cashInvoicesEmailDocumentPost(authorization, sendEmailCoppies, options = { headers: {} }) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const localVarPath = this.basePath + '/cash-invoices/email-document';
+            let localVarQueryParameters = {};
+            let localVarHeaderParams = Object.assign({}, this.defaultHeaders);
+            const produces = ['application/json'];
+            if (produces.indexOf('application/json') >= 0) {
+                localVarHeaderParams.Accept = 'application/json';
+            }
+            else {
+                localVarHeaderParams.Accept = produces.join(',');
+            }
+            let localVarFormParams = {};
+            if (authorization === null || authorization === undefined) {
+                throw new Error('Required parameter authorization was null or undefined when calling cashInvoicesEmailDocumentPost.');
+            }
+            if (sendEmailCoppies === null || sendEmailCoppies === undefined) {
+                throw new Error('Required parameter sendEmailCoppies was null or undefined when calling cashInvoicesEmailDocumentPost.');
+            }
+            localVarHeaderParams['Authorization'] = models_1.ObjectSerializer.serialize(authorization, "string");
+            Object.assign(localVarHeaderParams, options.headers);
+            let localVarUseFormData = false;
+            let localVarRequestOptions = {
+                method: 'POST',
+                qs: localVarQueryParameters,
+                headers: localVarHeaderParams,
+                uri: localVarPath,
+                useQuerystring: this._useQuerystring,
+                json: true,
+                body: models_1.ObjectSerializer.serialize(sendEmailCoppies, "SendEmailCoppies")
+            };
+            let authenticationPromise = Promise.resolve();
+            authenticationPromise = authenticationPromise.then(() => this.authentications.default.applyToRequest(localVarRequestOptions));
+            return authenticationPromise.then(() => {
+                if (Object.keys(localVarFormParams).length) {
+                    if (localVarUseFormData) {
+                        localVarRequestOptions.formData = localVarFormParams;
+                    }
+                    else {
+                        localVarRequestOptions.form = localVarFormParams;
+                    }
+                }
+                return new Promise((resolve, reject) => {
+                    localVarRequest(localVarRequestOptions, (error, response, body) => {
+                        if (error) {
+                            reject(error);
+                        }
+                        else {
+                            body = models_1.ObjectSerializer.deserialize(body, "SendEmailResponse");
+                            if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
+                                resolve({ response: response, body: body });
+                            }
+                            else {
+                                reject(new apis_1.HttpError(response, body, response.statusCode));
+                            }
+                        }
+                    });
+                });
+            });
+        });
+    }
     cashInvoicesGet(currentPage, pageSize, authorization, sortBy, filter, options = { headers: {} }) {
         return __awaiter(this, void 0, void 0, function* () {
             const localVarPath = this.basePath + '/cash-invoices';
@@ -111,68 +172,7 @@ class CashInvoiceApi {
                             reject(error);
                         }
                         else {
-                            body = models_1.ObjectSerializer.deserialize(body, "SimpleDocumentResponse");
-                            if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
-                            }
-                            else {
-                                reject(new apis_1.HttpError(response, body, response.statusCode));
-                            }
-                        }
-                    });
-                });
-            });
-        });
-    }
-    cashInvoicesIdDelete(authorization, id, options = { headers: {} }) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const localVarPath = this.basePath + '/cash-invoices/{id}'
-                .replace('{' + 'id' + '}', encodeURIComponent(String(id)));
-            let localVarQueryParameters = {};
-            let localVarHeaderParams = Object.assign({}, this.defaultHeaders);
-            const produces = ['application/json'];
-            if (produces.indexOf('application/json') >= 0) {
-                localVarHeaderParams.Accept = 'application/json';
-            }
-            else {
-                localVarHeaderParams.Accept = produces.join(',');
-            }
-            let localVarFormParams = {};
-            if (authorization === null || authorization === undefined) {
-                throw new Error('Required parameter authorization was null or undefined when calling cashInvoicesIdDelete.');
-            }
-            if (id === null || id === undefined) {
-                throw new Error('Required parameter id was null or undefined when calling cashInvoicesIdDelete.');
-            }
-            localVarHeaderParams['Authorization'] = models_1.ObjectSerializer.serialize(authorization, "string");
-            Object.assign(localVarHeaderParams, options.headers);
-            let localVarUseFormData = false;
-            let localVarRequestOptions = {
-                method: 'DELETE',
-                qs: localVarQueryParameters,
-                headers: localVarHeaderParams,
-                uri: localVarPath,
-                useQuerystring: this._useQuerystring,
-                json: true,
-            };
-            let authenticationPromise = Promise.resolve();
-            authenticationPromise = authenticationPromise.then(() => this.authentications.default.applyToRequest(localVarRequestOptions));
-            return authenticationPromise.then(() => {
-                if (Object.keys(localVarFormParams).length) {
-                    if (localVarUseFormData) {
-                        localVarRequestOptions.formData = localVarFormParams;
-                    }
-                    else {
-                        localVarRequestOptions.form = localVarFormParams;
-                    }
-                }
-                return new Promise((resolve, reject) => {
-                    localVarRequest(localVarRequestOptions, (error, response, body) => {
-                        if (error) {
-                            reject(error);
-                        }
-                        else {
-                            body = models_1.ObjectSerializer.deserialize(body, "object");
+                            body = models_1.ObjectSerializer.deserialize(body, "InlineDocumentResponse");
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
                                 resolve({ response: response, body: body });
                             }
@@ -233,68 +233,7 @@ class CashInvoiceApi {
                             reject(error);
                         }
                         else {
-                            body = models_1.ObjectSerializer.deserialize(body, "SimpleDocumentResponse");
-                            if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
-                            }
-                            else {
-                                reject(new apis_1.HttpError(response, body, response.statusCode));
-                            }
-                        }
-                    });
-                });
-            });
-        });
-    }
-    cashInvoicesIdPut(authorization, id, options = { headers: {} }) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const localVarPath = this.basePath + '/cash-invoices/{id}'
-                .replace('{' + 'id' + '}', encodeURIComponent(String(id)));
-            let localVarQueryParameters = {};
-            let localVarHeaderParams = Object.assign({}, this.defaultHeaders);
-            const produces = ['application/json'];
-            if (produces.indexOf('application/json') >= 0) {
-                localVarHeaderParams.Accept = 'application/json';
-            }
-            else {
-                localVarHeaderParams.Accept = produces.join(',');
-            }
-            let localVarFormParams = {};
-            if (authorization === null || authorization === undefined) {
-                throw new Error('Required parameter authorization was null or undefined when calling cashInvoicesIdPut.');
-            }
-            if (id === null || id === undefined) {
-                throw new Error('Required parameter id was null or undefined when calling cashInvoicesIdPut.');
-            }
-            localVarHeaderParams['Authorization'] = models_1.ObjectSerializer.serialize(authorization, "string");
-            Object.assign(localVarHeaderParams, options.headers);
-            let localVarUseFormData = false;
-            let localVarRequestOptions = {
-                method: 'PUT',
-                qs: localVarQueryParameters,
-                headers: localVarHeaderParams,
-                uri: localVarPath,
-                useQuerystring: this._useQuerystring,
-                json: true,
-            };
-            let authenticationPromise = Promise.resolve();
-            authenticationPromise = authenticationPromise.then(() => this.authentications.default.applyToRequest(localVarRequestOptions));
-            return authenticationPromise.then(() => {
-                if (Object.keys(localVarFormParams).length) {
-                    if (localVarUseFormData) {
-                        localVarRequestOptions.formData = localVarFormParams;
-                    }
-                    else {
-                        localVarRequestOptions.form = localVarFormParams;
-                    }
-                }
-                return new Promise((resolve, reject) => {
-                    localVarRequest(localVarRequestOptions, (error, response, body) => {
-                        if (error) {
-                            reject(error);
-                        }
-                        else {
-                            body = models_1.ObjectSerializer.deserialize(body, "SimpleDocumentResponse");
+                            body = models_1.ObjectSerializer.deserialize(body, "InlineDocumentResponse");
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
                                 resolve({ response: response, body: body });
                             }
@@ -356,6 +295,67 @@ class CashInvoiceApi {
                         }
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, "SimpleDocumentResponse");
+                            if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
+                                resolve({ response: response, body: body });
+                            }
+                            else {
+                                reject(new apis_1.HttpError(response, body, response.statusCode));
+                            }
+                        }
+                    });
+                });
+            });
+        });
+    }
+    cashInvoicesSharedocumentPost(authorization, shareDocument, options = { headers: {} }) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const localVarPath = this.basePath + '/cash-invoices/sharedocument';
+            let localVarQueryParameters = {};
+            let localVarHeaderParams = Object.assign({}, this.defaultHeaders);
+            const produces = ['application/json'];
+            if (produces.indexOf('application/json') >= 0) {
+                localVarHeaderParams.Accept = 'application/json';
+            }
+            else {
+                localVarHeaderParams.Accept = produces.join(',');
+            }
+            let localVarFormParams = {};
+            if (authorization === null || authorization === undefined) {
+                throw new Error('Required parameter authorization was null or undefined when calling cashInvoicesSharedocumentPost.');
+            }
+            if (shareDocument === null || shareDocument === undefined) {
+                throw new Error('Required parameter shareDocument was null or undefined when calling cashInvoicesSharedocumentPost.');
+            }
+            localVarHeaderParams['Authorization'] = models_1.ObjectSerializer.serialize(authorization, "string");
+            Object.assign(localVarHeaderParams, options.headers);
+            let localVarUseFormData = false;
+            let localVarRequestOptions = {
+                method: 'POST',
+                qs: localVarQueryParameters,
+                headers: localVarHeaderParams,
+                uri: localVarPath,
+                useQuerystring: this._useQuerystring,
+                json: true,
+                body: models_1.ObjectSerializer.serialize(shareDocument, "ShareDocument")
+            };
+            let authenticationPromise = Promise.resolve();
+            authenticationPromise = authenticationPromise.then(() => this.authentications.default.applyToRequest(localVarRequestOptions));
+            return authenticationPromise.then(() => {
+                if (Object.keys(localVarFormParams).length) {
+                    if (localVarUseFormData) {
+                        localVarRequestOptions.formData = localVarFormParams;
+                    }
+                    else {
+                        localVarRequestOptions.form = localVarFormParams;
+                    }
+                }
+                return new Promise((resolve, reject) => {
+                    localVarRequest(localVarRequestOptions, (error, response, body) => {
+                        if (error) {
+                            reject(error);
+                        }
+                        else {
+                            body = models_1.ObjectSerializer.deserialize(body, "ShareDocumentResponse");
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
                                 resolve({ response: response, body: body });
                             }

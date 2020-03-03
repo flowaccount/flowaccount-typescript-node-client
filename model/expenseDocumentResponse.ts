@@ -25,7 +25,7 @@ export class ExpenseDocumentResponse {
     * error code
     */
     'code'?: number;
-    'data'?: ExpenseDocument;
+    'data'?: object & ExpenseDocument;
 
     static discriminator: string | undefined = undefined;
 
@@ -48,7 +48,7 @@ export class ExpenseDocumentResponse {
         {
             "name": "data",
             "baseName": "data",
-            "type": "ExpenseDocument"
+            "type": "object & ExpenseDocument"
         }    ];
 
     static getAttributeTypeMap() {

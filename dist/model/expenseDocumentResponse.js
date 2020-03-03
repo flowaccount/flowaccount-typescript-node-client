@@ -25,7 +25,7 @@ ExpenseDocumentResponse.attributeTypeMap = [
     {
         "name": "data",
         "baseName": "data",
-        "type": "ExpenseDocument"
+        "type": "object & ExpenseDocument"
     }
 ];
 exports.ExpenseDocumentResponse = ExpenseDocumentResponse;

@@ -11,23 +11,26 @@
  */
 
 
-export class ProductResponseAllOf {
+/**
+* data success
+*/
+export class ShareDocumentResponseData {
     /**
-    * เลข id Product
+    * Link Document
     */
-    'id'?: number;
+    'link'?: string;
 
     static discriminator: string | undefined = undefined;
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
         {
-            "name": "id",
-            "baseName": "id",
-            "type": "number"
+            "name": "link",
+            "baseName": "link",
+            "type": "string"
         }    ];
 
     static getAttributeTypeMap() {
-        return ProductResponseAllOf.attributeTypeMap;
+        return ShareDocumentResponseData.attributeTypeMap;
     }
 }
 

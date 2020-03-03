@@ -13,11 +13,7 @@
 
 export class PaymentDocumentResponse {
     /**
-    * id ของเอกสาร
-    */
-    'documentId'?: number;
-    /**
-    * วันที่รับชำระเงิน รูปแบบ yyyy-MM-dd
+    * วันที่รับชำระเงิน รูปแบบ yyyy-MM-dd <br> <ex>Example: 2020-01-01</ex>
     */
     'paymentDate'?: string;
     /**
@@ -25,13 +21,13 @@ export class PaymentDocumentResponse {
     */
     'collected'?: number;
     /**
-    * ประเภทรายการปรับลด 1 = ส่วนลดพิเศษ / 3 = ค่านายหน้าและส่วนแบ่งการขาย / 5 = ค่าดำเนินการ / 7 = ปัดเศษ <br> (เฉพาะเอกสารใบกำกับภาษี/ใบเสร็จรับเงิน)
+    * ประเภทรายการปรับลด: <br> 1 = ส่วนลดพิเศษ <br> 3 = ค่านายหน้าและส่วนแบ่งการขาย <br> 5 = ค่าดำเนินการ <br> 7 = ปัดเศษ <br> (เฉพาะเอกสารใบกำกับภาษี/ใบเสร็จรับเงิน)
     */
     'paymentDeductionType'?: number;
     /**
     * จำนวนเงินยอดรายการปรับลด <br> (เฉพาะเอกสารใบกำกับภาษี/ใบเสร็จรับเงิน)
     */
-    'deductionAmount'?: number;
+    'paymentDeductionAmount'?: number;
     /**
     * เปอร์เซ็น หัก ณ ที่จ่าย
     */
@@ -43,19 +39,19 @@ export class PaymentDocumentResponse {
     /**
     * ค่าธรรมเนียม ที่ชำระโดยการโอนเงิน หรือ เช็ค <br> (เฉพาะเอกสารค่าใช้จ่าย)
     */
-    'charge'?: number;
+    'paymentCharge'?: number;
     /**
-    * วิธีการชำระ 1 = เงินสด / 3 = เช็ค /  5 = โอนเงิน , 7 = เครดิต
+    * วิธีการชำระ: <br> 1 = เงินสด <br> 3 = เช็ค <br> 5 = โอนเงิน <br> 7 = เครดิต
     */
     'paymentMethod'?: number;
     /**
-    * ช่องทางการชำระเงิน
+    * ช่องทางการชำระเงิน: <br> - เงินสด (Cash) <br> - โอนเงิน (Transfer) - ชื่อธนาคาร (Bank Name) <br> - เช็ค (Cheque) <br> - บัตรเครดิต (Credit card)
     */
     'paymentChannel'?: string;
     /**
-    * รายละเอียดการเก็บเงิน
+    * ประเภทบัญชีธนาคาร: <br> 1 = ออมทรัพย์ <br> 3 = กระแสรายวัน <br> 7 = ฝากประจำ
     */
-    'paymentRemarks'?: string;
+    'bankAccountType'?: number;
     /**
     * ชื่อธนาคาร
     */
@@ -65,7 +61,7 @@ export class PaymentDocumentResponse {
     */
     'bankAccountNumber'?: string;
     /**
-    * วันที่หน้าเช็ค รูปแบบ yyyy-MM-dd
+    * วันที่หน้าเช็ค รูปแบบ yyyy-MM-dd <br> <ex>Example: 2020-01-01</ex>
     */
     'chequeDate'?: string;
     /**
@@ -73,19 +69,15 @@ export class PaymentDocumentResponse {
     */
     'chequeNumber'?: string;
     /**
-    * ธนาคารที่ระบุหน้าเช็ค <br> 1 = ธนาคารกรุงเทพ <br> 2 = ธนาคารกสิกรไทย <br> 3 = ธนาคารกรุงไทย <br> 4 = ธนาคารทหารไทย <br> 5 = ธนาคารไทยพาณิชย์ <br> 6 = ธนาคารสแตนดาร์ดชาร์เตอร์ด <br> 7 = ธนาคารซีไอเอ็มบี ไทย <br> 8 = ธนาคารยูโอบี <br> 10 = ธนาคารกรุงศรีอยุธยา <br> 11 = ธนาคารออมสิน <br> 12 = ธนาคารธนชาต <br> 13 = ธนาคารแลนด์ แอนด์ เฮ้าส์ <br> 14 = ธนาคารเกียรตินาคิน <br> 15 = ธนาคารซิตี้แบงก์ <br> 16 = ธนาคารทิสโก้ <br> 53 = ธนาคารเพื่อการเกษตรและสหกรณ์การเกษตร <br> 54 = ธนาคารเพื่อการส่งออกและนำเข้าแห่งประเทศไทย <br> 55 = ธนาคารอาคารสงเคราะห์ <br> 56 = ธนาคารพัฒนาวิสาหกิจขนาดกลางและขนาดย่อมแห่งประเทศไทย <br> 57 = ธนาคารอิสลามแห่งประเทศไทย <br> 58 = ธนาคารแห่งประเทศจีน (ไทย) <br> 59 = ธนาคารไอซีบีซี (ไทย) <br> 60 = ธนาคารเมกะ สากลพาณิชย์ <br> 61 = ธนาคารซูมิโตโม มิตซุย แบงกิ้ง คอร์ปอเรชั่น <br> 62 = ธนาคารมิซูโฮ จำกัด (กรุงเทพฯ) <br> 63 = ธนาคารฮ่องกงและเซี่ยงไฮ้แบงกิ้งคอร์ปอเรชั่น <br> 64 = ธนาคารไทยเครดิต เพื่อรายย่อย 
-    */
-    'chequeBankAccountId'?: number;
-    /**
     * ธนาคารที่ชำระด้วยบัตรเครดิต <br> 1 = ธนาคารกรุงเทพ <br> 2 = ธนาคารกสิกรไทย <br> 3 = ธนาคารกรุงไทย <br> 4 = ธนาคารทหารไทย <br> 5 = ธนาคารไทยพาณิชย์ <br> 6 = ธนาคารสแตนดาร์ดชาร์เตอร์ด <br> 7 = ธนาคารซีไอเอ็มบี ไทย <br> 8 = ธนาคารยูโอบี <br> 10 = ธนาคารกรุงศรีอยุธยา <br> 11 = ธนาคารออมสิน <br> 12 = ธนาคารธนชาต <br> 13 = ธนาคารแลนด์ แอนด์ เฮ้าส์ <br> 14 = ธนาคารเกียรตินาคิน <br> 15 = ธนาคารซิตี้แบงก์ <br> 16 = ธนาคารทิสโก้ <br> 53 = ธนาคารเพื่อการเกษตรและสหกรณ์การเกษตร <br> 54 = ธนาคารเพื่อการส่งออกและนำเข้าแห่งประเทศไทย <br> 55 = ธนาคารอาคารสงเคราะห์ <br> 56 = ธนาคารพัฒนาวิสาหกิจขนาดกลางและขนาดย่อมแห่งประเทศไทย <br> 57 = ธนาคารอิสลามแห่งประเทศไทย <br> 58 = ธนาคารแห่งประเทศจีน (ไทย) <br> 59 = ธนาคารไอซีบีซี (ไทย) <br> 60 = ธนาคารเมกะ สากลพาณิชย์ <br> 61 = ธนาคารซูมิโตโม มิตซุย แบงกิ้ง คอร์ปอเรชั่น <br> 62 = ธนาคารมิซูโฮ จำกัด (กรุงเทพฯ) <br> 63 = ธนาคารฮ่องกงและเซี่ยงไฮ้แบงกิ้งคอร์ปอเรชั่น <br> 64 = ธนาคารไทยเครดิต เพื่อรายย่อย 
     */
     'creditCardBankAccountId'?: number;
     /**
     * หมายเหตุ การรับชำระเงิน หรือ จ่ายเงิน
     */
-    'remarks'?: string;
+    'paymentRemarks'?: string;
     /**
-    * สาเหตุเงินขาด เงินเกิน: 51 = เงินขาดหรือเงินกิน / 55 = ค่าธรรมเนียมธนาคาร 
+    * สาเหตุเงินขาดเงินเกิน: <br> 51 = เงินขาดหรือเงินกิน <br> 55 = ค่าธรรมเนียมธนาคาร 
     */
     'remainingCollectedType'?: number;
     /**
@@ -96,11 +88,6 @@ export class PaymentDocumentResponse {
     static discriminator: string | undefined = undefined;
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-        {
-            "name": "documentId",
-            "baseName": "documentId",
-            "type": "number"
-        },
         {
             "name": "paymentDate",
             "baseName": "paymentDate",
@@ -117,8 +104,8 @@ export class PaymentDocumentResponse {
             "type": "number"
         },
         {
-            "name": "deductionAmount",
-            "baseName": "deductionAmount",
+            "name": "paymentDeductionAmount",
+            "baseName": "paymentDeductionAmount",
             "type": "number"
         },
         {
@@ -132,8 +119,8 @@ export class PaymentDocumentResponse {
             "type": "number"
         },
         {
-            "name": "charge",
-            "baseName": "charge",
+            "name": "paymentCharge",
+            "baseName": "paymentCharge",
             "type": "number"
         },
         {
@@ -147,9 +134,9 @@ export class PaymentDocumentResponse {
             "type": "string"
         },
         {
-            "name": "paymentRemarks",
-            "baseName": "paymentRemarks",
-            "type": "string"
+            "name": "bankAccountType",
+            "baseName": "bankAccountType",
+            "type": "number"
         },
         {
             "name": "bankAccountName",
@@ -172,18 +159,13 @@ export class PaymentDocumentResponse {
             "type": "string"
         },
         {
-            "name": "chequeBankAccountId",
-            "baseName": "chequeBankAccountId",
-            "type": "number"
-        },
-        {
             "name": "creditCardBankAccountId",
             "baseName": "creditCardBankAccountId",
             "type": "number"
         },
         {
-            "name": "remarks",
-            "baseName": "remarks",
+            "name": "paymentRemarks",
+            "baseName": "paymentRemarks",
             "type": "string"
         },
         {

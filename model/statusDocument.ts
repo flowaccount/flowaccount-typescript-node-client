@@ -10,22 +10,8 @@
  * Do not edit the class manually.
  */
 
-import { ReferencedByMe } from './referencedByMe';
-import { ReferencedToMe } from './referencedToMe';
 
-export class StatusResponse {
-    /**
-    * ID เอกสารฉบับนี้
-    */
-    'recordId'?: number;
-    /**
-    * ข้อมูลเอกสารปลายทางอ้างอิง ถึง เอกสารฉบับนี้
-    */
-    'referencedToMe'?: Array<ReferencedToMe>;
-    /**
-    * ข้อมูลเอกสารต้นทางอ้างอิง ถึง เอกสารฉบับนี้
-    */
-    'referencedByMe'?: Array<ReferencedByMe>;
+export class StatusDocument {
     /**
     * เลขสถานะเอกสารฉบับนี้
     */
@@ -46,21 +32,6 @@ export class StatusResponse {
     static discriminator: string | undefined = undefined;
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-        {
-            "name": "recordId",
-            "baseName": "recordId",
-            "type": "number"
-        },
-        {
-            "name": "referencedToMe",
-            "baseName": "referencedToMe",
-            "type": "Array<ReferencedToMe>"
-        },
-        {
-            "name": "referencedByMe",
-            "baseName": "referencedByMe",
-            "type": "Array<ReferencedByMe>"
-        },
         {
             "name": "status",
             "baseName": "status",
@@ -83,7 +54,7 @@ export class StatusResponse {
         }    ];
 
     static getAttributeTypeMap() {
-        return StatusResponse.attributeTypeMap;
+        return StatusDocument.attributeTypeMap;
     }
 }
 

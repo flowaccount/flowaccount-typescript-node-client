@@ -8,11 +8,6 @@ class PaymentDocumentResponse {
 PaymentDocumentResponse.discriminator = undefined;
 PaymentDocumentResponse.attributeTypeMap = [
     {
-        "name": "documentId",
-        "baseName": "documentId",
-        "type": "number"
-    },
-    {
         "name": "paymentDate",
         "baseName": "paymentDate",
         "type": "string"
@@ -28,8 +23,8 @@ PaymentDocumentResponse.attributeTypeMap = [
         "type": "number"
     },
     {
-        "name": "deductionAmount",
-        "baseName": "deductionAmount",
+        "name": "paymentDeductionAmount",
+        "baseName": "paymentDeductionAmount",
         "type": "number"
     },
     {
@@ -43,8 +38,8 @@ PaymentDocumentResponse.attributeTypeMap = [
         "type": "number"
     },
     {
-        "name": "charge",
-        "baseName": "charge",
+        "name": "paymentCharge",
+        "baseName": "paymentCharge",
         "type": "number"
     },
     {
@@ -58,9 +53,9 @@ PaymentDocumentResponse.attributeTypeMap = [
         "type": "string"
     },
     {
-        "name": "paymentRemarks",
-        "baseName": "paymentRemarks",
-        "type": "string"
+        "name": "bankAccountType",
+        "baseName": "bankAccountType",
+        "type": "number"
     },
     {
         "name": "bankAccountName",
@@ -83,18 +78,13 @@ PaymentDocumentResponse.attributeTypeMap = [
         "type": "string"
     },
     {
-        "name": "chequeBankAccountId",
-        "baseName": "chequeBankAccountId",
-        "type": "number"
-    },
-    {
         "name": "creditCardBankAccountId",
         "baseName": "creditCardBankAccountId",
         "type": "number"
     },
     {
-        "name": "remarks",
-        "baseName": "remarks",
+        "name": "paymentRemarks",
+        "baseName": "paymentRemarks",
         "type": "string"
     },
     {

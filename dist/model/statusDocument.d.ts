@@ -1,9 +1,4 @@
-import { ReferencedByMe } from './referencedByMe';
-import { ReferencedToMe } from './referencedToMe';
-export declare class StatusResponse {
-    'recordId'?: number;
-    'referencedToMe'?: Array<ReferencedToMe>;
-    'referencedByMe'?: Array<ReferencedByMe>;
+export declare class StatusDocument {
     'status'?: number;
     'statusString'?: number;
     'documentType'?: number;

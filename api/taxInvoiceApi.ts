@@ -14,10 +14,10 @@ import localVarRequest = require('request');
 import http = require('http');
 
 /* tslint:disable:no-unused-locals */
+import { AttachmentResponse } from '../model/attachmentResponse';
 import { InlineDocument } from '../model/inlineDocument';
 import { InlineDocumentResponse } from '../model/inlineDocumentResponse';
 import { PaymentDocument } from '../model/paymentDocument';
-import { PaymentDocumentResponse } from '../model/paymentDocumentResponse';
 import { SendEmailCoppies } from '../model/sendEmailCoppies';
 import { SendEmailResponse } from '../model/sendEmailResponse';
 import { ShareDocument } from '../model/shareDocument';
@@ -80,6 +80,83 @@ export class TaxInvoiceApi {
         (this.authentications as any)[TaxInvoiceApiApiKeys[key]].apiKey = value;
     }
 
+    /**
+     * เปลี่ยนสถานะของเอกสารใบกำกับภาษี/ใบเสร็จรับเงิน(เงินสด) สร้างเอกสารใหม่ครั้งแรกจะได้รับสถานะ รอดำเนินการ (awaiting)
+     * @summary Change status of tax invoices document.
+     * @param authorization 
+     * @param id ID เอกสารใช้ recordId
+     * @param statusId เปลี่ยนสถานะเอกสารได้ 3 สถานะ &lt;br&gt; awaiting &#x3D; รอดำเนินการ &lt;br&gt; invoicedelivered &#x3D; รอเก็บเงิน &lt;br&gt; void &#x3D; ยกเลิก
+     */
+    public async cashInvoicesIdStatusKeyStatusIdPost (authorization: string, id: string, statusId: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: InlineDocumentResponse;  }> {
+        const localVarPath = this.basePath + '/cash-invoices/{id}/status-key/{statusId}'
+            .replace('{' + 'id' + '}', encodeURIComponent(String(id)))
+            .replace('{' + 'statusId' + '}', encodeURIComponent(String(statusId)));
+        let localVarQueryParameters: any = {};
+        let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
+        const produces = ['application/json'];
+        // give precedence to 'application/json'
+        if (produces.indexOf('application/json') >= 0) {
+            localVarHeaderParams.Accept = 'application/json';
+        } else {
+            localVarHeaderParams.Accept = produces.join(',');
+        }
+        let localVarFormParams: any = {};
+
+        // verify required parameter 'authorization' is not null or undefined
+        if (authorization === null || authorization === undefined) {
+            throw new Error('Required parameter authorization was null or undefined when calling cashInvoicesIdStatusKeyStatusIdPost.');
+        }
+
+        // verify required parameter 'id' is not null or undefined
+        if (id === null || id === undefined) {
+            throw new Error('Required parameter id was null or undefined when calling cashInvoicesIdStatusKeyStatusIdPost.');
+        }
+
+        // verify required parameter 'statusId' is not null or undefined
+        if (statusId === null || statusId === undefined) {
+            throw new Error('Required parameter statusId was null or undefined when calling cashInvoicesIdStatusKeyStatusIdPost.');
+        }
+
+        localVarHeaderParams['Authorization'] = ObjectSerializer.serialize(authorization, "string");
+        (<any>Object).assign(localVarHeaderParams, options.headers);
+
+        let localVarUseFormData = false;
+
+        let localVarRequestOptions: localVarRequest.Options = {
+            method: 'POST',
+            qs: localVarQueryParameters,
+            headers: localVarHeaderParams,
+            uri: localVarPath,
+            useQuerystring: this._useQuerystring,
+            json: true,
+        };
+
+        let authenticationPromise = Promise.resolve();
+        authenticationPromise = authenticationPromise.then(() => this.authentications.default.applyToRequest(localVarRequestOptions));
+        return authenticationPromise.then(() => {
+            if (Object.keys(localVarFormParams).length) {
+                if (localVarUseFormData) {
+                    (<any>localVarRequestOptions).formData = localVarFormParams;
+                } else {
+                    localVarRequestOptions.form = localVarFormParams;
+                }
+            }
+            return new Promise<{ response: http.IncomingMessage; body: InlineDocumentResponse;  }>((resolve, reject) => {
+                localVarRequest(localVarRequestOptions, (error, response, body) => {
+                    if (error) {
+                        reject(error);
+                    } else {
+                        body = ObjectSerializer.deserialize(body, "InlineDocumentResponse");
+                        if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
+                            resolve({ response: response, body: body });
+                        } else {
+                            reject(new HttpError(response, body, response.statusCode));
+                        }
+                    }
+                });
+            });
+        });
+    }
     /**
      * ส่งเอกสารใบกำกับภาษี หรือ ใบกำกับภาษี/ใบเสร็จรับเงิน ผ่านทางอีเมล ตามเลขที่เอกสารที่ต้องการ
      * @summary Send Email tax invoice document
@@ -250,11 +327,18 @@ export class TaxInvoiceApi {
      * @param id documentId หรือ recordId ของเอกสารที่ต้องการแนบ
      * @param file รูปแบบ file ที่ใช้แนบในเอกสารเป็นแบบ Binary
      */
-    public async taxInvoicesIdAttachmentPost (authorization: string, id: string, file?: RequestFile, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body?: any;  }> {
+    public async taxInvoicesIdAttachmentPost (authorization: string, id: string, file?: RequestFile, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: AttachmentResponse;  }> {
         const localVarPath = this.basePath + '/tax-invoices/{id}/attachment'
             .replace('{' + 'id' + '}', encodeURIComponent(String(id)));
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
+        const produces = ['application/json'];
+        // give precedence to 'application/json'
+        if (produces.indexOf('application/json') >= 0) {
+            localVarHeaderParams.Accept = 'application/json';
+        } else {
+            localVarHeaderParams.Accept = produces.join(',');
+        }
         let localVarFormParams: any = {};
 
         // verify required parameter 'authorization' is not null or undefined
@@ -296,11 +380,12 @@ export class TaxInvoiceApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.IncomingMessage; body?: any;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: AttachmentResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
                     } else {
+                        body = ObjectSerializer.deserialize(body, "AttachmentResponse");
                         if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
                             resolve({ response: response, body: body });
                         } else {
@@ -388,7 +473,7 @@ export class TaxInvoiceApi {
      * @param id ID เอกสารใช้ recordId หรือ documentId
      * @param paymentDocument 
      */
-    public async taxInvoicesIdPaymentPost (authorization: string, id: string, paymentDocument: PaymentDocument, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PaymentDocumentResponse;  }> {
+    public async taxInvoicesIdPaymentPost (authorization: string, id: string, paymentDocument: PaymentDocument, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: InlineDocumentResponse;  }> {
         const localVarPath = this.basePath + '/tax-invoices/{id}/payment'
             .replace('{' + 'id' + '}', encodeURIComponent(String(id)));
         let localVarQueryParameters: any = {};
@@ -442,12 +527,12 @@ export class TaxInvoiceApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.IncomingMessage; body: PaymentDocumentResponse;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: InlineDocumentResponse;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
                     } else {
-                        body = ObjectSerializer.deserialize(body, "PaymentDocumentResponse");
+                        body = ObjectSerializer.deserialize(body, "InlineDocumentResponse");
                         if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
                             resolve({ response: response, body: body });
                         } else {
@@ -459,7 +544,7 @@ export class TaxInvoiceApi {
         });
     }
     /**
-     * เปลี่ยนสถานะของเอกสาร สร้างเอกสารใบกำกับภาษี หรือ ใบกำกับภาษี/ใบเสร็จรับเงิน ใหม่ครั้งแรกจะได้รับสถานะ รอดำเนินการ (awaiting)
+     * เปลี่ยนสถานะของเอกสารเอกสารใบกำกับภาษี หรือ ใบกำกับภาษี/ใบเสร็จรับเงิน สร้างเอกสารใหม่ครั้งแรกจะได้รับสถานะ รอดำเนินการ (awaiting)
      * @summary Change status of tax invoices document.
      * @param authorization 
      * @param id ID เอกสารใช้ recordId
@@ -677,7 +762,7 @@ export class TaxInvoiceApi {
     }
     /**
      * แชร์ลิงค์ เอกสารใบกำกับภาษี หรือ ใบกำกับภาษี/ใบเสร็จรับเงิน ที่ต้องการ จะได้รับลิงค์สำหรับแชร์และเรียกดูเอกสาร
-     * @summary Share Document tax invoice
+     * @summary Share link tax invoice document.
      * @param authorization 
      * @param shareDocument 
      */

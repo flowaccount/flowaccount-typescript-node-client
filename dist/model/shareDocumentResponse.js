@@ -8,9 +8,24 @@ class ShareDocumentResponse {
 ShareDocumentResponse.discriminator = undefined;
 ShareDocumentResponse.attributeTypeMap = [
     {
-        "name": "link",
-        "baseName": "link",
+        "name": "status",
+        "baseName": "status",
+        "type": "boolean"
+    },
+    {
+        "name": "message",
+        "baseName": "message",
         "type": "string"
+    },
+    {
+        "name": "code",
+        "baseName": "code",
+        "type": "number"
+    },
+    {
+        "name": "data",
+        "baseName": "data",
+        "type": "ShareDocumentResponseData"
     }
 ];
 exports.ShareDocumentResponse = ShareDocumentResponse;

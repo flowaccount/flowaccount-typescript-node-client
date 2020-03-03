@@ -1,6 +1,10 @@
-import { RequestFile } from "../api";
-export declare class InlineObject {
-    'file'?: RequestFile;
+export declare class AttachmentResponseData {
+    'attachmentId'?: number;
+    'createdOn'?: object;
+    'attachmentName'?: string;
+    'orderNumber'?: number;
+    'isDisplay'?: boolean;
+    'attachmentPath'?: string;
     static discriminator: string | undefined;
     static attributeTypeMap: Array<{
         name: string;

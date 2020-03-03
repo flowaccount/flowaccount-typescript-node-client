@@ -26,7 +26,7 @@ export class WithholidingTaxDocument {
     */
     'contactAddress'?: string;
     /**
-    * เลขประจำตัวผู้เสียภาษี ผู้จำหน่าย หรือ ผู้จำหน่าย/ลูกค้า
+    * เลขประจำตัวผู้เสียภาษี ผู้จำหน่าย หรือ ผู้จำหน่าย/ลูกค้า <br> (ถ้ามีจำเป็นต้องครบ 13 หลัก) <br> <ex>Example: 1234567890123 </ex>
     */
     'contactTaxId'?: string;
     /**
@@ -38,11 +38,11 @@ export class WithholidingTaxDocument {
     */
     'contactPerson'?: string;
     /**
-    * อีเมลผู้ติดต่อ
+    * อีเมลผู้ติดต่อ <br> <ex>Example: contact@email.com</ex>
     */
     'contactEmail'?: string;
     /**
-    * เบอร์มือถือผู้ติดต่อ
+    * เบอร์มือถือผู้ติดต่อ <br> <ex>Example: 099-999-9999</ex>
     */
     'contactNumber'?: string;
     /**
@@ -54,7 +54,7 @@ export class WithholidingTaxDocument {
     */
     'contactGroup'?: number;
     /**
-    * วันที่เอกสาร รูปแบบ yyyy-MM-dd
+    * วันที่เอกสาร รูปแบบ yyyy-MM-dd <br> <ex>Example: 2020-01-01</ex>
     */
     'publishedOn': string;
     /**
@@ -62,7 +62,7 @@ export class WithholidingTaxDocument {
     */
     'entity': number;
     /**
-    * ระบุปีของเอกสาร เช่น 2020 (สำหรับแบบฟอร์มเอกสาร ภงด 1ก หรือ ภงด 1ก (พิเศษ)
+    * ระบุปีของเอกสาร เช่น 2020 (สำหรับแบบฟอร์มเอกสาร ภงด 1ก หรือ ภงด 1ก (พิเศษ) <br>Example: 2020</ex>
     */
     'textOther'?: string;
     /**

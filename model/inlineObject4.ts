@@ -1,3 +1,5 @@
+import { RequestFile } from "../api";
+
 /**
  * FlowAccount Open API
  * FlowAccount.com โปรแกรมบัญชีออนไลน์ใช้งานง่าย สำหรับธุรกิจที่พึ่งเริ่มต้น
@@ -12,33 +14,15 @@
 
 
 export class InlineObject4 {
-    'grantType'?: string;
-    'scope'?: string;
-    'clientId'?: string;
-    'clientSecret'?: string;
+    'file'?: RequestFile;
 
     static discriminator: string | undefined = undefined;
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
         {
-            "name": "grantType",
-            "baseName": "grant_type",
-            "type": "string"
-        },
-        {
-            "name": "scope",
-            "baseName": "scope",
-            "type": "string"
-        },
-        {
-            "name": "clientId",
-            "baseName": "client_id",
-            "type": "string"
-        },
-        {
-            "name": "clientSecret",
-            "baseName": "client_secret",
-            "type": "string"
+            "name": "file",
+            "baseName": "file",
+            "type": "RequestFile"
         }    ];
 
     static getAttributeTypeMap() {
