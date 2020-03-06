@@ -1,4 +1,4 @@
-import { RequestFile } from "../api";
+import { RequestFile } from "../api/apis";
 
 /**
  * FlowAccount Open API

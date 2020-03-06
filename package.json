@@ -1,11 +1,8 @@
 {
     "name": "@flowaccount/openapi-sdk",
-    "version": "0.0.17",
+    "version": "0.0.18",
     "description": "NodeJS client for @flowaccount/openapi-sdk",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/flowaccount/flowaccount-typescript-node-client.git"
-      },
+    "repository": "GIT_USER_ID/GIT_REPO_ID",
     "main": "dist/api.js",
     "types": "dist/api.d.ts",
     "scripts": {
@@ -25,9 +22,5 @@
     "devDependencies": {
         "typescript": "^2.4.2",
         "@types/node": "8.10.34"
-    },
-    "publishConfig": {
-        "registry": "https://npm.pkg.github.com/",
-        "access": "public"
-      }
+    }
 }
