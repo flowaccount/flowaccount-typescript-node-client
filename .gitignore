@@ -1,8 +1,6 @@
-<<<<<<< HEAD
 wwwroot/*.js
 node_modules
 typings
-=======
 # Logs
 logs
 *.log
@@ -64,4 +62,5 @@ typings/
 
 # next.js build output
 .next
->>>>>>> 314f9246dd17ccc73baf9ee438b9f690e9c693bb
+
+.npmrc
