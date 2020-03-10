@@ -1,6 +1,9 @@
-/// <reference types="node" />
 import http = require('http');
+import { AttachmentResponse } from '../model/attachmentResponse';
+import { DeleteResponse } from '../model/deleteResponse';
+import { InlineDocument } from '../model/inlineDocument';
 import { InlineDocumentResponse } from '../model/inlineDocumentResponse';
+import { PaymentDocument } from '../model/paymentDocument';
 import { SendEmailCoppies } from '../model/sendEmailCoppies';
 import { SendEmailResponse } from '../model/sendEmailResponse';
 import { ShareDocument } from '../model/shareDocument';
@@ -8,6 +11,7 @@ import { ShareDocumentResponse } from '../model/shareDocumentResponse';
 import { SimpleDocument } from '../model/simpleDocument';
 import { SimpleDocumentResponse } from '../model/simpleDocumentResponse';
 import { Authentication } from '../model/models';
+import { RequestFile } from './apis';
 export declare enum CashInvoiceApiApiKeys {
 }
 export declare class CashInvoiceApi {
@@ -18,8 +22,9 @@ export declare class CashInvoiceApi {
         'default': Authentication;
     };
     constructor(basePath?: string);
-    useQuerystring: boolean;
-    basePath: string;
+    set useQuerystring(value: boolean);
+    set basePath(basePath: string);
+    get basePath(): string;
     setDefaultAuthentication(auth: Authentication): void;
     setApiKey(key: CashInvoiceApiApiKeys, value: string): void;
     cashInvoicesEmailDocumentPost(authorization: string, sendEmailCoppies: SendEmailCoppies, options?: {
@@ -38,7 +43,47 @@ export declare class CashInvoiceApi {
         response: http.IncomingMessage;
         body: InlineDocumentResponse;
     }>;
+    cashInvoicesIdAttachmentPost(authorization: string, id: string, file?: RequestFile, options?: {
+        headers: {
+            [name: string]: string;
+        };
+    }): Promise<{
+        response: http.IncomingMessage;
+        body: AttachmentResponse;
+    }>;
+    cashInvoicesIdDelete(authorization: string, id: string, options?: {
+        headers: {
+            [name: string]: string;
+        };
+    }): Promise<{
+        response: http.IncomingMessage;
+        body: DeleteResponse;
+    }>;
     cashInvoicesIdGet(authorization: string, id: string, options?: {
+        headers: {
+            [name: string]: string;
+        };
+    }): Promise<{
+        response: http.IncomingMessage;
+        body: InlineDocumentResponse;
+    }>;
+    cashInvoicesIdPaymentPost(authorization: string, id: string, paymentDocument: PaymentDocument, options?: {
+        headers: {
+            [name: string]: string;
+        };
+    }): Promise<{
+        response: http.IncomingMessage;
+        body: InlineDocumentResponse;
+    }>;
+    cashInvoicesIdStatusKeyStatusIdPost(authorization: string, id: string, statusId: string, options?: {
+        headers: {
+            [name: string]: string;
+        };
+    }): Promise<{
+        response: http.IncomingMessage;
+        body: InlineDocumentResponse;
+    }>;
+    cashInvoicesInlinePost(authorization: string, inlineDocument: InlineDocument, options?: {
         headers: {
             [name: string]: string;
         };

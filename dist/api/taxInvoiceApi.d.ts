@@ -1,6 +1,6 @@
-/// <reference types="node" />
 import http = require('http');
 import { AttachmentResponse } from '../model/attachmentResponse';
+import { DeleteResponse } from '../model/deleteResponse';
 import { InlineDocument } from '../model/inlineDocument';
 import { InlineDocumentResponse } from '../model/inlineDocumentResponse';
 import { PaymentDocument } from '../model/paymentDocument';
@@ -22,18 +22,11 @@ export declare class TaxInvoiceApi {
         'default': Authentication;
     };
     constructor(basePath?: string);
-    useQuerystring: boolean;
-    basePath: string;
+    set useQuerystring(value: boolean);
+    set basePath(basePath: string);
+    get basePath(): string;
     setDefaultAuthentication(auth: Authentication): void;
     setApiKey(key: TaxInvoiceApiApiKeys, value: string): void;
-    cashInvoicesIdStatusKeyStatusIdPost(authorization: string, id: string, statusId: string, options?: {
-        headers: {
-            [name: string]: string;
-        };
-    }): Promise<{
-        response: http.IncomingMessage;
-        body: InlineDocumentResponse;
-    }>;
     taxInvoicesEmailDocumentPost(authorization: string, sendEmailCoppies: SendEmailCoppies, options?: {
         headers: {
             [name: string]: string;
@@ -57,6 +50,14 @@ export declare class TaxInvoiceApi {
     }): Promise<{
         response: http.IncomingMessage;
         body: AttachmentResponse;
+    }>;
+    taxInvoicesIdDelete(authorization: string, id: string, options?: {
+        headers: {
+            [name: string]: string;
+        };
+    }): Promise<{
+        response: http.IncomingMessage;
+        body: DeleteResponse;
     }>;
     taxInvoicesIdGet(authorization: string, id: string, options?: {
         headers: {

@@ -5,6 +5,7 @@ class SendEmailCoppiesAllOf {
         return SendEmailCoppiesAllOf.attributeTypeMap;
     }
 }
+exports.SendEmailCoppiesAllOf = SendEmailCoppiesAllOf;
 SendEmailCoppiesAllOf.discriminator = undefined;
 SendEmailCoppiesAllOf.attributeTypeMap = [
     {
@@ -13,5 +14,4 @@ SendEmailCoppiesAllOf.attributeTypeMap = [
         "type": "boolean"
     }
 ];
-exports.SendEmailCoppiesAllOf = SendEmailCoppiesAllOf;
 //# sourceMappingURL=sendEmailCoppiesAllOf.js.map

@@ -1,4 +1,3 @@
-/// <reference types="node" />
 import http = require('http');
 import { AuthenResponse } from '../model/authenResponse';
 import { Authentication } from '../model/models';
@@ -12,8 +11,9 @@ export declare class AuthenticationApi {
         'default': Authentication;
     };
     constructor(basePath?: string);
-    useQuerystring: boolean;
-    basePath: string;
+    set useQuerystring(value: boolean);
+    set basePath(basePath: string);
+    get basePath(): string;
     setDefaultAuthentication(auth: Authentication): void;
     setApiKey(key: AuthenticationApiApiKeys, value: string): void;
     tokenPost(contentType: string, grantType?: string, scope?: string, clientId?: string, clientSecret?: string, options?: {

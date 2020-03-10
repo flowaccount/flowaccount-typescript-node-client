@@ -5,6 +5,7 @@ class StatusDocument {
         return StatusDocument.attributeTypeMap;
     }
 }
+exports.StatusDocument = StatusDocument;
 StatusDocument.discriminator = undefined;
 StatusDocument.attributeTypeMap = [
     {
@@ -28,5 +29,4 @@ StatusDocument.attributeTypeMap = [
         "type": "boolean"
     }
 ];
-exports.StatusDocument = StatusDocument;
 //# sourceMappingURL=statusDocument.js.map

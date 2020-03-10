@@ -5,6 +5,7 @@ class ContactResponse {
         return ContactResponse.attributeTypeMap;
     }
 }
+exports.ContactResponse = ContactResponse;
 ContactResponse.discriminator = undefined;
 ContactResponse.attributeTypeMap = [
     {
@@ -118,5 +119,4 @@ ContactResponse.attributeTypeMap = [
         "type": "string"
     }
 ];
-exports.ContactResponse = ContactResponse;
 //# sourceMappingURL=contactResponse.js.map

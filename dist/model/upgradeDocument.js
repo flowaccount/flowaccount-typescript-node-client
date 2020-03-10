@@ -5,6 +5,7 @@ class UpgradeDocument {
         return UpgradeDocument.attributeTypeMap;
     }
 }
+exports.UpgradeDocument = UpgradeDocument;
 UpgradeDocument.discriminator = undefined;
 UpgradeDocument.attributeTypeMap = [
     {
@@ -23,5 +24,4 @@ UpgradeDocument.attributeTypeMap = [
         "type": "number"
     }
 ];
-exports.UpgradeDocument = UpgradeDocument;
 //# sourceMappingURL=upgradeDocument.js.map

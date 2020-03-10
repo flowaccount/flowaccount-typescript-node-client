@@ -1,9 +1,10 @@
 "use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
         function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
@@ -48,71 +49,6 @@ class TaxInvoiceApi {
     }
     setApiKey(key, value) {
         this.authentications[TaxInvoiceApiApiKeys[key]].apiKey = value;
-    }
-    cashInvoicesIdStatusKeyStatusIdPost(authorization, id, statusId, options = { headers: {} }) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const localVarPath = this.basePath + '/cash-invoices/{id}/status-key/{statusId}'
-                .replace('{' + 'id' + '}', encodeURIComponent(String(id)))
-                .replace('{' + 'statusId' + '}', encodeURIComponent(String(statusId)));
-            let localVarQueryParameters = {};
-            let localVarHeaderParams = Object.assign({}, this.defaultHeaders);
-            const produces = ['application/json'];
-            if (produces.indexOf('application/json') >= 0) {
-                localVarHeaderParams.Accept = 'application/json';
-            }
-            else {
-                localVarHeaderParams.Accept = produces.join(',');
-            }
-            let localVarFormParams = {};
-            if (authorization === null || authorization === undefined) {
-                throw new Error('Required parameter authorization was null or undefined when calling cashInvoicesIdStatusKeyStatusIdPost.');
-            }
-            if (id === null || id === undefined) {
-                throw new Error('Required parameter id was null or undefined when calling cashInvoicesIdStatusKeyStatusIdPost.');
-            }
-            if (statusId === null || statusId === undefined) {
-                throw new Error('Required parameter statusId was null or undefined when calling cashInvoicesIdStatusKeyStatusIdPost.');
-            }
-            localVarHeaderParams['Authorization'] = models_1.ObjectSerializer.serialize(authorization, "string");
-            Object.assign(localVarHeaderParams, options.headers);
-            let localVarUseFormData = false;
-            let localVarRequestOptions = {
-                method: 'POST',
-                qs: localVarQueryParameters,
-                headers: localVarHeaderParams,
-                uri: localVarPath,
-                useQuerystring: this._useQuerystring,
-                json: true,
-            };
-            let authenticationPromise = Promise.resolve();
-            authenticationPromise = authenticationPromise.then(() => this.authentications.default.applyToRequest(localVarRequestOptions));
-            return authenticationPromise.then(() => {
-                if (Object.keys(localVarFormParams).length) {
-                    if (localVarUseFormData) {
-                        localVarRequestOptions.formData = localVarFormParams;
-                    }
-                    else {
-                        localVarRequestOptions.form = localVarFormParams;
-                    }
-                }
-                return new Promise((resolve, reject) => {
-                    localVarRequest(localVarRequestOptions, (error, response, body) => {
-                        if (error) {
-                            reject(error);
-                        }
-                        else {
-                            body = models_1.ObjectSerializer.deserialize(body, "InlineDocumentResponse");
-                            if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                                resolve({ response: response, body: body });
-                            }
-                            else {
-                                reject(new apis_1.HttpError(response, body, response.statusCode));
-                            }
-                        }
-                    });
-                });
-            });
-        });
     }
     taxInvoicesEmailDocumentPost(authorization, sendEmailCoppies, options = { headers: {} }) {
         return __awaiter(this, void 0, void 0, function* () {
@@ -303,6 +239,67 @@ class TaxInvoiceApi {
                         }
                         else {
                             body = models_1.ObjectSerializer.deserialize(body, "AttachmentResponse");
+                            if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
+                                resolve({ response: response, body: body });
+                            }
+                            else {
+                                reject(new apis_1.HttpError(response, body, response.statusCode));
+                            }
+                        }
+                    });
+                });
+            });
+        });
+    }
+    taxInvoicesIdDelete(authorization, id, options = { headers: {} }) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const localVarPath = this.basePath + '/tax-invoices/{id}'
+                .replace('{' + 'id' + '}', encodeURIComponent(String(id)));
+            let localVarQueryParameters = {};
+            let localVarHeaderParams = Object.assign({}, this.defaultHeaders);
+            const produces = ['application/json'];
+            if (produces.indexOf('application/json') >= 0) {
+                localVarHeaderParams.Accept = 'application/json';
+            }
+            else {
+                localVarHeaderParams.Accept = produces.join(',');
+            }
+            let localVarFormParams = {};
+            if (authorization === null || authorization === undefined) {
+                throw new Error('Required parameter authorization was null or undefined when calling taxInvoicesIdDelete.');
+            }
+            if (id === null || id === undefined) {
+                throw new Error('Required parameter id was null or undefined when calling taxInvoicesIdDelete.');
+            }
+            localVarHeaderParams['Authorization'] = models_1.ObjectSerializer.serialize(authorization, "string");
+            Object.assign(localVarHeaderParams, options.headers);
+            let localVarUseFormData = false;
+            let localVarRequestOptions = {
+                method: 'DELETE',
+                qs: localVarQueryParameters,
+                headers: localVarHeaderParams,
+                uri: localVarPath,
+                useQuerystring: this._useQuerystring,
+                json: true,
+            };
+            let authenticationPromise = Promise.resolve();
+            authenticationPromise = authenticationPromise.then(() => this.authentications.default.applyToRequest(localVarRequestOptions));
+            return authenticationPromise.then(() => {
+                if (Object.keys(localVarFormParams).length) {
+                    if (localVarUseFormData) {
+                        localVarRequestOptions.formData = localVarFormParams;
+                    }
+                    else {
+                        localVarRequestOptions.form = localVarFormParams;
+                    }
+                }
+                return new Promise((resolve, reject) => {
+                    localVarRequest(localVarRequestOptions, (error, response, body) => {
+                        if (error) {
+                            reject(error);
+                        }
+                        else {
+                            body = models_1.ObjectSerializer.deserialize(body, "DeleteResponse");
                             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
                                 resolve({ response: response, body: body });
                             }

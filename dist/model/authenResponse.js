@@ -5,6 +5,7 @@ class AuthenResponse {
         return AuthenResponse.attributeTypeMap;
     }
 }
+exports.AuthenResponse = AuthenResponse;
 AuthenResponse.discriminator = undefined;
 AuthenResponse.attributeTypeMap = [
     {
@@ -33,5 +34,4 @@ AuthenResponse.attributeTypeMap = [
         "type": "string"
     }
 ];
-exports.AuthenResponse = AuthenResponse;
 //# sourceMappingURL=authenResponse.js.map

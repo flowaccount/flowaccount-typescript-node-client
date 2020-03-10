@@ -5,6 +5,7 @@ class ShareDocument {
         return ShareDocument.attributeTypeMap;
     }
 }
+exports.ShareDocument = ShareDocument;
 ShareDocument.discriminator = undefined;
 ShareDocument.attributeTypeMap = [
     {
@@ -18,5 +19,4 @@ ShareDocument.attributeTypeMap = [
         "type": "string"
     }
 ];
-exports.ShareDocument = ShareDocument;
 //# sourceMappingURL=shareDocument.js.map

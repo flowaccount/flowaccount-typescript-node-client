@@ -5,6 +5,7 @@ class InlineProductItemAllOf {
         return InlineProductItemAllOf.attributeTypeMap;
     }
 }
+exports.InlineProductItemAllOf = InlineProductItemAllOf;
 InlineProductItemAllOf.discriminator = undefined;
 InlineProductItemAllOf.attributeTypeMap = [
     {
@@ -18,5 +19,4 @@ InlineProductItemAllOf.attributeTypeMap = [
         "type": "number"
     }
 ];
-exports.InlineProductItemAllOf = InlineProductItemAllOf;
 //# sourceMappingURL=inlineProductItemAllOf.js.map

@@ -5,6 +5,7 @@ class ExpenseDocumentResponse {
         return ExpenseDocumentResponse.attributeTypeMap;
     }
 }
+exports.ExpenseDocumentResponse = ExpenseDocumentResponse;
 ExpenseDocumentResponse.discriminator = undefined;
 ExpenseDocumentResponse.attributeTypeMap = [
     {
@@ -28,5 +29,4 @@ ExpenseDocumentResponse.attributeTypeMap = [
         "type": "object & ExpenseDocument"
     }
 ];
-exports.ExpenseDocumentResponse = ExpenseDocumentResponse;
 //# sourceMappingURL=expenseDocumentResponse.js.map

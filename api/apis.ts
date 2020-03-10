@@ -10,8 +10,14 @@ export * from './expensesApi';
 import { ExpensesApi } from './expensesApi';
 export * from './productsApi';
 import { ProductsApi } from './productsApi';
+export * from './purchaseOrderApi';
+import { PurchaseOrderApi } from './purchaseOrderApi';
 export * from './quotationsApi';
 import { QuotationsApi } from './quotationsApi';
+export * from './receiptApi';
+import { ReceiptApi } from './receiptApi';
+export * from './receivingInventoryApi';
+import { ReceivingInventoryApi } from './receivingInventoryApi';
 export * from './taxInvoiceApi';
 import { TaxInvoiceApi } from './taxInvoiceApi';
 export * from './withholdingTaxApi';
@@ -36,4 +42,4 @@ export interface RequestDetailedFile {
 
 export type RequestFile = string | Buffer | fs.ReadStream | RequestDetailedFile;
 
-export const APIS = [AuthenticationApi, BillingNotesApi, CashInvoiceApi, ContactsApi, ExpensesApi, ProductsApi, QuotationsApi, TaxInvoiceApi, WithholdingTaxApi];
+export const APIS = [AuthenticationApi, BillingNotesApi, CashInvoiceApi, ContactsApi, ExpensesApi, ProductsApi, PurchaseOrderApi, QuotationsApi, ReceiptApi, ReceivingInventoryApi, TaxInvoiceApi, WithholdingTaxApi];

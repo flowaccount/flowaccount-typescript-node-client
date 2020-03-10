@@ -5,6 +5,7 @@ class Contact {
         return Contact.attributeTypeMap;
     }
 }
+exports.Contact = Contact;
 Contact.discriminator = undefined;
 Contact.attributeTypeMap = [
     {
@@ -113,5 +114,4 @@ Contact.attributeTypeMap = [
         "type": "string"
     }
 ];
-exports.Contact = Contact;
 //# sourceMappingURL=contact.js.map

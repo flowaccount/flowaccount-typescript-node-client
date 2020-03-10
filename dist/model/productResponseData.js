@@ -5,6 +5,7 @@ class ProductResponseData {
         return ProductResponseData.attributeTypeMap;
     }
 }
+exports.ProductResponseData = ProductResponseData;
 ProductResponseData.discriminator = undefined;
 ProductResponseData.attributeTypeMap = [
     {
@@ -88,5 +89,4 @@ ProductResponseData.attributeTypeMap = [
         "type": "number"
     }
 ];
-exports.ProductResponseData = ProductResponseData;
 //# sourceMappingURL=productResponseData.js.map

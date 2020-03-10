@@ -6,6 +6,7 @@ class SendEmailCoppies extends sendEmail_1.SendEmail {
         return super.getAttributeTypeMap().concat(SendEmailCoppies.attributeTypeMap);
     }
 }
+exports.SendEmailCoppies = SendEmailCoppies;
 SendEmailCoppies.discriminator = undefined;
 SendEmailCoppies.attributeTypeMap = [
     {
@@ -14,5 +15,4 @@ SendEmailCoppies.attributeTypeMap = [
         "type": "boolean"
     }
 ];
-exports.SendEmailCoppies = SendEmailCoppies;
 //# sourceMappingURL=sendEmailCoppies.js.map

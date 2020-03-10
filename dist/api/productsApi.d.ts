@@ -1,5 +1,5 @@
-/// <reference types="node" />
 import http = require('http');
+import { DeleteResponse } from '../model/deleteResponse';
 import { Product } from '../model/product';
 import { ProductResponse } from '../model/productResponse';
 import { Authentication } from '../model/models';
@@ -13,8 +13,9 @@ export declare class ProductsApi {
         'default': Authentication;
     };
     constructor(basePath?: string);
-    useQuerystring: boolean;
-    basePath: string;
+    set useQuerystring(value: boolean);
+    set basePath(basePath: string);
+    get basePath(): string;
     setDefaultAuthentication(auth: Authentication): void;
     setApiKey(key: ProductsApiApiKeys, value: string): void;
     productsGet(authorization: string, options?: {
@@ -24,6 +25,14 @@ export declare class ProductsApi {
     }): Promise<{
         response: http.IncomingMessage;
         body: ProductResponse;
+    }>;
+    productsIdDelete(authorization: string, id: string, options?: {
+        headers: {
+            [name: string]: string;
+        };
+    }): Promise<{
+        response: http.IncomingMessage;
+        body: DeleteResponse;
     }>;
     productsIdGet(authorization: string, id: string, options?: {
         headers: {

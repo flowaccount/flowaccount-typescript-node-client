@@ -6,6 +6,7 @@ class InlineDocumentResponse extends documentResponse_1.DocumentResponse {
         return super.getAttributeTypeMap().concat(InlineDocumentResponse.attributeTypeMap);
     }
 }
+exports.InlineDocumentResponse = InlineDocumentResponse;
 InlineDocumentResponse.discriminator = undefined;
 InlineDocumentResponse.attributeTypeMap = [
     {
@@ -14,5 +15,4 @@ InlineDocumentResponse.attributeTypeMap = [
         "type": "object"
     }
 ];
-exports.InlineDocumentResponse = InlineDocumentResponse;
 //# sourceMappingURL=inlineDocumentResponse.js.map

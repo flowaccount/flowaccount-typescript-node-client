@@ -1,6 +1,6 @@
-/// <reference types="node" />
 import http = require('http');
 import { AttachmentResponse } from '../model/attachmentResponse';
+import { DeleteResponse } from '../model/deleteResponse';
 import { InlineDocument } from '../model/inlineDocument';
 import { InlineDocumentResponse } from '../model/inlineDocumentResponse';
 import { SendEmailResponse } from '../model/sendEmailResponse';
@@ -20,8 +20,9 @@ export declare class QuotationsApi {
         'default': Authentication;
     };
     constructor(basePath?: string);
-    useQuerystring: boolean;
-    basePath: string;
+    set useQuerystring(value: boolean);
+    set basePath(basePath: string);
+    get basePath(): string;
     setDefaultAuthentication(auth: Authentication): void;
     setApiKey(key: QuotationsApiApiKeys, value: string): void;
     quotationsEmailDocumentPost(authorization: string, sendEmailSimple: SendEmailSimple, options?: {
@@ -47,6 +48,14 @@ export declare class QuotationsApi {
     }): Promise<{
         response: http.IncomingMessage;
         body: AttachmentResponse;
+    }>;
+    quotationsIdDelete(authorization: string, id: string, options?: {
+        headers: {
+            [name: string]: string;
+        };
+    }): Promise<{
+        response: http.IncomingMessage;
+        body: DeleteResponse;
     }>;
     quotationsIdGet(authorization: string, id: string, options?: {
         headers: {

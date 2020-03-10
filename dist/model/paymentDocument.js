@@ -5,6 +5,7 @@ class PaymentDocument {
         return PaymentDocument.attributeTypeMap;
     }
 }
+exports.PaymentDocument = PaymentDocument;
 PaymentDocument.discriminator = undefined;
 PaymentDocument.attributeTypeMap = [
     {
@@ -98,5 +99,4 @@ PaymentDocument.attributeTypeMap = [
         "type": "number"
     }
 ];
-exports.PaymentDocument = PaymentDocument;
 //# sourceMappingURL=paymentDocument.js.map

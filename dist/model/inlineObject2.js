@@ -5,6 +5,7 @@ class InlineObject2 {
         return InlineObject2.attributeTypeMap;
     }
 }
+exports.InlineObject2 = InlineObject2;
 InlineObject2.discriminator = undefined;
 InlineObject2.attributeTypeMap = [
     {
@@ -13,5 +14,4 @@ InlineObject2.attributeTypeMap = [
         "type": "RequestFile"
     }
 ];
-exports.InlineObject2 = InlineObject2;
 //# sourceMappingURL=inlineObject2.js.map

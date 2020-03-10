@@ -6,6 +6,7 @@ class InlineProductItem extends productItem_1.ProductItem {
         return super.getAttributeTypeMap().concat(InlineProductItem.attributeTypeMap);
     }
 }
+exports.InlineProductItem = InlineProductItem;
 InlineProductItem.discriminator = undefined;
 InlineProductItem.attributeTypeMap = [
     {
@@ -19,5 +20,4 @@ InlineProductItem.attributeTypeMap = [
         "type": "number"
     }
 ];
-exports.InlineProductItem = InlineProductItem;
 //# sourceMappingURL=inlineProductItem.js.map

@@ -5,6 +5,8 @@ export * from './businessCategory';
 export * from './contact';
 export * from './contactResponse';
 export * from './contactResponseAllOf';
+export * from './deleteResponse';
+export * from './deleteResponseData';
 export * from './document';
 export * from './documentResponse';
 export * from './expenseDocument';
@@ -23,6 +25,10 @@ export * from './inlineObject2';
 export * from './inlineObject3';
 export * from './inlineObject4';
 export * from './inlineObject5';
+export * from './inlineObject6';
+export * from './inlineObject7';
+export * from './inlineObject8';
+export * from './inlineObject9';
 export * from './inlineProductItem';
 export * from './inlineProductItemAllOf';
 export * from './paymentDocument';
@@ -63,6 +69,8 @@ import { BusinessCategory } from './businessCategory';
 import { Contact } from './contact';
 import { ContactResponse } from './contactResponse';
 import { ContactResponseAllOf } from './contactResponseAllOf';
+import { DeleteResponse } from './deleteResponse';
+import { DeleteResponseData } from './deleteResponseData';
 import { Document } from './document';
 import { DocumentResponse } from './documentResponse';
 import { ExpenseDocument } from './expenseDocument';
@@ -81,6 +89,10 @@ import { InlineObject2 } from './inlineObject2';
 import { InlineObject3 } from './inlineObject3';
 import { InlineObject4 } from './inlineObject4';
 import { InlineObject5 } from './inlineObject5';
+import { InlineObject6 } from './inlineObject6';
+import { InlineObject7 } from './inlineObject7';
+import { InlineObject8 } from './inlineObject8';
+import { InlineObject9 } from './inlineObject9';
 import { InlineProductItem } from './inlineProductItem';
 import { InlineProductItemAllOf } from './inlineProductItemAllOf';
 import { PaymentDocument } from './paymentDocument';
@@ -135,6 +147,8 @@ let typeMap: {[index: string]: any} = {
     "Contact": Contact,
     "ContactResponse": ContactResponse,
     "ContactResponseAllOf": ContactResponseAllOf,
+    "DeleteResponse": DeleteResponse,
+    "DeleteResponseData": DeleteResponseData,
     "Document": Document,
     "DocumentResponse": DocumentResponse,
     "ExpenseDocument": ExpenseDocument,
@@ -153,6 +167,10 @@ let typeMap: {[index: string]: any} = {
     "InlineObject3": InlineObject3,
     "InlineObject4": InlineObject4,
     "InlineObject5": InlineObject5,
+    "InlineObject6": InlineObject6,
+    "InlineObject7": InlineObject7,
+    "InlineObject8": InlineObject8,
+    "InlineObject9": InlineObject9,
     "InlineProductItem": InlineProductItem,
     "InlineProductItemAllOf": InlineProductItemAllOf,
     "PaymentDocument": PaymentDocument,

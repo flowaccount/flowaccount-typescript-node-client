@@ -1,4 +1,4 @@
-export declare class InlineObject5 {
+export declare class InlineObject9 {
     'grantType'?: string;
     'scope'?: string;
     'clientId'?: string;

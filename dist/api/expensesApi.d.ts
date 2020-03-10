@@ -1,7 +1,7 @@
-/// <reference types="node" />
 import http = require('http');
 import { AttachmentResponse } from '../model/attachmentResponse';
 import { BusinessCategory } from '../model/businessCategory';
+import { DeleteResponse } from '../model/deleteResponse';
 import { ExpenseDocument } from '../model/expenseDocument';
 import { ExpenseDocumentResponse } from '../model/expenseDocumentResponse';
 import { ExpenseInlineDocument } from '../model/expenseInlineDocument';
@@ -23,8 +23,9 @@ export declare class ExpensesApi {
         'default': Authentication;
     };
     constructor(basePath?: string);
-    useQuerystring: boolean;
-    basePath: string;
+    set useQuerystring(value: boolean);
+    set basePath(basePath: string);
+    get basePath(): string;
     setDefaultAuthentication(auth: Authentication): void;
     setApiKey(key: ExpensesApiApiKeys, value: string): void;
     expensesCategoriesAccountingGet(authorization: string, options?: {
@@ -66,6 +67,14 @@ export declare class ExpensesApi {
     }): Promise<{
         response: http.IncomingMessage;
         body: AttachmentResponse;
+    }>;
+    expensesIdDelete(authorization: string, id: string, options?: {
+        headers: {
+            [name: string]: string;
+        };
+    }): Promise<{
+        response: http.IncomingMessage;
+        body: DeleteResponse;
     }>;
     expensesIdGet(authorization: string, id: string, options?: {
         headers: {

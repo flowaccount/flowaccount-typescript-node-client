@@ -5,6 +5,7 @@ class InlineDocumentAllOf {
         return InlineDocumentAllOf.attributeTypeMap;
     }
 }
+exports.InlineDocumentAllOf = InlineDocumentAllOf;
 InlineDocumentAllOf.discriminator = undefined;
 InlineDocumentAllOf.attributeTypeMap = [
     {
@@ -43,5 +44,4 @@ InlineDocumentAllOf.attributeTypeMap = [
         "type": "Array<UpgradeDocument>"
     }
 ];
-exports.InlineDocumentAllOf = InlineDocumentAllOf;
 //# sourceMappingURL=inlineDocumentAllOf.js.map

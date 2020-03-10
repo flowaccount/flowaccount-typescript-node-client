@@ -10,6 +10,8 @@ __export(require("./businessCategory"));
 __export(require("./contact"));
 __export(require("./contactResponse"));
 __export(require("./contactResponseAllOf"));
+__export(require("./deleteResponse"));
+__export(require("./deleteResponseData"));
 __export(require("./document"));
 __export(require("./documentResponse"));
 __export(require("./expenseDocument"));
@@ -28,6 +30,10 @@ __export(require("./inlineObject2"));
 __export(require("./inlineObject3"));
 __export(require("./inlineObject4"));
 __export(require("./inlineObject5"));
+__export(require("./inlineObject6"));
+__export(require("./inlineObject7"));
+__export(require("./inlineObject8"));
+__export(require("./inlineObject9"));
 __export(require("./inlineProductItem"));
 __export(require("./inlineProductItemAllOf"));
 __export(require("./paymentDocument"));
@@ -65,6 +71,8 @@ const businessCategory_1 = require("./businessCategory");
 const contact_1 = require("./contact");
 const contactResponse_1 = require("./contactResponse");
 const contactResponseAllOf_1 = require("./contactResponseAllOf");
+const deleteResponse_1 = require("./deleteResponse");
+const deleteResponseData_1 = require("./deleteResponseData");
 const document_1 = require("./document");
 const documentResponse_1 = require("./documentResponse");
 const expenseDocument_1 = require("./expenseDocument");
@@ -83,6 +91,10 @@ const inlineObject2_1 = require("./inlineObject2");
 const inlineObject3_1 = require("./inlineObject3");
 const inlineObject4_1 = require("./inlineObject4");
 const inlineObject5_1 = require("./inlineObject5");
+const inlineObject6_1 = require("./inlineObject6");
+const inlineObject7_1 = require("./inlineObject7");
+const inlineObject8_1 = require("./inlineObject8");
+const inlineObject9_1 = require("./inlineObject9");
 const inlineProductItem_1 = require("./inlineProductItem");
 const inlineProductItemAllOf_1 = require("./inlineProductItemAllOf");
 const paymentDocument_1 = require("./paymentDocument");
@@ -132,6 +144,8 @@ let typeMap = {
     "Contact": contact_1.Contact,
     "ContactResponse": contactResponse_1.ContactResponse,
     "ContactResponseAllOf": contactResponseAllOf_1.ContactResponseAllOf,
+    "DeleteResponse": deleteResponse_1.DeleteResponse,
+    "DeleteResponseData": deleteResponseData_1.DeleteResponseData,
     "Document": document_1.Document,
     "DocumentResponse": documentResponse_1.DocumentResponse,
     "ExpenseDocument": expenseDocument_1.ExpenseDocument,
@@ -150,6 +164,10 @@ let typeMap = {
     "InlineObject3": inlineObject3_1.InlineObject3,
     "InlineObject4": inlineObject4_1.InlineObject4,
     "InlineObject5": inlineObject5_1.InlineObject5,
+    "InlineObject6": inlineObject6_1.InlineObject6,
+    "InlineObject7": inlineObject7_1.InlineObject7,
+    "InlineObject8": inlineObject8_1.InlineObject8,
+    "InlineObject9": inlineObject9_1.InlineObject9,
     "InlineProductItem": inlineProductItem_1.InlineProductItem,
     "InlineProductItemAllOf": inlineProductItemAllOf_1.InlineProductItemAllOf,
     "PaymentDocument": paymentDocument_1.PaymentDocument,

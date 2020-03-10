@@ -5,6 +5,7 @@ class WithholidingTaxDocumentResponse {
         return WithholidingTaxDocumentResponse.attributeTypeMap;
     }
 }
+exports.WithholidingTaxDocumentResponse = WithholidingTaxDocumentResponse;
 WithholidingTaxDocumentResponse.discriminator = undefined;
 WithholidingTaxDocumentResponse.attributeTypeMap = [
     {
@@ -28,5 +29,4 @@ WithholidingTaxDocumentResponse.attributeTypeMap = [
         "type": "WithholidingTaxDocumentResponseData"
     }
 ];
-exports.WithholidingTaxDocumentResponse = WithholidingTaxDocumentResponse;
 //# sourceMappingURL=withholidingTaxDocumentResponse.js.map

@@ -5,6 +5,7 @@ class SendEmail {
         return SendEmail.attributeTypeMap;
     }
 }
+exports.SendEmail = SendEmail;
 SendEmail.discriminator = "documentStructureType";
 SendEmail.attributeTypeMap = [
     {
@@ -48,5 +49,4 @@ SendEmail.attributeTypeMap = [
         "type": "string"
     }
 ];
-exports.SendEmail = SendEmail;
 //# sourceMappingURL=sendEmail.js.map

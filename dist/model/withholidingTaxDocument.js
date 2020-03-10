@@ -5,6 +5,7 @@ class WithholidingTaxDocument {
         return WithholidingTaxDocument.attributeTypeMap;
     }
 }
+exports.WithholidingTaxDocument = WithholidingTaxDocument;
 WithholidingTaxDocument.discriminator = undefined;
 WithholidingTaxDocument.attributeTypeMap = [
     {
@@ -128,5 +129,4 @@ WithholidingTaxDocument.attributeTypeMap = [
         "type": "boolean"
     }
 ];
-exports.WithholidingTaxDocument = WithholidingTaxDocument;
 //# sourceMappingURL=withholidingTaxDocument.js.map

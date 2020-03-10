@@ -1,6 +1,6 @@
-/// <reference types="node" />
 import http = require('http');
 import { AttachmentResponse } from '../model/attachmentResponse';
+import { DeleteResponse } from '../model/deleteResponse';
 import { InlineDocument } from '../model/inlineDocument';
 import { InlineDocumentResponse } from '../model/inlineDocumentResponse';
 import { SendEmailCoppies } from '../model/sendEmailCoppies';
@@ -21,8 +21,9 @@ export declare class BillingNotesApi {
         'default': Authentication;
     };
     constructor(basePath?: string);
-    useQuerystring: boolean;
-    basePath: string;
+    set useQuerystring(value: boolean);
+    set basePath(basePath: string);
+    get basePath(): string;
     setDefaultAuthentication(auth: Authentication): void;
     setApiKey(key: BillingNotesApiApiKeys, value: string): void;
     billingNotesEmailDocumentPost(authorization: string, sendEmailCoppies: SendEmailCoppies, options?: {
@@ -48,6 +49,14 @@ export declare class BillingNotesApi {
     }): Promise<{
         response: http.IncomingMessage;
         body: AttachmentResponse;
+    }>;
+    billingNotesIdDelete(authorization: string, id: string, options?: {
+        headers: {
+            [name: string]: string;
+        };
+    }): Promise<{
+        response: http.IncomingMessage;
+        body: DeleteResponse;
     }>;
     billingNotesIdGet(authorization: string, id: string, options?: {
         headers: {

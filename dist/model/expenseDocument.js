@@ -5,6 +5,7 @@ class ExpenseDocument {
         return ExpenseDocument.attributeTypeMap;
     }
 }
+exports.ExpenseDocument = ExpenseDocument;
 ExpenseDocument.discriminator = undefined;
 ExpenseDocument.attributeTypeMap = [
     {
@@ -158,5 +159,4 @@ ExpenseDocument.attributeTypeMap = [
         "type": "boolean"
     }
 ];
-exports.ExpenseDocument = ExpenseDocument;
 //# sourceMappingURL=expenseDocument.js.map

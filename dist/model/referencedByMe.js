@@ -5,6 +5,7 @@ class ReferencedByMe {
         return ReferencedByMe.attributeTypeMap;
     }
 }
+exports.ReferencedByMe = ReferencedByMe;
 ReferencedByMe.discriminator = undefined;
 ReferencedByMe.attributeTypeMap = [
     {
@@ -38,5 +39,4 @@ ReferencedByMe.attributeTypeMap = [
         "type": "number"
     }
 ];
-exports.ReferencedByMe = ReferencedByMe;
 //# sourceMappingURL=referencedByMe.js.map

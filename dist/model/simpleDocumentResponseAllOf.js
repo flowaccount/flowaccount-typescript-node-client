@@ -5,6 +5,7 @@ class SimpleDocumentResponseAllOf {
         return SimpleDocumentResponseAllOf.attributeTypeMap;
     }
 }
+exports.SimpleDocumentResponseAllOf = SimpleDocumentResponseAllOf;
 SimpleDocumentResponseAllOf.discriminator = undefined;
 SimpleDocumentResponseAllOf.attributeTypeMap = [
     {
@@ -13,5 +14,4 @@ SimpleDocumentResponseAllOf.attributeTypeMap = [
         "type": "object"
     }
 ];
-exports.SimpleDocumentResponseAllOf = SimpleDocumentResponseAllOf;
 //# sourceMappingURL=simpleDocumentResponseAllOf.js.map

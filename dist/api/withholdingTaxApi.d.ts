@@ -1,6 +1,6 @@
-/// <reference types="node" />
 import http = require('http');
 import { AttachmentResponse } from '../model/attachmentResponse';
+import { DeleteResponse } from '../model/deleteResponse';
 import { SendEmailResponse } from '../model/sendEmailResponse';
 import { SendEmailSimple } from '../model/sendEmailSimple';
 import { ShareDocument } from '../model/shareDocument';
@@ -19,8 +19,9 @@ export declare class WithholdingTaxApi {
         'default': Authentication;
     };
     constructor(basePath?: string);
-    useQuerystring: boolean;
-    basePath: string;
+    set useQuerystring(value: boolean);
+    set basePath(basePath: string);
+    get basePath(): string;
     setDefaultAuthentication(auth: Authentication): void;
     setApiKey(key: WithholdingTaxApiApiKeys, value: string): void;
     withholdingTaxesEmailDocumentPost(authorization: string, sendEmailSimple: SendEmailSimple, options?: {
@@ -46,6 +47,14 @@ export declare class WithholdingTaxApi {
     }): Promise<{
         response: http.IncomingMessage;
         body: AttachmentResponse;
+    }>;
+    withholdingTaxesIdDelete(authorization: string, id: string, options?: {
+        headers: {
+            [name: string]: string;
+        };
+    }): Promise<{
+        response: http.IncomingMessage;
+        body: DeleteResponse;
     }>;
     withholdingTaxesIdGet(authorization: string, id: string, options?: {
         headers: {

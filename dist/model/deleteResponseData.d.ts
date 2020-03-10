@@ -1,6 +1,5 @@
-import { RequestFile } from "../api/apis";
-export declare class InlineObject4 {
-    'file'?: RequestFile;
+export declare class DeleteResponseData {
+    'deleteStatus'?: string;
     static discriminator: string | undefined;
     static attributeTypeMap: Array<{
         name: string;

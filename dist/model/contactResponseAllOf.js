@@ -5,6 +5,7 @@ class ContactResponseAllOf {
         return ContactResponseAllOf.attributeTypeMap;
     }
 }
+exports.ContactResponseAllOf = ContactResponseAllOf;
 ContactResponseAllOf.discriminator = undefined;
 ContactResponseAllOf.attributeTypeMap = [
     {
@@ -13,5 +14,4 @@ ContactResponseAllOf.attributeTypeMap = [
         "type": "number"
     }
 ];
-exports.ContactResponseAllOf = ContactResponseAllOf;
 //# sourceMappingURL=contactResponseAllOf.js.map

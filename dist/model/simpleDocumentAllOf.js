@@ -5,6 +5,7 @@ class SimpleDocumentAllOf {
         return SimpleDocumentAllOf.attributeTypeMap;
     }
 }
+exports.SimpleDocumentAllOf = SimpleDocumentAllOf;
 SimpleDocumentAllOf.discriminator = undefined;
 SimpleDocumentAllOf.attributeTypeMap = [
     {
@@ -18,5 +19,4 @@ SimpleDocumentAllOf.attributeTypeMap = [
         "type": "Array<UpgradeDocument>"
     }
 ];
-exports.SimpleDocumentAllOf = SimpleDocumentAllOf;
 //# sourceMappingURL=simpleDocumentAllOf.js.map

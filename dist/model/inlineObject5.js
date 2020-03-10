@@ -5,28 +5,13 @@ class InlineObject5 {
         return InlineObject5.attributeTypeMap;
     }
 }
+exports.InlineObject5 = InlineObject5;
 InlineObject5.discriminator = undefined;
 InlineObject5.attributeTypeMap = [
     {
-        "name": "grantType",
-        "baseName": "grant_type",
-        "type": "string"
-    },
-    {
-        "name": "scope",
-        "baseName": "scope",
-        "type": "string"
-    },
-    {
-        "name": "clientId",
-        "baseName": "client_id",
-        "type": "string"
-    },
-    {
-        "name": "clientSecret",
-        "baseName": "client_secret",
-        "type": "string"
+        "name": "file",
+        "baseName": "file",
+        "type": "RequestFile"
     }
 ];
-exports.InlineObject5 = InlineObject5;
 //# sourceMappingURL=inlineObject5.js.map
