@@ -5,7 +5,6 @@ class AttachmentResponseData {
         return AttachmentResponseData.attributeTypeMap;
     }
 }
-exports.AttachmentResponseData = AttachmentResponseData;
 AttachmentResponseData.discriminator = undefined;
 AttachmentResponseData.attributeTypeMap = [
     {
@@ -39,4 +38,5 @@ AttachmentResponseData.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.AttachmentResponseData = AttachmentResponseData;
 //# sourceMappingURL=attachmentResponseData.js.map

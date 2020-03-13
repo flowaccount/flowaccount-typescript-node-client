@@ -6,7 +6,7 @@ class SimpleProductItem extends productItem_1.ProductItem {
         return super.getAttributeTypeMap().concat(SimpleProductItem.attributeTypeMap);
     }
 }
-exports.SimpleProductItem = SimpleProductItem;
 SimpleProductItem.discriminator = undefined;
 SimpleProductItem.attributeTypeMap = [];
+exports.SimpleProductItem = SimpleProductItem;
 //# sourceMappingURL=simpleProductItem.js.map

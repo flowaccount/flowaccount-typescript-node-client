@@ -5,7 +5,6 @@ class WithholidingTaxItem {
         return WithholidingTaxItem.attributeTypeMap;
     }
 }
-exports.WithholidingTaxItem = WithholidingTaxItem;
 WithholidingTaxItem.discriminator = undefined;
 WithholidingTaxItem.attributeTypeMap = [
     {
@@ -49,4 +48,5 @@ WithholidingTaxItem.attributeTypeMap = [
         "type": "number"
     }
 ];
+exports.WithholidingTaxItem = WithholidingTaxItem;
 //# sourceMappingURL=withholidingTaxItem.js.map

@@ -6,7 +6,6 @@ class SimpleDocument extends document_1.Document {
         return super.getAttributeTypeMap().concat(SimpleDocument.attributeTypeMap);
     }
 }
-exports.SimpleDocument = SimpleDocument;
 SimpleDocument.discriminator = undefined;
 SimpleDocument.attributeTypeMap = [
     {
@@ -20,4 +19,5 @@ SimpleDocument.attributeTypeMap = [
         "type": "Array<UpgradeDocument>"
     }
 ];
+exports.SimpleDocument = SimpleDocument;
 //# sourceMappingURL=simpleDocument.js.map

@@ -5,14 +5,8 @@ class Document {
         return Document.attributeTypeMap;
     }
 }
-exports.Document = Document;
 Document.discriminator = "documentStructureType";
 Document.attributeTypeMap = [
-    {
-        "name": "recordId",
-        "baseName": "recordId",
-        "type": "number"
-    },
     {
         "name": "contactCode",
         "baseName": "contactCode",
@@ -184,4 +178,5 @@ Document.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.Document = Document;
 //# sourceMappingURL=document.js.map

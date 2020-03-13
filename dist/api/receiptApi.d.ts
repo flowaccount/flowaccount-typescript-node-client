@@ -22,9 +22,8 @@ export declare class ReceiptApi {
         'default': Authentication;
     };
     constructor(basePath?: string);
-    set useQuerystring(value: boolean);
-    set basePath(basePath: string);
-    get basePath(): string;
+    useQuerystring: boolean;
+    basePath: string;
     setDefaultAuthentication(auth: Authentication): void;
     setApiKey(key: ReceiptApiApiKeys, value: string): void;
     receiptsEmailDocumentPost(authorization: string, sendEmailCoppies: SendEmailCoppies, options?: {

@@ -6,7 +6,6 @@ class InlineDocument extends document_1.Document {
         return super.getAttributeTypeMap().concat(InlineDocument.attributeTypeMap);
     }
 }
-exports.InlineDocument = InlineDocument;
 InlineDocument.discriminator = undefined;
 InlineDocument.attributeTypeMap = [
     {
@@ -45,4 +44,5 @@ InlineDocument.attributeTypeMap = [
         "type": "Array<UpgradeDocument>"
     }
 ];
+exports.InlineDocument = InlineDocument;
 //# sourceMappingURL=inlineDocument.js.map

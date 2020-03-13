@@ -6,7 +6,6 @@ class SimpleDocumentResponse extends documentResponse_1.DocumentResponse {
         return super.getAttributeTypeMap().concat(SimpleDocumentResponse.attributeTypeMap);
     }
 }
-exports.SimpleDocumentResponse = SimpleDocumentResponse;
 SimpleDocumentResponse.discriminator = undefined;
 SimpleDocumentResponse.attributeTypeMap = [
     {
@@ -15,4 +14,5 @@ SimpleDocumentResponse.attributeTypeMap = [
         "type": "object"
     }
 ];
+exports.SimpleDocumentResponse = SimpleDocumentResponse;
 //# sourceMappingURL=simpleDocumentResponse.js.map

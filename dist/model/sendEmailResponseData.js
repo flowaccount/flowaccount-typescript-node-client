@@ -5,7 +5,6 @@ class SendEmailResponseData {
         return SendEmailResponseData.attributeTypeMap;
     }
 }
-exports.SendEmailResponseData = SendEmailResponseData;
 SendEmailResponseData.discriminator = undefined;
 SendEmailResponseData.attributeTypeMap = [
     {
@@ -24,4 +23,5 @@ SendEmailResponseData.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.SendEmailResponseData = SendEmailResponseData;
 //# sourceMappingURL=sendEmailResponseData.js.map

@@ -5,7 +5,6 @@ class InlineDocumentResponseAllOf {
         return InlineDocumentResponseAllOf.attributeTypeMap;
     }
 }
-exports.InlineDocumentResponseAllOf = InlineDocumentResponseAllOf;
 InlineDocumentResponseAllOf.discriminator = undefined;
 InlineDocumentResponseAllOf.attributeTypeMap = [
     {
@@ -14,4 +13,5 @@ InlineDocumentResponseAllOf.attributeTypeMap = [
         "type": "object"
     }
 ];
+exports.InlineDocumentResponseAllOf = InlineDocumentResponseAllOf;
 //# sourceMappingURL=inlineDocumentResponseAllOf.js.map

@@ -13,10 +13,6 @@
 
 export class Document {
     /**
-    * id ของเอกสาร
-    */
-    'recordId'?: number;
-    /**
     * รหัส ลูกค้า/ผู้จำหน่าย
     */
     'contactCode'?: string;
@@ -153,11 +149,6 @@ export class Document {
     static discriminator: string | undefined = "documentStructureType";
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-        {
-            "name": "recordId",
-            "baseName": "recordId",
-            "type": "number"
-        },
         {
             "name": "contactCode",
             "baseName": "contactCode",

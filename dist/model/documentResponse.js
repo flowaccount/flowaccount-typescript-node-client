@@ -5,7 +5,6 @@ class DocumentResponse {
         return DocumentResponse.attributeTypeMap;
     }
 }
-exports.DocumentResponse = DocumentResponse;
 DocumentResponse.discriminator = "documentStructureType";
 DocumentResponse.attributeTypeMap = [
     {
@@ -29,4 +28,5 @@ DocumentResponse.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.DocumentResponse = DocumentResponse;
 //# sourceMappingURL=documentResponse.js.map

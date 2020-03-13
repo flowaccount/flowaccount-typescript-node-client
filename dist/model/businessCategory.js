@@ -5,7 +5,6 @@ class BusinessCategory {
         return BusinessCategory.attributeTypeMap;
     }
 }
-exports.BusinessCategory = BusinessCategory;
 BusinessCategory.discriminator = undefined;
 BusinessCategory.attributeTypeMap = [
     {
@@ -89,4 +88,5 @@ BusinessCategory.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.BusinessCategory = BusinessCategory;
 //# sourceMappingURL=businessCategory.js.map

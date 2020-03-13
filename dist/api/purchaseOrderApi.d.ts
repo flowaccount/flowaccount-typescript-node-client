@@ -21,9 +21,8 @@ export declare class PurchaseOrderApi {
         'default': Authentication;
     };
     constructor(basePath?: string);
-    set useQuerystring(value: boolean);
-    set basePath(basePath: string);
-    get basePath(): string;
+    useQuerystring: boolean;
+    basePath: string;
     setDefaultAuthentication(auth: Authentication): void;
     setApiKey(key: PurchaseOrderApiApiKeys, value: string): void;
     purchasesOrdersEmailDocumentPost(authorization: string, sendEmailCoppies: SendEmailCoppies, options?: {

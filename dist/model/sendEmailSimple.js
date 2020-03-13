@@ -6,7 +6,7 @@ class SendEmailSimple extends sendEmail_1.SendEmail {
         return super.getAttributeTypeMap().concat(SendEmailSimple.attributeTypeMap);
     }
 }
-exports.SendEmailSimple = SendEmailSimple;
 SendEmailSimple.discriminator = undefined;
 SendEmailSimple.attributeTypeMap = [];
+exports.SendEmailSimple = SendEmailSimple;
 //# sourceMappingURL=sendEmailSimple.js.map

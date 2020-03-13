@@ -23,9 +23,8 @@ export declare class ExpensesApi {
         'default': Authentication;
     };
     constructor(basePath?: string);
-    set useQuerystring(value: boolean);
-    set basePath(basePath: string);
-    get basePath(): string;
+    useQuerystring: boolean;
+    basePath: string;
     setDefaultAuthentication(auth: Authentication): void;
     setApiKey(key: ExpensesApiApiKeys, value: string): void;
     expensesCategoriesAccountingGet(authorization: string, options?: {

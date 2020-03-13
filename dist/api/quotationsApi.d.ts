@@ -20,9 +20,8 @@ export declare class QuotationsApi {
         'default': Authentication;
     };
     constructor(basePath?: string);
-    set useQuerystring(value: boolean);
-    set basePath(basePath: string);
-    get basePath(): string;
+    useQuerystring: boolean;
+    basePath: string;
     setDefaultAuthentication(auth: Authentication): void;
     setApiKey(key: QuotationsApiApiKeys, value: string): void;
     quotationsEmailDocumentPost(authorization: string, sendEmailSimple: SendEmailSimple, options?: {

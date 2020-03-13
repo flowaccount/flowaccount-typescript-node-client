@@ -13,9 +13,8 @@ export declare class ProductsApi {
         'default': Authentication;
     };
     constructor(basePath?: string);
-    set useQuerystring(value: boolean);
-    set basePath(basePath: string);
-    get basePath(): string;
+    useQuerystring: boolean;
+    basePath: string;
     setDefaultAuthentication(auth: Authentication): void;
     setApiKey(key: ProductsApiApiKeys, value: string): void;
     productsGet(authorization: string, options?: {

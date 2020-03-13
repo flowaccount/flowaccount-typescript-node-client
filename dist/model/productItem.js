@@ -5,7 +5,6 @@ class ProductItem {
         return ProductItem.attributeTypeMap;
     }
 }
-exports.ProductItem = ProductItem;
 ProductItem.discriminator = "documentStructureType";
 ProductItem.attributeTypeMap = [
     {
@@ -49,4 +48,5 @@ ProductItem.attributeTypeMap = [
         "type": "number"
     }
 ];
+exports.ProductItem = ProductItem;
 //# sourceMappingURL=productItem.js.map

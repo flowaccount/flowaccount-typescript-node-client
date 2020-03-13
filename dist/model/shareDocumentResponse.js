@@ -5,7 +5,6 @@ class ShareDocumentResponse {
         return ShareDocumentResponse.attributeTypeMap;
     }
 }
-exports.ShareDocumentResponse = ShareDocumentResponse;
 ShareDocumentResponse.discriminator = undefined;
 ShareDocumentResponse.attributeTypeMap = [
     {
@@ -29,4 +28,5 @@ ShareDocumentResponse.attributeTypeMap = [
         "type": "ShareDocumentResponseData"
     }
 ];
+exports.ShareDocumentResponse = ShareDocumentResponse;
 //# sourceMappingURL=shareDocumentResponse.js.map

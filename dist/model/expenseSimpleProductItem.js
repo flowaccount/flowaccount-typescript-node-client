@@ -5,7 +5,6 @@ class ExpenseSimpleProductItem {
         return ExpenseSimpleProductItem.attributeTypeMap;
     }
 }
-exports.ExpenseSimpleProductItem = ExpenseSimpleProductItem;
 ExpenseSimpleProductItem.discriminator = undefined;
 ExpenseSimpleProductItem.attributeTypeMap = [
     {
@@ -104,4 +103,5 @@ ExpenseSimpleProductItem.attributeTypeMap = [
         "type": "number"
     }
 ];
+exports.ExpenseSimpleProductItem = ExpenseSimpleProductItem;
 //# sourceMappingURL=expenseSimpleProductItem.js.map

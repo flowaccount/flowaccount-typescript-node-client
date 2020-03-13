@@ -5,7 +5,6 @@ class InlineObject9 {
         return InlineObject9.attributeTypeMap;
     }
 }
-exports.InlineObject9 = InlineObject9;
 InlineObject9.discriminator = undefined;
 InlineObject9.attributeTypeMap = [
     {
@@ -29,4 +28,5 @@ InlineObject9.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.InlineObject9 = InlineObject9;
 //# sourceMappingURL=inlineObject9.js.map

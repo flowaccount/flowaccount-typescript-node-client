@@ -5,7 +5,6 @@ class DeleteResponse {
         return DeleteResponse.attributeTypeMap;
     }
 }
-exports.DeleteResponse = DeleteResponse;
 DeleteResponse.discriminator = undefined;
 DeleteResponse.attributeTypeMap = [
     {
@@ -29,4 +28,5 @@ DeleteResponse.attributeTypeMap = [
         "type": "DeleteResponseData"
     }
 ];
+exports.DeleteResponse = DeleteResponse;
 //# sourceMappingURL=deleteResponse.js.map
