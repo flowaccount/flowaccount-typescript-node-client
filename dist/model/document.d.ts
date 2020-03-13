@@ -1,4 +1,5 @@
 export declare class Document {
+    'recordId'?: number;
     'contactCode'?: string;
     'contactName': string;
     'contactAddress'?: string;

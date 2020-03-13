@@ -11,7 +11,7 @@
         "test": "npm run build && node dist/client.js"
     },
     "author": "OpenAPI-Generator Contributors",
-    "license": "MIT",
+    "license": "Unlicense",
     "dependencies": {
         "bluebird": "^3.5.0",
         "request": "^2.81.0",

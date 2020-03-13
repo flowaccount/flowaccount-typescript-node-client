@@ -9,6 +9,11 @@ exports.Document = Document;
 Document.discriminator = "documentStructureType";
 Document.attributeTypeMap = [
     {
+        "name": "recordId",
+        "baseName": "recordId",
+        "type": "number"
+    },
+    {
         "name": "contactCode",
         "baseName": "contactCode",
         "type": "string"
