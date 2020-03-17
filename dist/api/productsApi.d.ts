@@ -1,3 +1,4 @@
+/// <reference types="node" />
 import http = require('http');
 import { DeleteResponse } from '../model/deleteResponse';
 import { Product } from '../model/product';

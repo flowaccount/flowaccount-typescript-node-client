@@ -1,16 +1,26 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-class Document {
+class SimpleDocumentResponseAllOfData {
     static getAttributeTypeMap() {
-        return Document.attributeTypeMap;
+        return SimpleDocumentResponseAllOfData.attributeTypeMap;
     }
 }
-Document.discriminator = "documentStructureType";
-Document.attributeTypeMap = [
+SimpleDocumentResponseAllOfData.discriminator = undefined;
+SimpleDocumentResponseAllOfData.attributeTypeMap = [
     {
         "name": "recordId",
         "baseName": "recordId",
         "type": "number"
+    },
+    {
+        "name": "documentId",
+        "baseName": "documentId",
+        "type": "number"
+    },
+    {
+        "name": "documentSerial",
+        "baseName": "documentSerial",
+        "type": "string"
     },
     {
         "name": "contactCode",
@@ -128,6 +138,11 @@ Document.attributeTypeMap = [
         "type": "number"
     },
     {
+        "name": "totalWithoutVat",
+        "baseName": "totalWithoutVat",
+        "type": "number"
+    },
+    {
         "name": "isVat",
         "baseName": "isVat",
         "type": "boolean"
@@ -150,11 +165,6 @@ Document.attributeTypeMap = [
     {
         "name": "documentWithholdingTaxPercentage",
         "baseName": "documentWithholdingTaxPercentage",
-        "type": "number"
-    },
-    {
-        "name": "documentWithholdingTaxAmount",
-        "baseName": "documentWithholdingTaxAmount",
         "type": "number"
     },
     {
@@ -183,10 +193,45 @@ Document.attributeTypeMap = [
         "type": "boolean"
     },
     {
-        "name": "documentStructureType",
-        "baseName": "documentStructureType",
-        "type": "string"
+        "name": "items",
+        "baseName": "items",
+        "type": "Array<SimpleProductItem>"
+    },
+    {
+        "name": "referencedToMe",
+        "baseName": "referencedToMe",
+        "type": "Array<ReferencedToMe>"
+    },
+    {
+        "name": "referencedByMe",
+        "baseName": "referencedByMe",
+        "type": "Array<ReferencedByMe>"
+    },
+    {
+        "name": "payments",
+        "baseName": "payments",
+        "type": "Array<PaymentDocumentResponse>"
+    },
+    {
+        "name": "status",
+        "baseName": "status",
+        "type": "number"
+    },
+    {
+        "name": "statusString",
+        "baseName": "statusString",
+        "type": "number"
+    },
+    {
+        "name": "documentType",
+        "baseName": "documentType",
+        "type": "number"
+    },
+    {
+        "name": "allowDelete",
+        "baseName": "allowDelete",
+        "type": "boolean"
     }
 ];
-exports.Document = Document;
-//# sourceMappingURL=document.js.map
+exports.SimpleDocumentResponseAllOfData = SimpleDocumentResponseAllOfData;
+//# sourceMappingURL=simpleDocumentResponseAllOfData.js.map

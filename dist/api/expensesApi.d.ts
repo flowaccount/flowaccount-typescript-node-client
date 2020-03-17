@@ -1,3 +1,4 @@
+/// <reference types="node" />
 import http = require('http');
 import { AttachmentResponse } from '../model/attachmentResponse';
 import { BusinessCategory } from '../model/businessCategory';

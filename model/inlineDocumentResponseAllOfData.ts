@@ -10,12 +10,24 @@
  * Do not edit the class manually.
  */
 
+import { InlineProductItem } from './inlineProductItem';
+import { PaymentDocumentResponse } from './paymentDocumentResponse';
+import { ReferencedByMe } from './referencedByMe';
+import { ReferencedToMe } from './referencedToMe';
 
-export class Document {
+export class InlineDocumentResponseAllOfData {
     /**
     * id ของเอกสาร
     */
     'recordId'?: number;
+    /**
+    * id ของเอกสาร
+    */
+    'documentId'?: number;
+    /**
+    * เลขที่เอกสาร
+    */
+    'documentSerial'?: string;
     /**
     * รหัส ลูกค้า/ผู้จำหน่าย
     */
@@ -23,7 +35,7 @@ export class Document {
     /**
     * ชื่อ ลูกค้า/ผู้จำหน่าย <br> <ex>Example: บริษัท ลูกค้า จำกัด, คุณลูกค้า ซื้อประจำ</ex>
     */
-    'contactName': string;
+    'contactName'?: string;
     /**
     * ที่อยู่ ลูกค้า/ผู้จำหน่าย
     */
@@ -59,7 +71,7 @@ export class Document {
     /**
     * วันที่เอกสาร รูปแบบ yyyy-MM-dd <br> <ex>Example: 2020-01-01</ex>
     */
-    'publishedOn': string;
+    'publishedOn'?: string;
     /**
     * รูปแบบเครดิต <br> 1 = เครดิต (วัน) <br> 3 = เงินสด  <br> 5 = เครดิต (ไม่แสดงวันที่ครบกำหนด)
     */
@@ -71,7 +83,7 @@ export class Document {
     /**
     * วันครบกำหนดเอกสาร รูปแบบ yyyy-MM-dd <br> <ex>Example: 2020-01-01</ex>
     */
-    'dueDate': string;
+    'dueDate'?: string;
     /**
     * ชื่อผู้สร้างเอกสาร หรือ ชื่อพนักงานขาย <br> <ex>Example: sale@email.com or Mr.Sale Shop</ex>
     */
@@ -88,6 +100,18 @@ export class Document {
     * มูลค่าเอกสารรวมภาษีแล้วหรือไม่
     */
     'isVatInclusive'?: boolean;
+    /**
+    * รูปแบบส่วนลดในเอกสาร กรณีใช้รูปแบบ Inline ส่วนลด หรือ ภาษี แยกตามรายการสินค้า <br> สามารถเลือกรูปแบบส่วนลดได้ <br> 1 =  เปอร์เซ็นต์ <br> 3 = จำนวน (บาท)
+    */
+    'discountType'?: number;
+    /**
+    * inline discount ใช้งานส่วนลด แยกตามรายการสินค้า
+    */
+    'useInlineDiscount'?: boolean;
+    /**
+    * inline vat ใช้งานส่วนลดและภาษี แยกตามรายการสินค้า
+    */
+    'useInlineVat'?: boolean;
     /**
     * เปิดใช้งานฟังก์ชั่น ปรับลดท้ายเอกสาร <br> (เฉพาะเอกสารใบกำกับภาษี / ใบเสร็จรับเงิน และ ใบเสร็จรับเงิน)
     */
@@ -107,7 +131,19 @@ export class Document {
     /**
     * มูลค่าหลังหักส่วนลด
     */
-    'totalAfterDiscount': number;
+    'totalAfterDiscount'?: number;
+    /**
+    * มูลค่าไม่รวมภาษีมูลค่าเพิ่ม
+    */
+    'totalWithoutVat'?: number;
+    /**
+    * ยอดขายที่ยกเว้นภาษีมูลค่าเพิ่ม
+    */
+    'exemptAmount'?: number;
+    /**
+    * ยอดขายที่คิดภาษีมูลค่าเพิ่ม
+    */
+    'vatableAmount'?: number;
     /**
     * มูลค่าหลังหักส่วนลด มีภาษีมูลค่าเพิ่ม 7%
     */
@@ -119,7 +155,7 @@ export class Document {
     /**
     * จำนวนเงินรวมทั้งสิ้น (รวมภาษีมูลค่าเพิ่ม 7% แล้ว)
     */
-    'grandTotal': number;
+    'grandTotal'?: number;
     /**
     * แสดงหรือไม่แสดง หัก ณ ที่จ่ายท้ายเอกสาร
     */
@@ -128,10 +164,6 @@ export class Document {
     * ภาษี ณ ที่จ่าย (%)
     */
     'documentWithholdingTaxPercentage'?: number;
-    /**
-    * มูลค่าภาษีหัก ณ ที่จ่าย
-    */
-    'documentWithholdingTaxAmount'?: number;
     /**
     * ประเภทรายการปรับลด <br> 1 = ส่วนลดพิเศษ <br> 3 = ค่านายหน้าและส่วนแบ่งการขาย <br> 5 = ค่าดำเนินการ <br> 7 = ปัดเศษ <br> (เฉพาะเอกสารใบกำกับภาษี/ใบเสร็จรับเงิน)
     */
@@ -152,15 +184,56 @@ export class Document {
     * ลายเซ็นอิเล็กทรอนิกส์และตรายาง
     */
     'showSignatureOrStamp'?: boolean;
-    'documentStructureType': string;
+    /**
+    * รายการสินค้าใช้งานสำหรับเอกสาร Inline Document
+    */
+    'items'?: Array<InlineProductItem>;
+    /**
+    * ข้อมูลเอกสารปลายทางที่อ้างอิง ถึง เอกสารฉบับนี้
+    */
+    'referencedToMe'?: Array<ReferencedToMe>;
+    /**
+    * เอกสารต้นทางที่อ้างอิง ถึง เอกสารฉบับนี้
+    */
+    'referencedByMe'?: Array<ReferencedByMe>;
+    /**
+    * ข้อมูลการเก็บเงินและจ่ายเงินของเอกสาร <br> ข้อมูลการเก็บเงิน: <br>1. ใบกำกับภาษี/ใบเสร็จรับเงิน (Tax Invoice) <br> 2. ใบเสร็จรับเงิน (Receipt) <br> 3. ใบกำกับภาษี/ใบเสร็จรับเงิน (Cash Invoice) <br> ข้อมูลการจ่ายเงิน: <br>1. เอกสารใบรับสินค้า (Receiving Inventory)
+    */
+    'payments'?: Array<PaymentDocumentResponse>;
+    /**
+    * เลขสถานะเอกสารฉบับนี้
+    */
+    'status'?: number;
+    /**
+    * ชื่อสถานะเอกสารฉบับนี้
+    */
+    'statusString'?: number;
+    /**
+    * เลขประเภทเอกสารฉบับนี้
+    */
+    'documentType'?: number;
+    /**
+    * สามารถลบเอกสาร :<br> true = ลบได้ <br> false = ลบไม่ได้
+    */
+    'allowDelete'?: boolean;
 
-    static discriminator: string | undefined = "documentStructureType";
+    static discriminator: string | undefined = undefined;
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
         {
             "name": "recordId",
             "baseName": "recordId",
             "type": "number"
+        },
+        {
+            "name": "documentId",
+            "baseName": "documentId",
+            "type": "number"
+        },
+        {
+            "name": "documentSerial",
+            "baseName": "documentSerial",
+            "type": "string"
         },
         {
             "name": "contactCode",
@@ -253,6 +326,21 @@ export class Document {
             "type": "boolean"
         },
         {
+            "name": "discountType",
+            "baseName": "discountType",
+            "type": "number"
+        },
+        {
+            "name": "useInlineDiscount",
+            "baseName": "useInlineDiscount",
+            "type": "boolean"
+        },
+        {
+            "name": "useInlineVat",
+            "baseName": "useInlineVat",
+            "type": "boolean"
+        },
+        {
             "name": "useReceiptDeduction",
             "baseName": "useReceiptDeduction",
             "type": "boolean"
@@ -275,6 +363,21 @@ export class Document {
         {
             "name": "totalAfterDiscount",
             "baseName": "totalAfterDiscount",
+            "type": "number"
+        },
+        {
+            "name": "totalWithoutVat",
+            "baseName": "totalWithoutVat",
+            "type": "number"
+        },
+        {
+            "name": "exemptAmount",
+            "baseName": "exemptAmount",
+            "type": "number"
+        },
+        {
+            "name": "vatableAmount",
+            "baseName": "vatableAmount",
             "type": "number"
         },
         {
@@ -303,11 +406,6 @@ export class Document {
             "type": "number"
         },
         {
-            "name": "documentWithholdingTaxAmount",
-            "baseName": "documentWithholdingTaxAmount",
-            "type": "number"
-        },
-        {
             "name": "documentDeductionType",
             "baseName": "documentDeductionType",
             "type": "number"
@@ -333,13 +431,48 @@ export class Document {
             "type": "boolean"
         },
         {
-            "name": "documentStructureType",
-            "baseName": "documentStructureType",
-            "type": "string"
+            "name": "items",
+            "baseName": "items",
+            "type": "Array<InlineProductItem>"
+        },
+        {
+            "name": "referencedToMe",
+            "baseName": "referencedToMe",
+            "type": "Array<ReferencedToMe>"
+        },
+        {
+            "name": "referencedByMe",
+            "baseName": "referencedByMe",
+            "type": "Array<ReferencedByMe>"
+        },
+        {
+            "name": "payments",
+            "baseName": "payments",
+            "type": "Array<PaymentDocumentResponse>"
+        },
+        {
+            "name": "status",
+            "baseName": "status",
+            "type": "number"
+        },
+        {
+            "name": "statusString",
+            "baseName": "statusString",
+            "type": "number"
+        },
+        {
+            "name": "documentType",
+            "baseName": "documentType",
+            "type": "number"
+        },
+        {
+            "name": "allowDelete",
+            "baseName": "allowDelete",
+            "type": "boolean"
         }    ];
 
     static getAttributeTypeMap() {
-        return Document.attributeTypeMap;
+        return InlineDocumentResponseAllOfData.attributeTypeMap;
     }
 }
 

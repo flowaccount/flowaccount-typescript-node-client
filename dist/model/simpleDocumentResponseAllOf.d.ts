@@ -1,5 +1,6 @@
+import { SimpleDocumentResponseAllOfData } from './simpleDocumentResponseAllOfData';
 export declare class SimpleDocumentResponseAllOf {
-    'data'?: object;
+    'data'?: SimpleDocumentResponseAllOfData;
     static discriminator: string | undefined;
     static attributeTypeMap: Array<{
         name: string;

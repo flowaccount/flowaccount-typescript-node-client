@@ -12,9 +12,10 @@
 
 import { DocumentResponse } from './documentResponse';
 import { SimpleDocumentResponseAllOf } from './simpleDocumentResponseAllOf';
+import { SimpleDocumentResponseAllOfData } from './simpleDocumentResponseAllOfData';
 
 export class SimpleDocumentResponse extends DocumentResponse {
-    'data'?: object;
+    'data'?: SimpleDocumentResponseAllOfData;
 
     static discriminator: string | undefined = undefined;
 
@@ -22,7 +23,7 @@ export class SimpleDocumentResponse extends DocumentResponse {
         {
             "name": "data",
             "baseName": "data",
-            "type": "object"
+            "type": "SimpleDocumentResponseAllOfData"
         }    ];
 
     static getAttributeTypeMap() {

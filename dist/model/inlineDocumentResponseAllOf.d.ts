@@ -1,5 +1,6 @@
+import { InlineDocumentResponseAllOfData } from './inlineDocumentResponseAllOfData';
 export declare class InlineDocumentResponseAllOf {
-    'data'?: object;
+    'data'?: InlineDocumentResponseAllOfData;
     static discriminator: string | undefined;
     static attributeTypeMap: Array<{
         name: string;

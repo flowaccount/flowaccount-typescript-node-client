@@ -15,6 +15,10 @@ export declare class ProductResponseData {
     'inventoryPublishedOn'?: string;
     'inventoryQuantity'?: number;
     'inventoryPrice'?: number;
+    'averageBuyPrice'?: number;
+    'averageSellPrice'?: number;
+    'remainingStock'?: number;
+    'totalValueInHand'?: number;
     static discriminator: string | undefined;
     static attributeTypeMap: Array<{
         name: string;

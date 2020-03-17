@@ -1,7 +1,13 @@
-export declare class Document {
+import { PaymentDocumentResponse } from './paymentDocumentResponse';
+import { ReferencedByMe } from './referencedByMe';
+import { ReferencedToMe } from './referencedToMe';
+import { SimpleProductItem } from './simpleProductItem';
+export declare class SimpleDocumentResponseAllOfData {
     'recordId'?: number;
+    'documentId'?: number;
+    'documentSerial'?: string;
     'contactCode'?: string;
-    'contactName': string;
+    'contactName'?: string;
     'contactAddress'?: string;
     'contactTaxId'?: string;
     'contactBranch'?: string;
@@ -10,10 +16,10 @@ export declare class Document {
     'contactNumber'?: string;
     'contactZipCode'?: string;
     'contactGroup'?: number;
-    'publishedOn': string;
+    'publishedOn'?: string;
     'creditType'?: number;
     'creditDays'?: number;
-    'dueDate': string;
+    'dueDate'?: string;
     'salesName'?: string;
     'projectName'?: string;
     'reference'?: string;
@@ -22,19 +28,26 @@ export declare class Document {
     'subTotal'?: number;
     'discountPercentage'?: number;
     'discountAmount'?: number;
-    'totalAfterDiscount': number;
+    'totalAfterDiscount'?: number;
+    'totalWithoutVat'?: number;
     'isVat'?: boolean;
     'vatAmount'?: number;
-    'grandTotal': number;
+    'grandTotal'?: number;
     'documentShowWithholdingTax'?: boolean;
     'documentWithholdingTaxPercentage'?: number;
-    'documentWithholdingTaxAmount'?: number;
     'documentDeductionType'?: number;
     'documentDeductionAmount'?: number;
     'remarks'?: string;
     'internalNotes'?: string;
     'showSignatureOrStamp'?: boolean;
-    'documentStructureType': string;
+    'items'?: Array<SimpleProductItem>;
+    'referencedToMe'?: Array<ReferencedToMe>;
+    'referencedByMe'?: Array<ReferencedByMe>;
+    'payments'?: Array<PaymentDocumentResponse>;
+    'status'?: number;
+    'statusString'?: number;
+    'documentType'?: number;
+    'allowDelete'?: boolean;
     static discriminator: string | undefined;
     static attributeTypeMap: Array<{
         name: string;

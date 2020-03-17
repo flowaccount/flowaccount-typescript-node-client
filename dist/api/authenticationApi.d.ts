@@ -1,3 +1,4 @@
+/// <reference types="node" />
 import http = require('http');
 import { AuthenResponse } from '../model/authenResponse';
 import { Authentication } from '../model/models';

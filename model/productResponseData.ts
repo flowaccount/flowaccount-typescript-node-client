@@ -76,6 +76,22 @@ export class ProductResponseData {
     * ราคาซื้อสินค้า
     */
     'inventoryPrice'?: number;
+    /**
+    * ราคาซื้อเฉลี่ยสินค้า
+    */
+    'averageBuyPrice'?: number;
+    /**
+    * ราคาขายเฉลี่ยสินค้า
+    */
+    'averageSellPrice'?: number;
+    /**
+    * จำนวนสินค้าคงเหลือในสต๊อก
+    */
+    'remainingStock'?: number;
+    /**
+    * มูลค่าสินค้าคงเหลือในสต๊อก
+    */
+    'totalValueInHand'?: number;
 
     static discriminator: string | undefined = undefined;
 
@@ -158,6 +174,26 @@ export class ProductResponseData {
         {
             "name": "inventoryPrice",
             "baseName": "inventoryPrice",
+            "type": "number"
+        },
+        {
+            "name": "averageBuyPrice",
+            "baseName": "averageBuyPrice",
+            "type": "number"
+        },
+        {
+            "name": "averageSellPrice",
+            "baseName": "averageSellPrice",
+            "type": "number"
+        },
+        {
+            "name": "remainingStock",
+            "baseName": "remainingStock",
+            "type": "number"
+        },
+        {
+            "name": "totalValueInHand",
+            "baseName": "totalValueInHand",
             "type": "number"
         }    ];
 

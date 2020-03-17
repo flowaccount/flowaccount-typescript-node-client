@@ -86,6 +86,26 @@ ProductResponseData.attributeTypeMap = [
         "name": "inventoryPrice",
         "baseName": "inventoryPrice",
         "type": "number"
+    },
+    {
+        "name": "averageBuyPrice",
+        "baseName": "averageBuyPrice",
+        "type": "number"
+    },
+    {
+        "name": "averageSellPrice",
+        "baseName": "averageSellPrice",
+        "type": "number"
+    },
+    {
+        "name": "remainingStock",
+        "baseName": "remainingStock",
+        "type": "number"
+    },
+    {
+        "name": "totalValueInHand",
+        "baseName": "totalValueInHand",
+        "type": "number"
     }
 ];
 exports.ProductResponseData = ProductResponseData;

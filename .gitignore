@@ -63,4 +63,5 @@ typings/
 # next.js build output
 .next
 
+# nprc token npm package
 .npmrc

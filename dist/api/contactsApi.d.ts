@@ -1,3 +1,4 @@
+/// <reference types="node" />
 import http = require('http');
 import { Contact } from '../model/contact';
 import { ContactResponse } from '../model/contactResponse';

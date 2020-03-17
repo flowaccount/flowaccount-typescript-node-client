@@ -1,16 +1,26 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-class Document {
+class InlineDocumentResponseAllOfData {
     static getAttributeTypeMap() {
-        return Document.attributeTypeMap;
+        return InlineDocumentResponseAllOfData.attributeTypeMap;
     }
 }
-Document.discriminator = "documentStructureType";
-Document.attributeTypeMap = [
+InlineDocumentResponseAllOfData.discriminator = undefined;
+InlineDocumentResponseAllOfData.attributeTypeMap = [
     {
         "name": "recordId",
         "baseName": "recordId",
         "type": "number"
+    },
+    {
+        "name": "documentId",
+        "baseName": "documentId",
+        "type": "number"
+    },
+    {
+        "name": "documentSerial",
+        "baseName": "documentSerial",
+        "type": "string"
     },
     {
         "name": "contactCode",
@@ -103,6 +113,21 @@ Document.attributeTypeMap = [
         "type": "boolean"
     },
     {
+        "name": "discountType",
+        "baseName": "discountType",
+        "type": "number"
+    },
+    {
+        "name": "useInlineDiscount",
+        "baseName": "useInlineDiscount",
+        "type": "boolean"
+    },
+    {
+        "name": "useInlineVat",
+        "baseName": "useInlineVat",
+        "type": "boolean"
+    },
+    {
         "name": "useReceiptDeduction",
         "baseName": "useReceiptDeduction",
         "type": "boolean"
@@ -125,6 +150,21 @@ Document.attributeTypeMap = [
     {
         "name": "totalAfterDiscount",
         "baseName": "totalAfterDiscount",
+        "type": "number"
+    },
+    {
+        "name": "totalWithoutVat",
+        "baseName": "totalWithoutVat",
+        "type": "number"
+    },
+    {
+        "name": "exemptAmount",
+        "baseName": "exemptAmount",
+        "type": "number"
+    },
+    {
+        "name": "vatableAmount",
+        "baseName": "vatableAmount",
         "type": "number"
     },
     {
@@ -153,11 +193,6 @@ Document.attributeTypeMap = [
         "type": "number"
     },
     {
-        "name": "documentWithholdingTaxAmount",
-        "baseName": "documentWithholdingTaxAmount",
-        "type": "number"
-    },
-    {
         "name": "documentDeductionType",
         "baseName": "documentDeductionType",
         "type": "number"
@@ -183,10 +218,45 @@ Document.attributeTypeMap = [
         "type": "boolean"
     },
     {
-        "name": "documentStructureType",
-        "baseName": "documentStructureType",
-        "type": "string"
+        "name": "items",
+        "baseName": "items",
+        "type": "Array<InlineProductItem>"
+    },
+    {
+        "name": "referencedToMe",
+        "baseName": "referencedToMe",
+        "type": "Array<ReferencedToMe>"
+    },
+    {
+        "name": "referencedByMe",
+        "baseName": "referencedByMe",
+        "type": "Array<ReferencedByMe>"
+    },
+    {
+        "name": "payments",
+        "baseName": "payments",
+        "type": "Array<PaymentDocumentResponse>"
+    },
+    {
+        "name": "status",
+        "baseName": "status",
+        "type": "number"
+    },
+    {
+        "name": "statusString",
+        "baseName": "statusString",
+        "type": "number"
+    },
+    {
+        "name": "documentType",
+        "baseName": "documentType",
+        "type": "number"
+    },
+    {
+        "name": "allowDelete",
+        "baseName": "allowDelete",
+        "type": "boolean"
     }
 ];
-exports.Document = Document;
-//# sourceMappingURL=document.js.map
+exports.InlineDocumentResponseAllOfData = InlineDocumentResponseAllOfData;
+//# sourceMappingURL=inlineDocumentResponseAllOfData.js.map

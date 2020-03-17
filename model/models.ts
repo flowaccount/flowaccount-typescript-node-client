@@ -19,6 +19,7 @@ export * from './inlineDocument';
 export * from './inlineDocumentAllOf';
 export * from './inlineDocumentResponse';
 export * from './inlineDocumentResponseAllOf';
+export * from './inlineDocumentResponseAllOfData';
 export * from './inlineObject';
 export * from './inlineObject1';
 export * from './inlineObject2';
@@ -52,6 +53,7 @@ export * from './simpleDocument';
 export * from './simpleDocumentAllOf';
 export * from './simpleDocumentResponse';
 export * from './simpleDocumentResponseAllOf';
+export * from './simpleDocumentResponseAllOfData';
 export * from './simpleProductItem';
 export * from './statusDocument';
 export * from './upgradeDocument';
@@ -83,6 +85,7 @@ import { InlineDocument } from './inlineDocument';
 import { InlineDocumentAllOf } from './inlineDocumentAllOf';
 import { InlineDocumentResponse } from './inlineDocumentResponse';
 import { InlineDocumentResponseAllOf } from './inlineDocumentResponseAllOf';
+import { InlineDocumentResponseAllOfData } from './inlineDocumentResponseAllOfData';
 import { InlineObject } from './inlineObject';
 import { InlineObject1 } from './inlineObject1';
 import { InlineObject2 } from './inlineObject2';
@@ -116,6 +119,7 @@ import { SimpleDocument } from './simpleDocument';
 import { SimpleDocumentAllOf } from './simpleDocumentAllOf';
 import { SimpleDocumentResponse } from './simpleDocumentResponse';
 import { SimpleDocumentResponseAllOf } from './simpleDocumentResponseAllOf';
+import { SimpleDocumentResponseAllOfData } from './simpleDocumentResponseAllOfData';
 import { SimpleProductItem } from './simpleProductItem';
 import { StatusDocument } from './statusDocument';
 import { UpgradeDocument } from './upgradeDocument';
@@ -161,6 +165,7 @@ let typeMap: {[index: string]: any} = {
     "InlineDocumentAllOf": InlineDocumentAllOf,
     "InlineDocumentResponse": InlineDocumentResponse,
     "InlineDocumentResponseAllOf": InlineDocumentResponseAllOf,
+    "InlineDocumentResponseAllOfData": InlineDocumentResponseAllOfData,
     "InlineObject": InlineObject,
     "InlineObject1": InlineObject1,
     "InlineObject2": InlineObject2,
@@ -194,6 +199,7 @@ let typeMap: {[index: string]: any} = {
     "SimpleDocumentAllOf": SimpleDocumentAllOf,
     "SimpleDocumentResponse": SimpleDocumentResponse,
     "SimpleDocumentResponseAllOf": SimpleDocumentResponseAllOf,
+    "SimpleDocumentResponseAllOfData": SimpleDocumentResponseAllOfData,
     "SimpleProductItem": SimpleProductItem,
     "StatusDocument": StatusDocument,
     "UpgradeDocument": UpgradeDocument,

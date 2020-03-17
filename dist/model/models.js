@@ -24,6 +24,7 @@ __export(require("./inlineDocument"));
 __export(require("./inlineDocumentAllOf"));
 __export(require("./inlineDocumentResponse"));
 __export(require("./inlineDocumentResponseAllOf"));
+__export(require("./inlineDocumentResponseAllOfData"));
 __export(require("./inlineObject"));
 __export(require("./inlineObject1"));
 __export(require("./inlineObject2"));
@@ -57,6 +58,7 @@ __export(require("./simpleDocument"));
 __export(require("./simpleDocumentAllOf"));
 __export(require("./simpleDocumentResponse"));
 __export(require("./simpleDocumentResponseAllOf"));
+__export(require("./simpleDocumentResponseAllOfData"));
 __export(require("./simpleProductItem"));
 __export(require("./statusDocument"));
 __export(require("./upgradeDocument"));
@@ -85,6 +87,7 @@ const inlineDocument_1 = require("./inlineDocument");
 const inlineDocumentAllOf_1 = require("./inlineDocumentAllOf");
 const inlineDocumentResponse_1 = require("./inlineDocumentResponse");
 const inlineDocumentResponseAllOf_1 = require("./inlineDocumentResponseAllOf");
+const inlineDocumentResponseAllOfData_1 = require("./inlineDocumentResponseAllOfData");
 const inlineObject_1 = require("./inlineObject");
 const inlineObject1_1 = require("./inlineObject1");
 const inlineObject2_1 = require("./inlineObject2");
@@ -118,6 +121,7 @@ const simpleDocument_1 = require("./simpleDocument");
 const simpleDocumentAllOf_1 = require("./simpleDocumentAllOf");
 const simpleDocumentResponse_1 = require("./simpleDocumentResponse");
 const simpleDocumentResponseAllOf_1 = require("./simpleDocumentResponseAllOf");
+const simpleDocumentResponseAllOfData_1 = require("./simpleDocumentResponseAllOfData");
 const simpleProductItem_1 = require("./simpleProductItem");
 const statusDocument_1 = require("./statusDocument");
 const upgradeDocument_1 = require("./upgradeDocument");
@@ -158,6 +162,7 @@ let typeMap = {
     "InlineDocumentAllOf": inlineDocumentAllOf_1.InlineDocumentAllOf,
     "InlineDocumentResponse": inlineDocumentResponse_1.InlineDocumentResponse,
     "InlineDocumentResponseAllOf": inlineDocumentResponseAllOf_1.InlineDocumentResponseAllOf,
+    "InlineDocumentResponseAllOfData": inlineDocumentResponseAllOfData_1.InlineDocumentResponseAllOfData,
     "InlineObject": inlineObject_1.InlineObject,
     "InlineObject1": inlineObject1_1.InlineObject1,
     "InlineObject2": inlineObject2_1.InlineObject2,
@@ -191,6 +196,7 @@ let typeMap = {
     "SimpleDocumentAllOf": simpleDocumentAllOf_1.SimpleDocumentAllOf,
     "SimpleDocumentResponse": simpleDocumentResponse_1.SimpleDocumentResponse,
     "SimpleDocumentResponseAllOf": simpleDocumentResponseAllOf_1.SimpleDocumentResponseAllOf,
+    "SimpleDocumentResponseAllOfData": simpleDocumentResponseAllOfData_1.SimpleDocumentResponseAllOfData,
     "SimpleProductItem": simpleProductItem_1.SimpleProductItem,
     "StatusDocument": statusDocument_1.StatusDocument,
     "UpgradeDocument": upgradeDocument_1.UpgradeDocument,
