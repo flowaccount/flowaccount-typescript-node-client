@@ -154,13 +154,13 @@ export class CashInvoiceApi {
     /**
      * เรียกดูข้อมูลเอกสารใบกำกับภาษี/ใบเสร็จรับเงิน (เงินสด) ทั้งหมดในระบบ
      * @summary Get list all cash invoices documents
-     * @param currentPage 
-     * @param pageSize 
+     * @param currentPage Query current page document cash invoices. &lt;br&gt;Example Pattern: &lt;ex&gt;/cash-invoices?currentPage&#x3D;1 &lt;/ex&gt;&lt;ex&gt;/cash-invoices?currentPage&#x3D;1&amp;pageSize&#x3D;20&lt;/ex&gt;
+     * @param pageSize Query document cash invoices list amount per page. &lt;br&gt;Example Pattern: &lt;ex&gt; /cash-invoices?pageSize&#x3D;20 &lt;/ex&gt;
      * @param authorization 
      * @param sortBy 
      * @param filter 
      */
-    public async cashInvoicesGet (currentPage: string, pageSize: string, authorization: string, sortBy?: string, filter?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: InlineDocumentResponse;  }> {
+    public async cashInvoicesGet (currentPage: number, pageSize: number, authorization: string, sortBy?: string, filter?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: InlineDocumentResponse;  }> {
         const localVarPath = this.basePath + '/cash-invoices';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -189,11 +189,11 @@ export class CashInvoiceApi {
         }
 
         if (currentPage !== undefined) {
-            localVarQueryParameters['currentPage'] = ObjectSerializer.serialize(currentPage, "string");
+            localVarQueryParameters['currentPage'] = ObjectSerializer.serialize(currentPage, "number");
         }
 
         if (pageSize !== undefined) {
-            localVarQueryParameters['pageSize'] = ObjectSerializer.serialize(pageSize, "string");
+            localVarQueryParameters['pageSize'] = ObjectSerializer.serialize(pageSize, "number");
         }
 
         if (sortBy !== undefined) {

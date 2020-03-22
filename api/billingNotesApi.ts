@@ -153,9 +153,13 @@ export class BillingNotesApi {
     /**
      * เรียกดูข้อมูลเอกสารใบวางบิลทั้งหมดในระบบ
      * @summary Get list all billing notes documents.
+     * @param currentPage Query current page document billing notes. &lt;br&gt;Example Pattern: &lt;ex&gt;/billing-notes?currentPage&#x3D;1 &lt;/ex&gt;&lt;ex&gt;/billing-notes?currentPage&#x3D;1&amp;pageSize&#x3D;20&lt;/ex&gt;
+     * @param pageSize Query document billing notes list amount per page. &lt;br&gt;Example Pattern: &lt;ex&gt; /billing-notes?pageSize&#x3D;20 &lt;/ex&gt;
      * @param authorization 
+     * @param sortBy 
+     * @param filter 
      */
-    public async billingNotesGet (authorization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: InlineDocumentResponse;  }> {
+    public async billingNotesGet (currentPage: number, pageSize: number, authorization: string, sortBy?: string, filter?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: InlineDocumentResponse;  }> {
         const localVarPath = this.basePath + '/billing-notes';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -168,9 +172,35 @@ export class BillingNotesApi {
         }
         let localVarFormParams: any = {};
 
+        // verify required parameter 'currentPage' is not null or undefined
+        if (currentPage === null || currentPage === undefined) {
+            throw new Error('Required parameter currentPage was null or undefined when calling billingNotesGet.');
+        }
+
+        // verify required parameter 'pageSize' is not null or undefined
+        if (pageSize === null || pageSize === undefined) {
+            throw new Error('Required parameter pageSize was null or undefined when calling billingNotesGet.');
+        }
+
         // verify required parameter 'authorization' is not null or undefined
         if (authorization === null || authorization === undefined) {
             throw new Error('Required parameter authorization was null or undefined when calling billingNotesGet.');
+        }
+
+        if (currentPage !== undefined) {
+            localVarQueryParameters['currentPage'] = ObjectSerializer.serialize(currentPage, "number");
+        }
+
+        if (pageSize !== undefined) {
+            localVarQueryParameters['pageSize'] = ObjectSerializer.serialize(pageSize, "number");
+        }
+
+        if (sortBy !== undefined) {
+            localVarQueryParameters['sortBy'] = ObjectSerializer.serialize(sortBy, "string");
+        }
+
+        if (filter !== undefined) {
+            localVarQueryParameters['filter'] = ObjectSerializer.serialize(filter, "string");
         }
 
         localVarHeaderParams['Authorization'] = ObjectSerializer.serialize(authorization, "string");

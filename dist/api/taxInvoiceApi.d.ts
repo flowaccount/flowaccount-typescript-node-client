@@ -35,7 +35,7 @@ export declare class TaxInvoiceApi {
         response: http.IncomingMessage;
         body: SendEmailResponse;
     }>;
-    taxInvoicesGet(currentPage: string, pageSize: string, authorization: string, sortBy?: string, filter?: string, options?: {
+    taxInvoicesGet(currentPage: number, pageSize: number, authorization: string, sortBy?: string, filter?: string, options?: {
         headers: {
             [name: string]: string;
         };

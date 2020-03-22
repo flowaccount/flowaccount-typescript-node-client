@@ -153,9 +153,13 @@ export class QuotationsApi {
     /**
      * เรียกดูข้อมูลเอกสารใบเสนอราคาทั้งหมดในระบบ
      * @summary Get list all quotations documents.
+     * @param currentPage Query current page document quotations. &lt;br&gt;Example Pattern: &lt;ex&gt;/quotations?currentPage&#x3D;1 &lt;/ex&gt;&lt;ex&gt;/quotations?currentPage&#x3D;1&amp;pageSize&#x3D;20&lt;/ex&gt;
+     * @param pageSize Query document quotations list amount per page. &lt;br&gt;Example Pattern: &lt;ex&gt; /quotations?pageSize&#x3D;20 &lt;/ex&gt;
      * @param authorization 
+     * @param sortBy 
+     * @param filter 
      */
-    public async quotationsGet (authorization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: InlineDocumentResponse;  }> {
+    public async quotationsGet (currentPage: number, pageSize: number, authorization: string, sortBy?: string, filter?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: InlineDocumentResponse;  }> {
         const localVarPath = this.basePath + '/quotations';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -168,9 +172,35 @@ export class QuotationsApi {
         }
         let localVarFormParams: any = {};
 
+        // verify required parameter 'currentPage' is not null or undefined
+        if (currentPage === null || currentPage === undefined) {
+            throw new Error('Required parameter currentPage was null or undefined when calling quotationsGet.');
+        }
+
+        // verify required parameter 'pageSize' is not null or undefined
+        if (pageSize === null || pageSize === undefined) {
+            throw new Error('Required parameter pageSize was null or undefined when calling quotationsGet.');
+        }
+
         // verify required parameter 'authorization' is not null or undefined
         if (authorization === null || authorization === undefined) {
             throw new Error('Required parameter authorization was null or undefined when calling quotationsGet.');
+        }
+
+        if (currentPage !== undefined) {
+            localVarQueryParameters['currentPage'] = ObjectSerializer.serialize(currentPage, "number");
+        }
+
+        if (pageSize !== undefined) {
+            localVarQueryParameters['pageSize'] = ObjectSerializer.serialize(pageSize, "number");
+        }
+
+        if (sortBy !== undefined) {
+            localVarQueryParameters['sortBy'] = ObjectSerializer.serialize(sortBy, "string");
+        }
+
+        if (filter !== undefined) {
+            localVarQueryParameters['filter'] = ObjectSerializer.serialize(filter, "string");
         }
 
         localVarHeaderParams['Authorization'] = ObjectSerializer.serialize(authorization, "string");

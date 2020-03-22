@@ -83,11 +83,6 @@ ProductResponseData.attributeTypeMap = [
         "type": "number"
     },
     {
-        "name": "inventoryPrice",
-        "baseName": "inventoryPrice",
-        "type": "number"
-    },
-    {
         "name": "averageBuyPrice",
         "baseName": "averageBuyPrice",
         "type": "number"

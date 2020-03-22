@@ -49,7 +49,7 @@ class ContactsApi {
     setApiKey(key, value) {
         this.authentications[ContactsApiApiKeys[key]].apiKey = value;
     }
-    contactsGet(authorization, options = { headers: {} }) {
+    contactsGet(currentPage, pageSize, authorization, options = { headers: {} }) {
         return __awaiter(this, void 0, void 0, function* () {
             const localVarPath = this.basePath + '/contacts';
             let localVarQueryParameters = {};
@@ -62,8 +62,20 @@ class ContactsApi {
                 localVarHeaderParams.Accept = produces.join(',');
             }
             let localVarFormParams = {};
+            if (currentPage === null || currentPage === undefined) {
+                throw new Error('Required parameter currentPage was null or undefined when calling contactsGet.');
+            }
+            if (pageSize === null || pageSize === undefined) {
+                throw new Error('Required parameter pageSize was null or undefined when calling contactsGet.');
+            }
             if (authorization === null || authorization === undefined) {
                 throw new Error('Required parameter authorization was null or undefined when calling contactsGet.');
+            }
+            if (currentPage !== undefined) {
+                localVarQueryParameters['currentPage'] = models_1.ObjectSerializer.serialize(currentPage, "number");
+            }
+            if (pageSize !== undefined) {
+                localVarQueryParameters['pageSize'] = models_1.ObjectSerializer.serialize(pageSize, "number");
             }
             localVarHeaderParams['Authorization'] = models_1.ObjectSerializer.serialize(authorization, "string");
             Object.assign(localVarHeaderParams, options.headers);

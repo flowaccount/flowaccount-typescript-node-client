@@ -32,7 +32,7 @@ export declare class WithholdingTaxApi {
         response: http.IncomingMessage;
         body: SendEmailResponse;
     }>;
-    withholdingTaxesGet(authorization: string, options?: {
+    withholdingTaxesGet(currentPage: number, pageSize: number, authorization: string, sortBy?: string, filter?: string, options?: {
         headers: {
             [name: string]: string;
         };

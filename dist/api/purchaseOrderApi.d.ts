@@ -34,7 +34,7 @@ export declare class PurchaseOrderApi {
         response: http.IncomingMessage;
         body: SendEmailResponse;
     }>;
-    purchasesOrdersGet(authorization: string, options?: {
+    purchasesOrdersGet(currentPage: number, pageSize: number, authorization: string, sortBy?: string, filter?: string, options?: {
         headers: {
             [name: string]: string;
         };

@@ -34,7 +34,7 @@ export declare class BillingNotesApi {
         response: http.IncomingMessage;
         body: SendEmailResponse;
     }>;
-    billingNotesGet(authorization: string, options?: {
+    billingNotesGet(currentPage: number, pageSize: number, authorization: string, sortBy?: string, filter?: string, options?: {
         headers: {
             [name: string]: string;
         };

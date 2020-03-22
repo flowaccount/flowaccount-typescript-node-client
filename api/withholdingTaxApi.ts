@@ -152,9 +152,13 @@ export class WithholdingTaxApi {
     /**
      * เรียกดูข้อมูลเอกสารใบหัก ณ ที่จ่ายทั้งหมดในระบบ
      * @summary Get list all withholding tax documents.
+     * @param currentPage Query current page document withholding tax. &lt;br&gt;Example Pattern: &lt;ex&gt;/withholding-taxes?currentPage&#x3D;1 &lt;/ex&gt;&lt;ex&gt;/withholding-taxes?currentPage&#x3D;1&amp;pageSize&#x3D;20&lt;/ex&gt;
+     * @param pageSize Query document withholding tax list amount per page. &lt;br&gt;Example Pattern: &lt;ex&gt; /withholding-taxes?pageSize&#x3D;20 &lt;/ex&gt;
      * @param authorization 
+     * @param sortBy 
+     * @param filter 
      */
-    public async withholdingTaxesGet (authorization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: WithholidingTaxDocumentResponse;  }> {
+    public async withholdingTaxesGet (currentPage: number, pageSize: number, authorization: string, sortBy?: string, filter?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: WithholidingTaxDocumentResponse;  }> {
         const localVarPath = this.basePath + '/withholding-taxes';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -167,9 +171,35 @@ export class WithholdingTaxApi {
         }
         let localVarFormParams: any = {};
 
+        // verify required parameter 'currentPage' is not null or undefined
+        if (currentPage === null || currentPage === undefined) {
+            throw new Error('Required parameter currentPage was null or undefined when calling withholdingTaxesGet.');
+        }
+
+        // verify required parameter 'pageSize' is not null or undefined
+        if (pageSize === null || pageSize === undefined) {
+            throw new Error('Required parameter pageSize was null or undefined when calling withholdingTaxesGet.');
+        }
+
         // verify required parameter 'authorization' is not null or undefined
         if (authorization === null || authorization === undefined) {
             throw new Error('Required parameter authorization was null or undefined when calling withholdingTaxesGet.');
+        }
+
+        if (currentPage !== undefined) {
+            localVarQueryParameters['currentPage'] = ObjectSerializer.serialize(currentPage, "number");
+        }
+
+        if (pageSize !== undefined) {
+            localVarQueryParameters['pageSize'] = ObjectSerializer.serialize(pageSize, "number");
+        }
+
+        if (sortBy !== undefined) {
+            localVarQueryParameters['sortBy'] = ObjectSerializer.serialize(sortBy, "string");
+        }
+
+        if (filter !== undefined) {
+            localVarQueryParameters['filter'] = ObjectSerializer.serialize(filter, "string");
         }
 
         localVarHeaderParams['Authorization'] = ObjectSerializer.serialize(authorization, "string");

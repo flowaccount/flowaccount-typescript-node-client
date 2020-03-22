@@ -33,7 +33,7 @@ export declare class QuotationsApi {
         response: http.IncomingMessage;
         body: SendEmailResponse;
     }>;
-    quotationsGet(authorization: string, options?: {
+    quotationsGet(currentPage: number, pageSize: number, authorization: string, sortBy?: string, filter?: string, options?: {
         headers: {
             [name: string]: string;
         };

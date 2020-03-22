@@ -34,7 +34,7 @@ export declare class ReceivingInventoryApi {
         response: http.IncomingMessage;
         body: SendEmailResponse;
     }>;
-    purchasesGet(authorization: string, options?: {
+    purchasesGet(currentPage: number, pageSize: number, authorization: string, sortBy?: string, filter?: string, options?: {
         headers: {
             [name: string]: string;
         };

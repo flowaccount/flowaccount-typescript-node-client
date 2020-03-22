@@ -76,9 +76,11 @@ export class ProductsApi {
     /**
      * 
      * @summary Get list all products.
+     * @param currentPage Query current page products item. &lt;br&gt;Example Pattern: &lt;ex&gt;/products?currentPage&#x3D;1 &lt;/ex&gt;&lt;ex&gt;/products?currentPage&#x3D;1&amp;pageSize&#x3D;20&lt;/ex&gt;
+     * @param pageSize Query products list amount per page. &lt;br&gt;Example Pattern: &lt;ex&gt; /products?pageSize&#x3D;20 &lt;/ex&gt;
      * @param authorization 
      */
-    public async productsGet (authorization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: ProductResponse;  }> {
+    public async productsGet (currentPage: number, pageSize: number, authorization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: ProductResponse;  }> {
         const localVarPath = this.basePath + '/products';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -91,9 +93,27 @@ export class ProductsApi {
         }
         let localVarFormParams: any = {};
 
+        // verify required parameter 'currentPage' is not null or undefined
+        if (currentPage === null || currentPage === undefined) {
+            throw new Error('Required parameter currentPage was null or undefined when calling productsGet.');
+        }
+
+        // verify required parameter 'pageSize' is not null or undefined
+        if (pageSize === null || pageSize === undefined) {
+            throw new Error('Required parameter pageSize was null or undefined when calling productsGet.');
+        }
+
         // verify required parameter 'authorization' is not null or undefined
         if (authorization === null || authorization === undefined) {
             throw new Error('Required parameter authorization was null or undefined when calling productsGet.');
+        }
+
+        if (currentPage !== undefined) {
+            localVarQueryParameters['currentPage'] = ObjectSerializer.serialize(currentPage, "number");
+        }
+
+        if (pageSize !== undefined) {
+            localVarQueryParameters['pageSize'] = ObjectSerializer.serialize(pageSize, "number");
         }
 
         localVarHeaderParams['Authorization'] = ObjectSerializer.serialize(authorization, "string");

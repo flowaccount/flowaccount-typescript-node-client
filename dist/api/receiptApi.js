@@ -133,10 +133,10 @@ class ReceiptApi {
                 throw new Error('Required parameter authorization was null or undefined when calling receiptsGet.');
             }
             if (currentPage !== undefined) {
-                localVarQueryParameters['currentPage'] = models_1.ObjectSerializer.serialize(currentPage, "string");
+                localVarQueryParameters['currentPage'] = models_1.ObjectSerializer.serialize(currentPage, "number");
             }
             if (pageSize !== undefined) {
-                localVarQueryParameters['pageSize'] = models_1.ObjectSerializer.serialize(pageSize, "string");
+                localVarQueryParameters['pageSize'] = models_1.ObjectSerializer.serialize(pageSize, "number");
             }
             if (sortBy !== undefined) {
                 localVarQueryParameters['sortBy'] = models_1.ObjectSerializer.serialize(sortBy, "string");

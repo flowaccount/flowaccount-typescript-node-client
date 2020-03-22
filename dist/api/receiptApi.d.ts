@@ -35,7 +35,7 @@ export declare class ReceiptApi {
         response: http.IncomingMessage;
         body: SendEmailResponse;
     }>;
-    receiptsGet(currentPage: string, pageSize: string, authorization: string, sortBy?: string, filter?: string, options?: {
+    receiptsGet(currentPage: number, pageSize: number, authorization: string, sortBy?: string, filter?: string, options?: {
         headers: {
             [name: string]: string;
         };

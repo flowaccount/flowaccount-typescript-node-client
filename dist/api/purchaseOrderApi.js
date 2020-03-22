@@ -110,7 +110,7 @@ class PurchaseOrderApi {
             });
         });
     }
-    purchasesOrdersGet(authorization, options = { headers: {} }) {
+    purchasesOrdersGet(currentPage, pageSize, authorization, sortBy, filter, options = { headers: {} }) {
         return __awaiter(this, void 0, void 0, function* () {
             const localVarPath = this.basePath + '/purchases-orders';
             let localVarQueryParameters = {};
@@ -123,8 +123,26 @@ class PurchaseOrderApi {
                 localVarHeaderParams.Accept = produces.join(',');
             }
             let localVarFormParams = {};
+            if (currentPage === null || currentPage === undefined) {
+                throw new Error('Required parameter currentPage was null or undefined when calling purchasesOrdersGet.');
+            }
+            if (pageSize === null || pageSize === undefined) {
+                throw new Error('Required parameter pageSize was null or undefined when calling purchasesOrdersGet.');
+            }
             if (authorization === null || authorization === undefined) {
                 throw new Error('Required parameter authorization was null or undefined when calling purchasesOrdersGet.');
+            }
+            if (currentPage !== undefined) {
+                localVarQueryParameters['currentPage'] = models_1.ObjectSerializer.serialize(currentPage, "number");
+            }
+            if (pageSize !== undefined) {
+                localVarQueryParameters['pageSize'] = models_1.ObjectSerializer.serialize(pageSize, "number");
+            }
+            if (sortBy !== undefined) {
+                localVarQueryParameters['sortBy'] = models_1.ObjectSerializer.serialize(sortBy, "string");
+            }
+            if (filter !== undefined) {
+                localVarQueryParameters['filter'] = models_1.ObjectSerializer.serialize(filter, "string");
             }
             localVarHeaderParams['Authorization'] = models_1.ObjectSerializer.serialize(authorization, "string");
             Object.assign(localVarHeaderParams, options.headers);

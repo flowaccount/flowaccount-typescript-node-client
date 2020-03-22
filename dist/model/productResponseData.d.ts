@@ -14,7 +14,6 @@ export declare class ProductResponseData {
     'buyVatType'?: number;
     'inventoryPublishedOn'?: string;
     'inventoryQuantity'?: number;
-    'inventoryPrice'?: number;
     'averageBuyPrice'?: number;
     'averageSellPrice'?: number;
     'remainingStock'?: number;

@@ -73,10 +73,6 @@ export class ProductResponseData {
     */
     'inventoryQuantity'?: number;
     /**
-    * ราคาซื้อสินค้า
-    */
-    'inventoryPrice'?: number;
-    /**
     * ราคาซื้อเฉลี่ยสินค้า
     */
     'averageBuyPrice'?: number;
@@ -169,11 +165,6 @@ export class ProductResponseData {
         {
             "name": "inventoryQuantity",
             "baseName": "inventoryQuantity",
-            "type": "number"
-        },
-        {
-            "name": "inventoryPrice",
-            "baseName": "inventoryPrice",
             "type": "number"
         },
         {

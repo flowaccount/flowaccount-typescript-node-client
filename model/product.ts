@@ -17,7 +17,7 @@ export class Product {
     */
     'type': number;
     /**
-    * รหัสสินค้า <br> <ex>Example: P001</ex>
+    * รหัสสินค้า / SKU <br> <ex>Example: P001</ex>
     */
     'code'?: string;
     /**

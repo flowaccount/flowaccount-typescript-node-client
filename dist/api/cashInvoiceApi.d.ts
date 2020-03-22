@@ -35,7 +35,7 @@ export declare class CashInvoiceApi {
         response: http.IncomingMessage;
         body: SendEmailResponse;
     }>;
-    cashInvoicesGet(currentPage: string, pageSize: string, authorization: string, sortBy?: string, filter?: string, options?: {
+    cashInvoicesGet(currentPage: number, pageSize: number, authorization: string, sortBy?: string, filter?: string, options?: {
         headers: {
             [name: string]: string;
         };

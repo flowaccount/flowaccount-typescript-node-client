@@ -52,7 +52,7 @@ export declare class ExpensesApi {
         response: http.IncomingMessage;
         body: SendEmailResponse;
     }>;
-    expensesGet(authorization: string, options?: {
+    expensesGet(currentPage: number, pageSize: number, authorization: string, sortBy?: string, filter?: string, options?: {
         headers: {
             [name: string]: string;
         };
