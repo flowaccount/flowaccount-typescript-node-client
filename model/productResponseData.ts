@@ -45,6 +45,10 @@ export class ProductResponseData {
     */
     'unitName'?: string;
     /**
+    * id หมวดสินค้า
+    */
+    'categoryId'?: number;
+    /**
     * หมวดสินค้า
     */
     'categoryName'?: string;
@@ -131,6 +135,11 @@ export class ProductResponseData {
             "name": "unitName",
             "baseName": "unitName",
             "type": "string"
+        },
+        {
+            "name": "categoryId",
+            "baseName": "categoryId",
+            "type": "number"
         },
         {
             "name": "categoryName",

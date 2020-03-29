@@ -18,7 +18,7 @@ export declare class ProductsApi {
     basePath: string;
     setDefaultAuthentication(auth: Authentication): void;
     setApiKey(key: ProductsApiApiKeys, value: string): void;
-    productsGet(currentPage: number, pageSize: number, authorization: string, options?: {
+    productsGet(currentPage: number, pageSize: number, authorization: string, sortBy?: string, filter?: string, options?: {
         headers: {
             [name: string]: string;
         };

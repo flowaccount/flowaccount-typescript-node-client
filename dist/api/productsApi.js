@@ -49,7 +49,7 @@ class ProductsApi {
     setApiKey(key, value) {
         this.authentications[ProductsApiApiKeys[key]].apiKey = value;
     }
-    productsGet(currentPage, pageSize, authorization, options = { headers: {} }) {
+    productsGet(currentPage, pageSize, authorization, sortBy, filter, options = { headers: {} }) {
         return __awaiter(this, void 0, void 0, function* () {
             const localVarPath = this.basePath + '/products';
             let localVarQueryParameters = {};
@@ -76,6 +76,12 @@ class ProductsApi {
             }
             if (pageSize !== undefined) {
                 localVarQueryParameters['pageSize'] = models_1.ObjectSerializer.serialize(pageSize, "number");
+            }
+            if (sortBy !== undefined) {
+                localVarQueryParameters['sortBy'] = models_1.ObjectSerializer.serialize(sortBy, "string");
+            }
+            if (filter !== undefined) {
+                localVarQueryParameters['filter'] = models_1.ObjectSerializer.serialize(filter, "string");
             }
             localVarHeaderParams['Authorization'] = models_1.ObjectSerializer.serialize(authorization, "string");
             Object.assign(localVarHeaderParams, options.headers);

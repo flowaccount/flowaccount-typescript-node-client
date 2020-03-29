@@ -79,8 +79,10 @@ export class ContactsApi {
      * @param currentPage Query current page contacts. &lt;br&gt;Example Pattern: &lt;ex&gt;/contacts?currentPage&#x3D;1 &lt;/ex&gt;&lt;ex&gt;/contacts?currentPage&#x3D;1&amp;pageSize&#x3D;20&lt;/ex&gt;
      * @param pageSize Query contacts list amount per page. &lt;br&gt;Example Pattern: &lt;ex&gt; /contacts?pageSize&#x3D;20 &lt;/ex&gt;
      * @param authorization 
+     * @param sortBy Query contacts list amount per page. &lt;br&gt;Example Pattern: &lt;ex&gt; /contacts?sortBy&#x3D;[{\&#39;name\&#39;:\&#39;contactPerson\&#39;,\&#39;sortOrder\&#39;:\&#39;desc\&#39;}]&lt;/ex&gt;
+     * @param filter Query contacts list amount per page. &lt;br&gt;Example Pattern: &lt;ex&gt; /contacts?filter&#x3D;[{\&#39;columnName\&#39;:\&#39;contactType\&#39;,\&#39;columnValue\&#39;:\&#39;3\&#39;,\&#39;columnPredicateOperator\&#39;:\&#39;And\&#39;}]&lt;/ex&gt;
      */
-    public async contactsGet (currentPage: number, pageSize: number, authorization: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: ContactResponse;  }> {
+    public async contactsGet (currentPage: number, pageSize: number, authorization: string, sortBy?: string, filter?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: ContactResponse;  }> {
         const localVarPath = this.basePath + '/contacts';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -114,6 +116,14 @@ export class ContactsApi {
 
         if (pageSize !== undefined) {
             localVarQueryParameters['pageSize'] = ObjectSerializer.serialize(pageSize, "number");
+        }
+
+        if (sortBy !== undefined) {
+            localVarQueryParameters['sortBy'] = ObjectSerializer.serialize(sortBy, "string");
+        }
+
+        if (filter !== undefined) {
+            localVarQueryParameters['filter'] = ObjectSerializer.serialize(filter, "string");
         }
 
         localVarHeaderParams['Authorization'] = ObjectSerializer.serialize(authorization, "string");

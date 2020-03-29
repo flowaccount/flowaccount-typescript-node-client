@@ -48,6 +48,11 @@ ProductResponseData.attributeTypeMap = [
         "type": "string"
     },
     {
+        "name": "categoryId",
+        "baseName": "categoryId",
+        "type": "number"
+    },
+    {
         "name": "categoryName",
         "baseName": "categoryName",
         "type": "string"

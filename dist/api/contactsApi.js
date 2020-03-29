@@ -49,7 +49,7 @@ class ContactsApi {
     setApiKey(key, value) {
         this.authentications[ContactsApiApiKeys[key]].apiKey = value;
     }
-    contactsGet(currentPage, pageSize, authorization, options = { headers: {} }) {
+    contactsGet(currentPage, pageSize, authorization, sortBy, filter, options = { headers: {} }) {
         return __awaiter(this, void 0, void 0, function* () {
             const localVarPath = this.basePath + '/contacts';
             let localVarQueryParameters = {};
@@ -76,6 +76,12 @@ class ContactsApi {
             }
             if (pageSize !== undefined) {
                 localVarQueryParameters['pageSize'] = models_1.ObjectSerializer.serialize(pageSize, "number");
+            }
+            if (sortBy !== undefined) {
+                localVarQueryParameters['sortBy'] = models_1.ObjectSerializer.serialize(sortBy, "string");
+            }
+            if (filter !== undefined) {
+                localVarQueryParameters['filter'] = models_1.ObjectSerializer.serialize(filter, "string");
             }
             localVarHeaderParams['Authorization'] = models_1.ObjectSerializer.serialize(authorization, "string");
             Object.assign(localVarHeaderParams, options.headers);

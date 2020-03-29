@@ -7,6 +7,7 @@ export declare class ProductResponseData {
     'sellPrice'?: number;
     'sellVatType'?: number;
     'unitName'?: string;
+    'categoryId'?: number;
     'categoryName'?: string;
     'barcode'?: string;
     'buyDescription'?: string;
